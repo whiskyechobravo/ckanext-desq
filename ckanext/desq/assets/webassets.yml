@@ -1,0 +1,14 @@
+# desq-js:
+#   filter: rjsmin
+#   output: ckanext-desq/%(version)s-desq.js
+#   contents:
+#     - js/desq.js
+#   extra:
+#     preload:
+#       - base/main
+
+# desq-css:
+#   filter: cssrewrite
+#   output: ckanext-desq/%(version)s-desq.css
+#   contents:
+#     - css/desq.css
