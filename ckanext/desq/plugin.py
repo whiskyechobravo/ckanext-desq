@@ -82,3 +82,11 @@ class DesqPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         """Modify and return the facets_dict for the dataset search page."""
         facets_dict['year'] = toolkit._('Year')
         return facets_dict
+
+    def group_facets(self, facets_dict, group_type, package_type):
+        """Modify and return the facets_dict for a group’s page."""
+        return facets_dict
+
+    def organization_facets(self, facets_dict, organization_type, package_type):
+        """Modify and return the facets_dict for an organization’s page."""
+        return facets_dict
