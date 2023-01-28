@@ -10,6 +10,7 @@ class DesqPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IValidators)
     plugins.implements(plugins.IDatasetForm)
+    plugins.implements(plugins.IFacets)
 
     # IConfigurer
 
@@ -73,3 +74,11 @@ class DesqPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         # This plugin doesn't handle any special package types, it just
         # registers itself as the default (above)
         return []
+
+    # IFacets
+    # Reference: https://docs.ckan.org/en/2.9/extensions/plugin-interfaces.html?highlight=ifacet#ckan.plugins.interfaces.IFacets
+
+    def dataset_facets(self, facets_dict, package_type):
+        """Modify and return the facets_dict for the dataset search page."""
+        facets_dict['year'] = toolkit._('Year')
+        return facets_dict
