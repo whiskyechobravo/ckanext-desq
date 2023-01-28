@@ -1,8 +1,9 @@
 scheming_version: 2
 dataset_type: dataset
-about: A reimplementation of the default CKAN dataset schema
-about_url: http://github.com/ckan/ckanext-scheming
+about: Dataset schema for DESQ
 
+# Derived from ckanext-scheming/ckanext/scheming/ckan_dataset.yaml
+# Unless marked with "DESQ", fields match those of the default CKAN dataset schema.
 
 dataset_fields:
 
@@ -21,7 +22,7 @@ dataset_fields:
   form_snippet: markdown.html
   form_placeholder: eg. Some useful notes about the data
 
-- field_name: year
+- field_name: year  # DESQ
   label: Year
   form_placeholder: eg. 2021
   validators: ignore_missing desq_is_year
