@@ -1,0 +1,8 @@
+{#- DESQ: Only need to toggle between French and English. #}
+{%- with current_lang = request.environ.CKAN_LANG %}
+    {%- set switcher = {'en': 'fr', 'fr': 'en'} %}
+    {%- set selected_lang = switcher[current_lang]|default('en') %}
+    <a href="{{ h.url_for(h.current_url(), locale=selected_lang) }}" title="{{ selected_lang }}">
+        {{- h.get_locales_dict()[selected_lang].display_name|capitalize -}}
+    </a>
+{%- endwith %}
