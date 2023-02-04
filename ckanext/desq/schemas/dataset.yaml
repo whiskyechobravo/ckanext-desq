@@ -2,29 +2,64 @@ scheming_version: 2
 dataset_type: dataset
 about: Dataset schema for DESQ
 
-# Derived from ckanext-scheming/ckanext/scheming/ckan_dataset.yaml
-# Unless marked with "DESQ", fields match those of the default CKAN dataset schema.
-
 dataset_fields:
 
-- field_name: title
-  label: Title
-  preset: title
+- field_name: title_translated
+  label:
+    en: Title
+    fr: Titre
+  preset: fluent_core_translated
+  required: true
   form_placeholder: eg. A descriptive title
+  form_attrs:
+    class: form-control
 
 - field_name: name
   label: URL
   preset: dataset_slug
   form_placeholder: eg. my-dataset
 
-- field_name: notes
+- field_name: notes_translated
   label: Description
-  form_snippet: markdown.html
-  form_placeholder: eg. Some useful notes about the data
+  preset: fluent_core_translated
+  form_snippet: fluent_markdown.html
+  form_placeholder:
+    en: eg. Some useful notes about the data
+    fr: p.ex. Quelques notes utiles à propos des données
+  form_attrs:
+    class: form-control
 
-- field_name: year  # DESQ
-  label: Year
-  form_placeholder: eg. 2021
+- field_name: primary_id
+  label:
+    en: Identifier
+    fr: Identifiant
+  help_text:
+    en: Enter the file number or catalog number of the dataset, if applicable.
+    fr: Entrez le numéro de fichier ou de catalogue du jeu de données, s'il y a lieu.
+  form_placeholder:
+    en: eg. CO-9999
+    fr: p.ex. CO-9999
+  validators: ignore_missing unicode
+
+- field_name: secondary_id
+  label:
+    en: Part identifier
+    fr: Identifiant de la partie
+  help_text:
+    en: If this dataset is a part of a set under a common identifier, enter its part number or name.
+    fr: Si ce jeu de données est une partie d'un ensemble partageant un identifiant commun, entrez le numéro ou le nom de cette partie.
+  form_placeholder:
+    en: eg. Table 3
+    fr: p.ex. Tableau 3
+  validators: ignore_missing unicode
+
+- field_name: year
+  label:
+    en: Year
+    fr: Année
+  form_placeholder:
+    en: eg. 2021
+    fr: p.ex. 2021
   validators: ignore_missing desq_is_year
 
 - field_name: tag_string
