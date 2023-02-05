@@ -16,8 +16,8 @@ dataset_fields:
 
 - field_name: name
   label:
-    en: Name in URL
-    fr: Nom dans l’URL
+    en: Name for the URL
+    fr: Nom pour l’URL
   preset: dataset_slug
   help_text:
     en: Name to use to produce a unique URL for this dataset.
@@ -352,7 +352,7 @@ dataset_fields:
 - field_name: usage_conditions
   label:
     en: Usage Conditions
-    fr: Conditions d'utilisation
+    fr: Conditions d’utilisation
   preset: fluent_text
   help_text:
     en: Limitations or restrictions on how the dataset can be used.
@@ -360,7 +360,7 @@ dataset_fields:
   form_snippet: fluent_markdown.html
   form_placeholder:
     en: eg. Statistics Canada hereby grants you the permission to use, reproduce, publish, freely distribute or sell information covered by the Statistics Canada Open Licence. In any use of this information, you must adhere to the conditions of the Statistics Canada Open Licence. If you do not agree to these terms, you may not use the information.
-    fr: p.ex. Statistique Canada vous accorde la permission d'utiliser, de reproduire, de publier, de diffuser gratuitement ou de vendre l'information régie par la licence ouverte de Statistique Canada. Lors de toute utilisation de cette information, vous devez adhérer aux conditions de la licence ouverte de Statistique Canada. Si vous n'acceptez pas ces conditions, il ne vous est pas permis d'utiliser l'information.
+    fr: p.ex. Statistique Canada vous accorde la permission d’utiliser, de reproduire, de publier, de diffuser gratuitement ou de vendre l’information régie par la licence ouverte de Statistique Canada. Lors de toute utilisation de cette information, vous devez adhérer aux conditions de la licence ouverte de Statistique Canada. Si vous n’acceptez pas ces conditions, il ne vous est pas permis d’utiliser l’information.
   form_attrs:
     class: form-control
 
