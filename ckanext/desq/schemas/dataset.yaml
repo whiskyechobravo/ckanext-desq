@@ -453,14 +453,22 @@ resource_fields:
   label: URL
   preset: resource_url_upload
 
-- field_name: name
+- field_name: name_translated
   label: Name
+  preset: fluent_core_translated
   form_placeholder: eg. January 2011 Gold Prices
+  form_attrs:
+    class: form-control
 
-- field_name: description
+- field_name: description_translated
   label: Description
-  form_snippet: markdown.html
-  form_placeholder: Some useful notes about the data
+  preset: fluent_core_translated
+  form_placeholder:
+    en: eg. Some useful notes about the data
+    fr: p.ex. Quelques notes utiles à propos des données
+  form_snippet: fluent_markdown.html
+  form_attrs:
+    class: form-control
 
 - field_name: format
   label: Format
