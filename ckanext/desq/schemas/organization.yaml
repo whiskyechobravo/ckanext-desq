@@ -1,0 +1,64 @@
+scheming_version: 2
+organization_type: organization
+about: Organization schema for DESQ
+
+fields:
+
+- field_name: title_translated
+  label:
+    en: Name
+    fr: Nom
+  preset: fluent_core_translated
+  required: true
+  form_placeholder:
+    en: eg. Organization name
+    fr: p.ex. Nom de l’organisation
+  form_attrs:
+    class: form-control
+
+- field_name: title_abbr
+  label:
+    en: Abbreviation
+    fr: Abréviation
+  preset: fluent_text
+  form_placeholder:
+    en: eg. ABCDE
+    fr: p.ex. ABCDE
+  form_attrs:
+    class: form-control
+
+- field_name: name
+  label:
+    en: Name for the URL
+    fr: Nom pour l’URL
+  help_text:
+    en: Name to use to produce a unique URL for this organization.
+    fr: Nom à utiliser pour produire un URL unique pour cette organisation.
+  form_placeholder:
+    en: eg. Organization name
+    fr: p.ex. Nom de l’organisation
+  form_snippet: slug.html
+  validators: not_empty unicode_safe name_validator group_name_validator
+
+- field_name: description_translated
+  label: Description
+  preset: fluent_core_translated
+  form_snippet: fluent_markdown.html
+  form_attrs:
+    class: form-control
+
+- field_name: url
+  label: Image URL
+  preset: organization_url_upload
+  form_placeholder: http://example.com/org-logo.jpg
+
+- field_name: website
+  label:
+    en: Website
+    fr: Site web
+  form_placeholder:
+    en: eg. http://example.com/
+    fr: p.ex. http://example.com/
+  display_property: foaf:homepage
+  display_snippet: link.html
+  # TODO: Make this field translatable, in case the page is available in different languages?
