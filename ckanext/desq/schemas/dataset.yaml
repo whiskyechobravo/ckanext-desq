@@ -15,8 +15,13 @@ dataset_fields:
     class: form-control
 
 - field_name: name
-  label: URL
+  label:
+    en: Name in URL
+    fr: Nom dans l’URL
   preset: dataset_slug
+  help_text:
+    en: Name to use to produce a unique URL for this dataset.
+    fr: Nom à utiliser pour produire un URL unique pour ce jeu de données.
   form_placeholder: eg. my-dataset
 
 - field_name: notes_translated
@@ -29,87 +34,427 @@ dataset_fields:
   form_attrs:
     class: form-control
 
-- field_name: primary_id
+- field_name: catalog_number
   label:
-    en: Identifier
-    fr: Identifiant
+    en: File number or catalog number
+    fr: Numéro de dossier ou de catalogue
   help_text:
-    en: Enter the file number or catalog number of the dataset, if applicable.
-    fr: Entrez le numéro de fichier ou de catalogue du jeu de données, s'il y a lieu.
+    en: File number or catalog number of the dataset, if applicable.
+    fr: Numéro de dossier ou de catalogue du jeu de données, s’il y a lieu.
   form_placeholder:
     en: eg. CO-9999
     fr: p.ex. CO-9999
   validators: ignore_missing unicode
 
-- field_name: secondary_id
+- field_name: series_id
   label:
-    en: Part identifier
-    fr: Identifiant de la partie
+    en: Series identifier
+    fr: Identifiant de la série
   help_text:
-    en: If this dataset is a part of a set under a common identifier, enter its part number or name.
-    fr: Si ce jeu de données est une partie d'un ensemble partageant un identifiant commun, entrez le numéro ou le nom de cette partie.
+    en: Identifier of the series, or aggregate dataset, or which the dataset is a part, if applicable.
+    fr: Identifiant de la série ou du jeu de données global dont fait partie le jeu de données, s’il y a lieu.
   form_placeholder:
-    en: eg. Table 3
-    fr: p.ex. Tableau 3
+    en: eg. CO-9999
+    fr: p.ex. CO-9999
   validators: ignore_missing unicode
 
-- field_name: year
+- field_name: census_year
   label:
-    en: Year
-    fr: Année
+    en: Census year
+    fr: Année du recensement
   form_placeholder:
     en: eg. 2021
     fr: p.ex. 2021
   validators: ignore_missing desq_is_year
 
-- field_name: tag_string
-  label: Tags
-  preset: tag_string_autocomplete
-  form_placeholder: eg. economy, mental health, government
+- field_name: dataset_type
+  label:
+    en: Type of dataset
+    fr: Type de jeu de données
+  preset: select
+  required: true
+  choices:
+  - label:
+      en: Profile of a community or region
+      fr: Profil d’une communauté ou d’une région
+    value: profile
+  - label:
+      en: Table
+      fr: Tableau
+    value: table
+  - label:
+      en: Thematic map
+      fr: Carte thématique
+    value: map
+  - label:
+      en: Visualization
+      fr: Visualisation
+    value: viz
+
+# Note: Derived from preset tag_string_autocomplete
+#- field_name: dimension
+#  label: Dimensions
+#  form_placeholder: eg. Age Groups, Mother Tongue, First Official Language Spoken
+#  help_text:
+#    en: Select or enter the dimensions.
+#    fr: Si ce jeu de données est une partie d’un ensemble partageant un identifiant commun, entrez le numéro ou le nom de cette partie.
+#  validators: ignore_missing desq_tag_convert
+#  form_attrs:
+#    data-module: autocomplete
+#    data-module-tags:
+#    data-module-source: /api/2/util/tag/autocomplete?vocabulary_id=dimension&incomplete=?
+#    class:
+
+# - field_name: tag_string
+#   label: Tags
+#   preset: tag_string_autocomplete
+#   form_placeholder: eg. economy, mental health, government
+#   validators: ignore_missing tag_string_convert
+
+#- field_name: keywords
+#  label:
+#    en: Keywords
+#    fr: Mots-clés
+#  preset: fluent_tags
+#  validators: ignore_missing fluent_tags
+#  form_placeholder: eg. economy, mental health, government
+#  # form_attrs:
+#  #   class:
+
+- field_name: topic
+  label:
+    en: Topics
+    fr: Thèmes
+  preset: multiple_select
+  # TODO: display_snippet: list_inline.html
+  required: true
+  select_size: 10
+  help_text:
+    en: "Select all topics that can be related to the variables contained in the dataset. You may select or deselect multiple topics (ctrl+click)."
+    fr: "Sélectionnez tous les thèmes qui sont concernés par les variables contenues dans le jeu de données. Vous pouvez sélectionner ou désélectionner plusieurs thèmes (ctrl+clic)."
+  choices:
+  - label:
+      en: Age, sex at birth, and gender
+      fr: Âge, sexe à la naissance et genre
+    value: age_sex_gender
+  - label:
+      en: Commuting
+      fr: Navettage
+    value: commuting
+  - label:
+      en: Education
+      fr: Scolarité
+    value: education
+  - label:
+      en: Ethnocultural and religious diversity
+      fr: Diversité ethnoculturelle et religieuse
+    value: ethnocultural_religious_diversity
+  - label:
+      en: Families, households, and marital status
+      fr: Familles, ménages et état matrimonial
+    value: families
+  - label:
+      en: Housing
+      fr: Logement
+    value: housing
+  - label:
+      en: Immigration, place of birth, and citizenship
+      fr: Immigration, lieu de naissance et citoyenneté
+    value: immigration
+  - label:
+      en: Income
+      fr: Revenu
+    value: income
+  - label:
+      en: Indigenous peoples
+      fr: Peuples autochtones
+    value: indigenous_peoples
+  - label:
+      en: Labour
+      fr: Travail
+    value: labour
+  - label:
+      en: Language
+      fr: Langue
+    value: language
+  - label:
+      en: Language of work
+      fr: Langue de travail
+    value: language_of_work
+  - label:
+      en: Mobility and migration
+      fr: Mobilité et migration
+    value: mobility_migration
+  - label:
+      en: Population and dwelling counts
+      fr: Chiffres de population et des logements
+    value: population
+  - label:
+      en: Type of dwelling
+      fr: Type de logement
+    value: dwelling
+
+- field_name: geo_area
+  label:
+    en: Geographical areas
+    fr: Régions géographiques
+  preset: multiple_select
+  # TODO: display_snippet: list_inline.html
+  select_size: 10
+  help_text:
+    en: "Select all areas that are available in the dataset. You may select or deselect multiple areas (ctrl+click)."
+    fr: "Sélectionnez toutes les régions qui sont disponibles dans le jeu de données. Vous pouvez sélectionner ou désélectionner plusieurs régions (ctrl+clic)."
+  choices:
+  - label:
+      en: Province or territory (PR)
+      fr: Province ou territoire (PR)
+    value: pr
+  - label:
+      en: Federal electoral district (FED)
+      fr: Circonscription électorale fédérale (CEF)
+    value: fed
+  - label:
+      en: Provincial electoral district (CEP)
+      fr: Circonscription électorale provinciale (CEP)
+    value: cep
+  - label:
+      en: Census division (CD)
+      fr: Division de recensement (DR)
+    value: cd
+  - label:
+      en: Census subdivision (CSD)
+      fr: Subdivision de recensement (SDR)
+    value: csd
+  - label:
+      en: Census consolidated subdivision (CCS)
+      fr: Subdivision de recensement unifiée (SRU)
+    value: ccs
+  - label:
+      en: Census metropolitan area (CMA), census agglomeration (CA), or census metropolitan influenced zone (MIZ)
+      fr: Région métropolitaine de recensement (RMR), agglomération de recensement (AR) ou zone d’influence métropolitaine de recensement (ZIM)
+    value: cma_ca_miz
+  - label:
+      en: Census tract (CT)
+      fr: Secteur de recensement (SR)
+    value: ct
+  - label:
+      en: Designated place (DPL)
+      fr: Localité désignée (LD)
+    value: dpl
+  - label:
+      en: Economic region (ER)
+      fr: Région économique (RE)
+    value: er
+  - label:
+      en: Population centre (POPCTR) or rural area (RA)
+      fr: Centre de population (CTRPOP) ou région rurale (RR)
+    value: popctr_ra
+  - label:
+      en: Aggregate dissemination area (ADA)
+      fr: Aire de diffusion agrégée (ADA)
+    value: ada
+  - label:
+      en: Dissemination area (DA)
+      fr: Aire de diffusion (AD)
+    value: da
+  - label:
+      en: Dissemination block (DB)
+      fr: Îlot de diffusion (ID)
+    value: db
+  - label:
+      en: Administrative regions of Quebec
+      fr: Régions administratives du Québec
+    value: qc_adm_region
+  - label:
+      en: Regional county municipality (MRC)
+      fr: Municipalité régionale de comté (MRC)
+    value: mrc
+  - label:
+      en: Health Region (RSS)
+      fr: Région sociosanitaire (RSS)
+    value: rss
+  - label:
+      en: Local area services network (RLS), or territorial area services network (RTS)
+      fr: Réseau local de services (RLS) ou réseau territorial de services (RTS)
+    value: rls_rts
+  - label:
+      en: Integrated health and social services centre (CISSS), or integrated university health and social services centre (CIUSSS)
+      fr: Centre intégré de santé et de services sociaux (CISSS) ou Centre intégré universitaire de santé et de services sociaux (CIUSSS)
+    value: cisss_ciusss
+  - label:
+      en: Local community services centre (CLSC)
+      fr: Centre local de services communautaire (CLSC)
+    value: clsc
+  - label:
+      en: Forward sortation area
+      fr: Région de tri d’acheminement
+    value: sortation_area
+  - label:
+      en: Postal code
+      fr: Code postal
+    value: postal_code
+  - label:
+      en: Place name
+      fr: Nom de localité
+    value: place_name
+
+- field_name: variable
+  label:
+    en: Variables
+    fr: Variables
+  form_blanks: 0
+  repeating_subfields:
+  - field_name: variable_name
+    label:
+      en: Name
+      fr: Nom
+    preset: fluent_text
+    help_text:
+      en: Name of the variable. If it is not available in both languages, enter the same name in both EN and FR fields.
+      fr: Nom de la variable. Si elle n’est pas disponible dans les deux langues, entrez le même nom dans les champs EN et FR.
+    form_placeholder:
+      en: eg. First official language spoken (8)
+      fr: eg. Première langue officielle parlée (8)
+    form_attrs:
+      class: form-control
+  - field_name: variable_values
+    label:
+      en: Values
+      fr: Valeurs
+    preset: fluent_text
+    help_text:
+      en: Member values, or value descriptions if values are codes, using the Markdown ordered list or bulleted list syntax.
+      fr: Valeurs membres ou, si les valeurs sont des codes, descriptions des valeurs, en utilisant la syntaxe Markdown pour une liste ordonnée ou une liste à puces.
+    form_snippet: fluent_markdown.html
+    form_attrs:
+      class: form-control
+  - field_name: variable_notes
+    label:
+      en: Notes
+      fr: Notes
+    preset: fluent_text
+    help_text:
+      en: Notes about the variable that might help users decide whether it could be useful to them.
+      fr: Notes à propos de la variable susceptibles d’aider un utlisateur à juger de sa pertinence pour ses besoins.
+    form_snippet: fluent_markdown.html
+    form_attrs:
+      class: form-control
+
+- field_name: language
+  label:
+    en: Language
+    fr: Langue
+  preset: multiple_select
+  help_text:
+    en: Language of the dataset. You may select or deselect multiple languages (ctrl+click).
+    fr: Langue du jeu de données. Vous pouvez sélectionner ou désélectionner de multiples langues (ctrl+clic).
+  required: true
+  select_size: 4
+  # TODO: display_snippet: list_inline.html
+  choices:
+  - label:
+      en: English
+      fr: Anglais
+    value: en
+  - label:
+      en: French
+      fr: Français
+    value: fr
+  - label:
+      en: Other
+      fr: Autre
+    value: o
+  - label:
+      en: Not applicable
+      fr: Sans objet
+    value: x
 
 - field_name: license_id
-  label: License
+  label:
+    en: Licence
+    fr: Licence
   form_snippet: license.html
   help_text: License definitions and additional information can be found at http://opendefinition.org/
-
-- field_name: owner_org
-  label: Organization
-  preset: dataset_organization
+  required: true
 
 - field_name: url
-  label: Source
-  form_placeholder: http://example.com/dataset.json
+  label:
+    en: Source website
+    fr: Page web de la source
+  form_placeholder:
+    en: eg. http://example.com/dataset
+    fr: p.ex. http://example.com/dataset
+  help_text:
+    en: URL of the webpage that describes this dataset.
+    fr: URL de la page web qui décrit ce jeu de données.
   display_property: foaf:homepage
   display_snippet: link.html
+  # TODO: Make this field translatable, in case the page is available in different languages?
 
-- field_name: version
-  label: Version
-  validators: ignore_missing unicode_safe package_version_validator
-  form_placeholder: '1.0'
+- field_name: source_notice
+  label:
+    en: Acknowledgement of source
+    fr: Mention de la source
+  preset: fluent_text
+  help_text:
+    en: Enter any notice that the source or licence might require. Statistics Canada requires a different notice if its product has been modified; see https://www.statcan.gc.ca/en/reference/licence.
+    fr: Entrez toute mention qui pourrait être requise par la source ou la licence. Statistique Canada exige une mention différente si son produit a été modifié; voyez https://www.statcan.gc.ca/fr/reference/licence.
+  form_snippet: fluent_markdown.html
+  form_attrs:
+    class: form-control
 
-- field_name: author
-  label: Author
-  form_placeholder: Joe Bloggs
-  display_property: dc:creator
+- field_name: owner_org
+  label:
+    en: Sponsor
+    fr: Commanditaire
+  preset: dataset_organization
 
-- field_name: author_email
-  label: Author Email
-  form_placeholder: joe@example.com
-  display_property: dc:creator
-  display_snippet: email.html
-  display_email_name_field: author
+- field_name: contributor
+  label:
+    en: Contributors
+    fr: Contributeurs
+  form_blanks: 0
+  repeating_subfields:
+  - field_name: contributor_name
+    label:
+      en: Name
+      fr: Nom
+    preset: fluent_text
+    # TODO: display_property: dc:contributor
+    form_attrs:
+      class: form-control
+    form_placeholder:
+      en: eg. Statistics Canada
+      fr: p.ex. Statistique Canada
+  - field_name: contributor_url
+    label: URL
+    preset: fluent_link
+    form_placeholder:
+      en: eg. http://example.com/contributors-page
+      fr: p.ex. http://example.com/page-du-contributeur
+    form_attrs:
+      class: form-control
 
-- field_name: maintainer
-  label: Maintainer
-  form_placeholder: Joe Bloggs
-  display_property: dc:contributor
+- field_name: date_published
+  label:
+    en: Date published
+    fr: Date de publication
+  preset: date
+  help_text:
+    en: The date of issuance (e.g., publication) of the dataset (YYYY-MM-DD).
+    fr: Date de publication du jeu de données (AAAA-MM-JJ).
+  required: true
+  validators: scheming_required unicode_safe isodate desq_no_future_date
 
-- field_name: maintainer_email
-  label: Maintainer Email
-  form_placeholder: joe@example.com
-  display_property: dc:contributor
-  display_snippet: email.html
-  display_email_name_field: maintainer
+- field_name: date_modified
+  label:
+    en: Date modified
+    fr: Date de modification
+  preset: date
+  help_text:
+    en: The date on which the dataset was updated (YYYY-MM-DD).
+    fr: Date à laquelle le jeu de données a été mis à jour (AAAA-MM-JJ).
+  validators: scheming_required unicode_safe isodate desq_no_future_date
 
 
 resource_fields:
