@@ -343,9 +343,26 @@ dataset_fields:
   label:
     en: Licence
     fr: Licence
+  help_text:
+    en: Licence applied to the dataset.
+    fr: Licence s’appliquant au jeu de données.
   form_snippet: license.html
-  help_text: License definitions and additional information can be found at http://opendefinition.org/
   required: true
+
+- field_name: usage_conditions
+  label:
+    en: Usage Conditions
+    fr: Conditions d'utilisation
+  preset: fluent_text
+  help_text:
+    en: Limitations or restrictions on how the dataset can be used.
+    fr: Limitations et restrictions concernant la façon dont le jeu de données peut être utilisé.
+  form_snippet: fluent_markdown.html
+  form_placeholder:
+    en: eg. Statistics Canada hereby grants you the permission to use, reproduce, publish, freely distribute or sell information covered by the Statistics Canada Open Licence. In any use of this information, you must adhere to the conditions of the Statistics Canada Open Licence. If you do not agree to these terms, you may not use the information.
+    fr: p.ex. Statistique Canada vous accorde la permission d'utiliser, de reproduire, de publier, de diffuser gratuitement ou de vendre l'information régie par la licence ouverte de Statistique Canada. Lors de toute utilisation de cette information, vous devez adhérer aux conditions de la licence ouverte de Statistique Canada. Si vous n'acceptez pas ces conditions, il ne vous est pas permis d'utiliser l'information.
+  form_attrs:
+    class: form-control
 
 - field_name: url
   label:
@@ -367,9 +384,12 @@ dataset_fields:
     fr: Mention de la source
   preset: fluent_text
   help_text:
-    en: Enter any notice that the source or licence might require. Statistics Canada requires a different notice if its product has been modified; see https://www.statcan.gc.ca/en/reference/licence.
-    fr: Entrez toute mention qui pourrait être requise par la source ou la licence. Statistique Canada exige une mention différente si son produit a été modifié; voyez https://www.statcan.gc.ca/fr/reference/licence.
+    en: Notice about the source or licence might require. Statistics Canada requires a different notice if its product has been modified; see https://www.statcan.gc.ca/en/reference/licence.
+    fr: Mention qui pourrait être requise par la source ou la licence. Statistique Canada exige une mention différente si son produit a été modifié; voyez https://www.statcan.gc.ca/fr/reference/licence.
   form_snippet: fluent_markdown.html
+  form_placeholder:
+    en: eg. Adapted from Statistics Canada, name of product, reference date. This does not constitute an endorsement by Statistics Canada of this product.
+    fr: p.ex. Adapté de Statistique Canada, nom du produit, date de référence. Cela ne constitue pas une approbation de ce produit par Statistique Canada.
   form_attrs:
     class: form-control
 
@@ -381,8 +401,8 @@ dataset_fields:
 
 - field_name: contributor
   label:
-    en: Contributors
-    fr: Contributeurs
+    en: Authors and contributors
+    fr: Auteurs et contributeurs
   form_blanks: 0
   repeating_subfields:
   - field_name: contributor_name
