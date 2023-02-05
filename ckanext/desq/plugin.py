@@ -28,7 +28,6 @@ class DesqPlugin(plugins.SingletonPlugin):
     def get_validators(self):
         return {
             'desq_is_year': desq_validators.is_year,
-            'desq_tag_convert': desq_validators.tag_convert,
             'desq_no_future_date': desq_validators.no_future_date,
         }
 

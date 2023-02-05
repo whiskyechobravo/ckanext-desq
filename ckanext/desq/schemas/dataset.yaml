@@ -91,36 +91,6 @@ dataset_fields:
       fr: Visualisation
     value: viz
 
-# Note: Derived from preset tag_string_autocomplete
-#- field_name: dimension
-#  label: Dimensions
-#  form_placeholder: eg. Age Groups, Mother Tongue, First Official Language Spoken
-#  help_text:
-#    en: Select or enter the dimensions.
-#    fr: Si ce jeu de données est une partie d’un ensemble partageant un identifiant commun, entrez le numéro ou le nom de cette partie.
-#  validators: ignore_missing desq_tag_convert
-#  form_attrs:
-#    data-module: autocomplete
-#    data-module-tags:
-#    data-module-source: /api/2/util/tag/autocomplete?vocabulary_id=dimension&incomplete=?
-#    class:
-
-# - field_name: tag_string
-#   label: Tags
-#   preset: tag_string_autocomplete
-#   form_placeholder: eg. economy, mental health, government
-#   validators: ignore_missing tag_string_convert
-
-#- field_name: keywords
-#  label:
-#    en: Keywords
-#    fr: Mots-clés
-#  preset: fluent_tags
-#  validators: ignore_missing fluent_tags
-#  form_placeholder: eg. economy, mental health, government
-#  # form_attrs:
-#  #   class:
-
 - field_name: topic
   label:
     en: Topics
