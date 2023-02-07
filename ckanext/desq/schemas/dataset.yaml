@@ -100,8 +100,8 @@ dataset_fields:
   required: true
   select_size: 10
   help_text:
-    en: "Select all topics that can be related to the variables contained in the dataset. You may select or deselect multiple topics (ctrl+click)."
-    fr: "Sélectionnez tous les thèmes qui sont concernés par les variables contenues dans le jeu de données. Vous pouvez sélectionner ou désélectionner plusieurs thèmes (ctrl+clic)."
+    en: "Select every topic that can be related to the variables contained in the dataset. You may select or deselect multiple topics (ctrl+click)."
+    fr: "Sélectionnez chacun des thèmes concernés par les variables contenues dans le jeu de données. Vous pouvez sélectionner ou désélectionner plusieurs thèmes (ctrl+clic)."
   choices:
   - label:
       en: Age, sex at birth, and gender
@@ -196,8 +196,8 @@ dataset_fields:
   # TODO: display_snippet: list_inline.html
   select_size: 10
   help_text:
-    en: "Select all areas that are available in the dataset. You may select or deselect multiple areas (ctrl+click)."
-    fr: "Sélectionnez toutes les régions qui sont disponibles dans le jeu de données. Vous pouvez sélectionner ou désélectionner plusieurs régions (ctrl+clic)."
+    en: "Select every area that is present in the dataset. You may select or deselect multiple areas (ctrl+click)."
+    fr: "Sélectionnez chacune des régions présentes dans le jeu de données. Vous pouvez sélectionner ou désélectionner plusieurs régions (ctrl+clic)."
   choices:
   - label:
       en: Province or territory (PR)
