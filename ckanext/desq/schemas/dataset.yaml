@@ -75,6 +75,10 @@ dataset_fields:
   required: true
   choices:
   - label:
+      en: Map
+      fr: Carte
+    value: map
+  - label:
       en: Profile of a community or region
       fr: Profil d’une communauté ou d’une région
     value: profile
@@ -82,10 +86,6 @@ dataset_fields:
       en: Table
       fr: Tableau
     value: table
-  - label:
-      en: Thematic map
-      fr: Carte thématique
-    value: map
   - label:
       en: Visualization
       fr: Visualisation
@@ -109,8 +109,12 @@ dataset_fields:
     value: age_sex_gender
   - label:
       en: Commuting
-      fr: Navettage
+      fr: Déplacement domicile-travail
     value: commuting
+  - label:
+      en: Economics
+      fr: Économie
+    value: economics
   - label:
       en: Education
       fr: Scolarité
@@ -120,9 +124,17 @@ dataset_fields:
       fr: Diversité ethnoculturelle et religieuse
     value: ethnocultural_religious_diversity
   - label:
+      en: Environment
+      fr: Environnement
+    value: education
+  - label:
       en: Families, households, and marital status
       fr: Familles, ménages et état matrimonial
     value: families
+  - label:
+      en: Health
+      fr: Santé
+    value: health
   - label:
       en: Housing
       fr: Logement
@@ -132,8 +144,8 @@ dataset_fields:
       fr: Immigration, lieu de naissance et citoyenneté
     value: immigration
   - label:
-      en: Income
-      fr: Revenu
+      en: Income, pensions, spending, and wealth
+      fr: Revenu, pensions, dépenses et richesse
     value: income
   - label:
       en: Indigenous peoples
@@ -144,13 +156,29 @@ dataset_fields:
       fr: Travail
     value: labour
   - label:
-      en: Language
-      fr: Langue
-    value: language
+      en: Language — First official language spoken
+      fr: Langue — Première langue officielle parlée
+    value: official_language_spoken
   - label:
-      en: Language of work
-      fr: Langue de travail
-    value: language_of_work
+      en: Language — Knowledge of languages
+      fr: Langue — Connaissance des langues
+    value: language_knowledge
+  - label:
+      en: Language — Language at home
+      fr: Langue — Langue à la maison
+    value: language_home
+  - label:
+      en: Language — Language at work
+      fr: Langue — Langue au travail
+    value: language_work
+  - label:
+      en: Language — Minority official language
+      fr: Langue — Langue officielle minoritaire
+    value: minority_official_language
+  - label:
+      en: Language — Mother tongue
+      fr: Langue — Langue maternelle
+    value: mother_tongue
   - label:
       en: Mobility and migration
       fr: Mobilité et migration
@@ -159,10 +187,6 @@ dataset_fields:
       en: Population and dwelling counts
       fr: Chiffres de population et des logements
     value: population
-  - label:
-      en: Type of dwelling
-      fr: Type de logement
-    value: dwelling
 
 - field_name: geo_area
   label:
@@ -232,8 +256,8 @@ dataset_fields:
       fr: Îlot de diffusion (ID)
     value: db
   - label:
-      en: Administrative regions of Quebec
-      fr: Régions administratives du Québec
+      en: Administrative region of Quebec
+      fr: Région administrative du Québec
     value: qc_adm_region
   - label:
       en: Regional county municipality (MRC)
