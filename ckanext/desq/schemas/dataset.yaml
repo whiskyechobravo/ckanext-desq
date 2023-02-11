@@ -363,7 +363,7 @@ dataset_fields:
       fr: Sans objet
     value: x
 
-- field_name: license_id
+- field_name: licence
   label:
     en: Licence
     fr: Licence
