@@ -1,6 +1,7 @@
 """Plugin interfaces definitions."""
 
 import json
+from collections import OrderedDict
 
 from ckan import plugins
 from ckan.plugins import toolkit
@@ -64,7 +65,17 @@ class DesqPlugin(plugins.SingletonPlugin):
 
     def dataset_facets(self, facets_dict, package_type):
         """Modify and return the facets_dict for the dataset search page."""
-        facets_dict['year'] = toolkit._('Year')
+        # Instead of updating facets_dict, we fully replace it to reorder everything.
+        facets_dict = OrderedDict({
+            'census_year': toolkit._('Census years'),
+            'dataset_type': toolkit._('Types of dataset'),
+            'topic': toolkit._('Topics'),
+            'geo_area': toolkit._('Geographical areas'),
+            'res_format': toolkit._('Formats'),
+            'language': toolkit._('Languages'),
+            'licence': toolkit._('Licences'),
+            'organization': toolkit._('Organizations'),
+        })
         return facets_dict
 
     def group_facets(self, facets_dict, group_type, package_type):
@@ -164,6 +175,9 @@ class DesqPlugin(plugins.SingletonPlugin):
         """
 
         # TODO: Index full strings of multiple_select fields.
+        data_dict['topic'] = json.loads(data_dict.get('topic', '[]'))
+        data_dict['geo_area'] = json.loads(data_dict.get('geo_area', '[]'))
+        data_dict['language'] = json.loads(data_dict.get('language', '[]'))
 
         # TODO: Remove the scheming_nerf_index plugin, and handle repeating subfields properly.
         # References:
