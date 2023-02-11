@@ -7,6 +7,7 @@ from ckan import plugins
 from ckan.plugins import toolkit
 
 from ckanext.desq import validators as desq_validators
+from ckanext.desq import helpers
 
 
 class DesqPlugin(plugins.SingletonPlugin):
@@ -14,6 +15,7 @@ class DesqPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IPluginObserver)
     plugins.implements(plugins.IValidators)
     plugins.implements(plugins.IFacets)
+    plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IPackageController)
 
     # IConfigurer
@@ -85,6 +87,17 @@ class DesqPlugin(plugins.SingletonPlugin):
     def organization_facets(self, facets_dict, organization_type, package_type):
         """Modify and return the facets_dict for an organization’s page."""
         return facets_dict
+
+    # ITemplateHelpers
+    # Reference: https://docs.ckan.org/en/2.9/extensions/adding-custom-fields.html?highlight=get_helpers#adding-tags-to-templates
+
+    def get_helpers(self):
+        return {
+            # TODO: 'desq_get_topic': helpers.get_topic,
+            # TODO: 'desq_get_geo_area': helpers.get_geo_area,
+            # TODO: 'desq_get_language': helpers.get_language,
+            'desq_get_licence': helpers.get_licence,
+        }
 
     # IPackageController
     # Reference: https://docs.ckan.org/en/2.9/extensions/plugin-interfaces.html#ckan.plugins.interfaces.IPackageController
