@@ -5,7 +5,7 @@
         {%- if items %}
             <nav aria-label="{{ title }}">
                 <ul class="{{ nav_class or 'list-unstyled nav nav-simple nav-facet' }}">
-                    {%- if name in ['dataset_type', 'topic', 'geo_area', 'language'] %}
+                    {%- if name in ['data_type', 'topic', 'geo_area', 'language'] %}
                         {%- set choices = h.desq_dataset_field_choices(name) %}
                     {%- endif %}
                     {%- for item in items %}

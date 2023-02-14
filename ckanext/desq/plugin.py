@@ -70,7 +70,7 @@ class DesqPlugin(plugins.SingletonPlugin):
         # Instead of updating facets_dict, we fully replace it to reorder everything.
         facets_dict = OrderedDict({
             'census_year': toolkit._('Census years'),
-            'dataset_type': toolkit._('Types of dataset'),
+            'data_type': toolkit._('Data types'),
             'topic': toolkit._('Topics'),
             'geo_area': toolkit._('Geographical areas'),
             'res_format': toolkit._('Formats'),

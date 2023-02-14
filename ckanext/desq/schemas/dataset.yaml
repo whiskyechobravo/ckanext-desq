@@ -67,10 +67,10 @@ dataset_fields:
     fr: p.ex. 2021
   validators: ignore_missing desq_is_year
 
-- field_name: dataset_type
+- field_name: data_type
   label:
-    en: Type of dataset
-    fr: Type de jeu de données
+    en: Data types
+    fr: Types de données
   preset: select
   required: true
   choices:
