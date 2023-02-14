@@ -97,6 +97,7 @@ class DesqPlugin(plugins.SingletonPlugin):
             # TODO: 'desq_get_geo_area': helpers.get_geo_area,
             # TODO: 'desq_get_language': helpers.get_language,
             'desq_get_licence': helpers.get_licence,
+            'desq_dataset_field_choices': helpers.get_dataset_field_choices,
         }
 
     # IPackageController
