@@ -14,13 +14,13 @@
         Guide: https://docs.ckan.org/en/2.9/extensions/adding-custom-fields.html#sorting-by-custom-fields-on-the-dataset-search-page
 
         Changes:
-        - Add 'Year Ascending'
-        - Add 'Year Descending'
+        - Add 'Census year Ascending'
+        - Add 'Census year Descending'
     #}
     {%- set sorting = [
         (_('Relevance'), 'score desc, metadata_modified desc'),
-        (_('Year Ascending'), 'year asc'),
-        (_('Year Descending'), 'year desc'),
+        (_('Census year Ascending'), 'census_year asc'),
+        (_('Census year Descending'), 'census_year desc'),
         (_('Name Ascending'), 'title_string asc'),
         (_('Name Descending'), 'title_string desc'),
         (_('Last Modified'), 'metadata_modified desc'),
