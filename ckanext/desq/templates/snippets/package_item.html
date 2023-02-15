@@ -1,0 +1,5 @@
+{% ckan_extends %}
+
+{% block heading_title %}
+    {{ h.link_to(title, h.url_for('%s.read' % package.type, id=package.name)) }}
+{% endblock %}
