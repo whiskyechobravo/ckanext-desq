@@ -69,19 +69,19 @@ msgstr ""
 
 #: ckanext/desq/templates/package/search.html:22
 msgid "Census year Ascending"
-msgstr ""
+msgstr "Année du recensement croissante"
 
 #: ckanext/desq/templates/package/search.html:23
 msgid "Census year Descending"
-msgstr ""
+msgstr "Année du recensement décroissante"
 
 #: ckanext/desq/templates/package/search.html:24
 msgid "Name Ascending"
-msgstr ""
+msgstr "Nom A-Z"
 
 #: ckanext/desq/templates/package/search.html:25
 msgid "Name Descending"
-msgstr ""
+msgstr "Nom Z-A"
 
 #: ckanext/desq/templates/package/search.html:26
 msgid "Last Modified"
