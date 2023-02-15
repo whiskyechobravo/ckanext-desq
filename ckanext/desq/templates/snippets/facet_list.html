@@ -1,5 +1,8 @@
 {% ckan_extends %}
 
+{#- DESQ: Block modified in order to:
+    - Provide translated field choices from facet value.
+ #}
 {% block facet_list_items %}
     {%- with items = items or h.get_facet_items_dict(name, search_facets or c.search_facets) %}
         {%- if items %}
@@ -18,11 +21,11 @@
                         {%- set label = label_function(item) if label_function else item.display_name %}
                         {%- set count = count_label(item['count']) if count_label else ('%d' % item['count']) %}
                         <li class="{{ nav_item_class or 'nav-item' }}{% if item.active %} active{% endif %}">
-                        <a href="{{ href }}">
-                            <span class="item-label">{{ label }}</span>
-                            <span class="hidden separator"> - </span>
-                            <span class="item-count badge">{{ count }}</span>
-                        </a>
+                            <a href="{{ href }}">
+                                <span class="item-label">{{ label }}</span>
+                                <span class="hidden separator"> - </span>
+                                <span class="item-count badge">{{ count }}</span>
+                            </a>
                         </li>
                     {%- endfor %}
                 </ul>

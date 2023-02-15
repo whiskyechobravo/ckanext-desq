@@ -5,17 +5,19 @@ from collections import OrderedDict
 
 from ckan import plugins
 from ckan.plugins import toolkit
+from ckan.lib.plugins import DefaultTranslation
 
 from ckanext.desq import validators as desq_validators
 from ckanext.desq import helpers
 
 
-class DesqPlugin(plugins.SingletonPlugin):
+class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IPluginObserver)
     plugins.implements(plugins.IValidators)
     plugins.implements(plugins.IFacets)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IPackageController)
 
     # IConfigurer

@@ -1,0 +1,103 @@
+# Translations template for ckanext-desq.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the ckanext-desq project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-desq 0.0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-02-14 19:14-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ckanext/desq/plugin.py:72
+msgid "Census years"
+msgstr ""
+
+#: ckanext/desq/plugin.py:73
+msgid "Data types"
+msgstr ""
+
+#: ckanext/desq/plugin.py:74
+msgid "Topics"
+msgstr ""
+
+#: ckanext/desq/plugin.py:75
+msgid "Geographical areas"
+msgstr ""
+
+#: ckanext/desq/plugin.py:76
+msgid "Formats"
+msgstr ""
+
+#: ckanext/desq/plugin.py:77
+msgid "Languages"
+msgstr ""
+
+#: ckanext/desq/plugin.py:78
+msgid "Licences"
+msgstr ""
+
+#: ckanext/desq/plugin.py:79
+msgid "Organizations"
+msgstr ""
+
+#: ckanext/desq/validators.py:16
+msgid "Must be greater than 1900"
+msgstr ""
+
+#: ckanext/desq/validators.py:18
+msgid "Must be less than 2100"
+msgstr ""
+
+#: ckanext/desq/validators.py:25
+msgid "Date may not be in the future."
+msgstr ""
+
+#: ckanext/desq/templates/package/search.html:21
+msgid "Relevance"
+msgstr ""
+
+#: ckanext/desq/templates/package/search.html:22
+msgid "Census year Ascending"
+msgstr ""
+
+#: ckanext/desq/templates/package/search.html:23
+msgid "Census year Descending"
+msgstr ""
+
+#: ckanext/desq/templates/package/search.html:24
+msgid "Name Ascending"
+msgstr ""
+
+#: ckanext/desq/templates/package/search.html:25
+msgid "Name Descending"
+msgstr ""
+
+#: ckanext/desq/templates/package/search.html:26
+msgid "Last Modified"
+msgstr ""
+
+#: ckanext/desq/templates/package/search.html:27
+msgid "Popular"
+msgstr ""
+
+#: ckanext/desq/templates/snippets/facet_list.html:37
+msgid "Show More {facet_type}"
+msgstr ""
+
+#: ckanext/desq/templates/snippets/facet_list.html:40
+msgid "Show Only Popular {facet_type}"
+msgstr ""
+
+#: ckanext/desq/templates/snippets/facet_list.html:44
+msgid "There are no {facet_type} that match this search"
+msgstr ""
+

@@ -31,3 +31,34 @@ https://github.com/whiskyechobravo/ckan/tree/desq-2.9.5
    ```bash
    sudo service ckan restart
    ```
+
+
+## Managing translations
+
+References:
+- https://docs.ckan.org/en/2.9/contributing/i18n.html
+- https://docs.ckan.org/en/2.9/extensions/translating-extensions.html
+
+Creating the `.pot` file:
+
+```bash
+python setup.py extract_messages
+```
+
+Creating a `.po` file for a locale:
+
+```bash
+python setup.py init_catalog --locale LANG
+```
+
+Updating existing translations:
+
+```bash
+python setup.py update_catalog --locale LANG
+```
+
+Compile translations:
+
+```bash
+python setup.py compile_catalog --locale LANG
+```
