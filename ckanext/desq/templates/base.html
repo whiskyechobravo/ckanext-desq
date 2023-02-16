@@ -1,0 +1,11 @@
+{% ckan_extends %}
+
+{#- DESQ:
+    - Replace g.site_name with translatable string.
+-#}
+
+{%- block title -%}
+    {%- block subtitle %}{% endblock -%}
+    {%- if self.subtitle()|trim %} {{ g.template_title_delimiter }} {% endif -%}
+    {{ _('Data Portal on English-Speaking Quebec') }}
+{%- endblock -%}

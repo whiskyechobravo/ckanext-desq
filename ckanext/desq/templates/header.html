@@ -1,0 +1,25 @@
+{% ckan_extends %}
+
+{#- DESQ:
+    - Replace g.site_name with translatable string.
+    - Remove site description from header.
+    - Remove Groups link from 'header_site_navigation_tabs' block.
+-#}
+
+{% block header_logo %}
+    {%- if g.site_logo %}
+        <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+    {%- else %}
+        <h1>
+            <a href="{{ h.url_for('home.index') }}">{{ _('Data Portal on English-Speaking Quebec') }}</a>
+        </h1>
+    {%- endif %}
+{% endblock %}
+
+{% block header_site_navigation_tabs %}
+    {{ h.build_nav_main(
+        ('search', _('Datasets')),
+        ('organizations_index', _('Organizations')),
+        ('home.about', _('About')) )
+    }}
+{% endblock %}

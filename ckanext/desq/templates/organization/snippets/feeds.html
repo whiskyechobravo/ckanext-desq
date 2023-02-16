@@ -1,0 +1,6 @@
+{#- DESQ:
+    - Replace g.site_name with translatable string.
+-#}
+
+{%- set dataset_feed = h.url_for('feeds.organization', id=group_dict.name) -%}
+<link rel="alternate" type="application/atom+xml" title="{{ _('Data Portal on English-Speaking Quebec') }} - {{ _('Datasets in organization: {group}').format(group=group_dict.display_name) }}" href="{{ dataset_feed }}" />

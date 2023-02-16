@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-desq 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-02-14 19:14-0500\n"
+"POT-Creation-Date: 2023-02-15 18:51-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: ckanext/desq/plugin.py:72
+#: ckanext/desq/plugin.py:74
 msgid "Census years"
 msgstr ""
 
-#: ckanext/desq/plugin.py:73
+#: ckanext/desq/plugin.py:75
 msgid "Data types"
 msgstr ""
 
-#: ckanext/desq/plugin.py:74
+#: ckanext/desq/plugin.py:76
 msgid "Topics"
 msgstr ""
 
-#: ckanext/desq/plugin.py:75
+#: ckanext/desq/plugin.py:77
 msgid "Geographical areas"
 msgstr ""
 
-#: ckanext/desq/plugin.py:76
+#: ckanext/desq/plugin.py:78
 msgid "Formats"
 msgstr ""
 
-#: ckanext/desq/plugin.py:77
+#: ckanext/desq/plugin.py:79
 msgid "Languages"
 msgstr ""
 
-#: ckanext/desq/plugin.py:78
+#: ckanext/desq/plugin.py:80
 msgid "Licences"
 msgstr ""
 
-#: ckanext/desq/plugin.py:79
+#: ckanext/desq/plugin.py:81 ckanext/desq/templates/header.html:22
 msgid "Organizations"
 msgstr ""
 
@@ -59,6 +59,238 @@ msgstr ""
 
 #: ckanext/desq/validators.py:25
 msgid "Date may not be in the future."
+msgstr ""
+
+#: ckanext/desq/templates/base.html:10 ckanext/desq/templates/header.html:14
+#: ckanext/desq/templates/organization/snippets/feeds.html:6
+#: ckanext/desq/templates/package/read_base.html:17
+#: ckanext/desq/templates/package/resource_read.html:16
+msgid "Data Portal on English-Speaking Quebec"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:21
+msgid "Datasets"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:23
+msgid "About"
+msgstr ""
+
+#: ckanext/desq/templates/home/snippets/about_text.html:1
+msgid ""
+"<h2>Content</h2> The Data Portal on English-Speaking Quebec (DESQ) is a "
+"growing online database created by the <a "
+"href=\"https://www.concordia.ca/artsci/scpa/quescren.html\" "
+"target=\"_blank\">Quebec English-Speaking Communities Research Network "
+"(QUESCREN)</a> at Concordia University. DESQ stores statistical datasets "
+"related to English-speaking Quebec that are mostly drawn from Canadian census"
+" data. <h2>Dataset Formats</h2> Datasets are available in three formats: <ul>"
+" <li><strong>Ivation tables (IVT)</strong>. These can be opened using the "
+"freely available <a href=\"https://www.statcan.gc.ca/en/public/beyond20-20\" "
+"target=\"_blank\">Beyond 20/20 Professional Browser</a>, which works only on "
+"Windows operating systems (not Mac). For a quick primer on using this "
+"browser, <a "
+"href=\"https://lib.uwaterloo.ca/locations/umd/digital/documents/Beyond2020_edited2.pdf\""
+" target=\"_blank\">click here</a>.</li> <li><strong>Comma-separated values "
+"files (CSV)</strong>. These raw datasets can be imported into a variety of "
+"programs, but typically require field formatting and some prior experience in"
+" working with big data.</li> <li><strong>Microsoft Excel spreadsheet files "
+"(XLSX)</strong>. These are the most user-friendly datasets for those familiar"
+" with spreadsheets but unfamiliar with other data treatment software. "
+"However, they allow for the cross-referencing of only two variables at a "
+"time. Files can be opened using <a href=\"https://www.microsoft.com/en-"
+"us/microsoft-365/excel\" target=\"_blank\">Microsoft Excel</a>, <a "
+"href=\"https://www.google.ca/sheets/about/\" target=\"_blank\">Google "
+"Sheets</a>, or other programs compatible with Excel.</li> </ul> <strong>The "
+"website is currently under development and all dataset formats listed here "
+"may not yet be available.</strong> <h2>Use of Material</h2> All datasets on "
+"this site were created by Statistics Canada for third-party organizations. "
+"They are freely available via an <a "
+"href=\"https://www.statcan.gc.ca/en/reference/licence\" "
+"target=\"_blank\">open license from Statistics Canada</a> and open-use "
+"licensing agreements with the third-party organizations. You are free to use,"
+" share, publish and freely distribute these tables as long as you provide an "
+"acknowledgement of source (e.g.: <em>Statistics Canada, “name of product,” "
+"“reference date,” custom dataset created for “name of partner organization” "
+"by Statistics Canada. Reproduced and distributed on an as-is basis with the "
+"permission of Statistics Canada.</em>) <h2>Credits</h2> Producer of DESQ: "
+"Quebec English-Speaking Communities Research Network (QUESCREN) CKOL "
+"Management Team - <a "
+"href=\"mailto:patrick.donovan1@concordia.ca?subject=DESQ\">Patrick "
+"Donovan</a> (QUESCREN) - <a "
+"href=\"mailto:lorraine.odonnell@concordia.ca?subject=DESQ\">Lorraine "
+"O’Donnell</a> (QUESCREN) IT Consultant - David Lesieur (<a "
+"href=\"https://whiskyechobravo.com/\">Whisky Echo Bravo</a>) Project "
+"Consultant - Jan Warnke (JW COMM) <h2>Funders and partners</h2> The <a "
+"href=\"https://www.quebec.ca/en/government/departments-and-agencies/srqea\" "
+"target=\"_blank\">Secrétariat aux relations avec les Québécois d’expression "
+"anglaise</a>, Gouvernement du Quebec, funded this project. QUESCREN <a "
+"href=\"/organization/\">partner organizations</a> originally obtained the "
+"datasets from <a href=\"https://www.statcan.gc.ca/en/start\" "
+"target=\"_blank\">Statistics Canada</a>. We acknowledge their generosity in "
+"agreeing to make them available to the public via DESQ, and the work of "
+"project consultant Jan Warnke in facilitating their availability. QUESCREN "
+"also receives funding from the <a href=\"https://www.canada.ca/en/canadian-"
+"heritage.html\" target=\"_blank\">Department of Canadian Heritage</a>, the <a"
+" href=\"https://icrml.ca/en/\" target=\"_blank\">Canadian Institute for "
+"Research on Linguistic Minorities</a>, and <a "
+"href=\"https://www.concordia.ca/\" target=\"_blank\">Concordia "
+"University</a>."
+msgstr ""
+
+#: ckanext/desq/templates/home/snippets/promoted.html:8
+msgid ""
+"The Data Portal on English-Speaking Quebec (DESQ) is a growing online "
+"database created by the <a "
+"href=\"https://www.concordia.ca/artsci/scpa/quescren.html\" "
+"target=\"_blank\">Quebec English-Speaking Communities Research Network "
+"(QUESCREN)</a> at Concordia University. DESQ stores statistical datasets "
+"related to English-speaking Quebec that are mostly drawn from Canadian census"
+" data."
+msgstr ""
+
+#: ckanext/desq/templates/home/snippets/stats.html:10
+msgid "Statistics"
+msgstr ""
+
+#: ckanext/desq/templates/home/snippets/stats.html:16
+msgid "dataset"
+msgstr ""
+
+#: ckanext/desq/templates/home/snippets/stats.html:16
+msgid "datasets"
+msgstr ""
+
+#: ckanext/desq/templates/home/snippets/stats.html:22
+msgid "organization"
+msgstr ""
+
+#: ckanext/desq/templates/home/snippets/stats.html:22
+msgid "organizations"
+msgstr ""
+
+#: ckanext/desq/templates/organization/snippets/feeds.html:6
+msgid "Datasets in organization: {group}"
+msgstr ""
+
+#: ckanext/desq/templates/package/read_base.html:24
+#: ckanext/desq/templates/package/resource_read.html:39
+msgid "Manage"
+msgstr ""
+
+#: ckanext/desq/templates/package/read_base.html:30
+msgid "Dataset"
+msgstr ""
+
+#: ckanext/desq/templates/package/read_base.html:31
+msgid "Activity Stream"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:46
+msgid "View"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:48
+msgid "API Endpoint"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:50
+msgid "Go to resource"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:52
+msgid "Download"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:85
+#, python-format
+msgid ""
+"You're currently viewing an old version of this dataset. To see the current "
+"version, click <a href=\"%(url)s\">here</a>."
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:95
+#: ckanext/desq/templates/package/resource_read.html:97
+msgid "URL:"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:105
+msgid "Dataset description:"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:107
+#, python-format
+msgid "Source: <a href=\"%(url)s\">%(dataset)s</a>"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:147
+msgid "There are no views created for this resource yet."
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:151
+msgid "Not seeing the views you were expecting?"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:153
+msgid "Click here for more information."
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:156
+msgid "Here are some reasons you may not be seeing expected views:"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:158
+msgid "No view has been created that is suitable for this resource"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:159
+msgid "The site administrators may not have enabled the relevant view plugins"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:160
+msgid ""
+"If a view requires the DataStore, the DataStore plugin may not be enabled, or"
+" the data may not have been pushed to the DataStore, or the DataStore hasn't "
+"finished processing the data yet"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:183
+msgid "Additional Information"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:187
+msgid "Field"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:188
+msgid "Value"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:193
+msgid "Data last updated"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:194
+#: ckanext/desq/templates/package/resource_read.html:198
+#: ckanext/desq/templates/package/resource_read.html:202
+#: ckanext/desq/templates/package/resource_read.html:206
+msgid "unknown"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:197
+msgid "Metadata last updated"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:201
+msgid "Created"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:205
+msgid "Format"
+msgstr ""
+
+#: ckanext/desq/templates/package/resource_read.html:209
+msgid "License"
 msgstr ""
 
 #: ckanext/desq/templates/package/search.html:21
