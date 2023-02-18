@@ -3,6 +3,6 @@
     {%- set switcher = {'en': 'fr', 'fr': 'en'} %}
     {%- set selected_lang = switcher[current_lang]|default('en') %}
     <a href="{{ h.url_for(h.current_url(), locale=selected_lang) }}" title="{{ selected_lang }}">
-        {{- h.get_locales_dict()[selected_lang].display_name|capitalize -}}
+        {{- switcher[current_lang]|default('en')|capitalize -}}
     </a>
 {%- endwith %}

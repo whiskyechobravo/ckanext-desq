@@ -94,11 +94,9 @@ h2 {
 a {
   color: #0072a8;
 }
-.navbar {
+.main-nav {
   margin-bottom: 0;
   border: 0;
-}
-.main-nav {
   color: #fff;
   background: #353535;
 }
@@ -106,7 +104,8 @@ a {
   font-family: "GillSansMTPro", Arial, Helvetica, "Helvetica Neue", sans-serif;
   font-size: 16px;
 }
-.main-nav a {
+.main-nav li > a {
+  padding: 20px 12px;
   color: #bcbcbc;
   background: transparent;
   text-transform: uppercase;
@@ -122,6 +121,21 @@ a {
 .main-nav input {
   font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
 }
+.main-nav .navbar-form {
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+.main-nav .navbar-right {
+  margin-right: 0;
+}
+.main-nav .language-selector li > a {
+  padding: 20px;
+  color: #fff;
+  background: #000;
+}
+.main-nav .language-selector li > a:hover {
+  background: #1d1d1d;
+}
 .account-masthead {
   padding-top: 1.25rem;
   color: #000;
@@ -136,6 +150,17 @@ a {
 .account-masthead a {
   color: #000;
   text-decoration: none;
+}
+.account-masthead .container {
+  position: relative;
+}
+.account-masthead .account {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+.account-masthead .account ul li a {
+  color: #000;
 }
 .concordia-logo-header {
   display: block;

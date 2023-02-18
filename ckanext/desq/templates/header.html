@@ -89,7 +89,11 @@
                         ('home.about', _('About')) )
                     }}
                 </ul>
+                <ul class="nav navbar-nav navbar-right language-selector">
+                    <li>{% snippet 'snippets/language_selector.html' %}</li>
+                </ul>
                 <form class="navbar-form navbar-right" action="{% url_for 'dataset.search' %}" method="get">
+                    {#- TODO: Remove this search box? It is redundant on most pages. If we are to keep it, need to fix width too large for French nav, and inconsistent border-radius. #}
                     <div class="input-group">
                         <label class="sr-only" for="field-sitewide-search">{{ _('Search datasets') }}</label>
                         <input id="field-sitewide-search" type="text" class="form-control" name="q" placeholder="{{ _('Search') }}" aria-label="{{ _('Search datasets') }}"/>
