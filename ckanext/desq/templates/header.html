@@ -1,25 +1,104 @@
-{% ckan_extends %}
-
 {#- DESQ:
-    - Replace g.site_name with translatable string.
-    - Remove site description from header.
+    - Add Concordia logo.
+    - Replace g.site_name with translatable string. Move site name.
+    - Remove site logo, remove site description.
     - Remove Groups link from 'header_site_navigation_tabs' block.
+    - Remove Log in, Register links.
 -#}
-
-{% block header_logo %}
-    {%- if g.site_logo %}
-        <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
-    {%- else %}
-        <h1>
-            <a href="{{ h.url_for('home.index') }}">{{ _('Data Portal on English-Speaking Quebec') }}</a>
-        </h1>
-    {%- endif %}
-{% endblock %}
-
-{% block header_site_navigation_tabs %}
-    {{ h.build_nav_main(
-        ('search', _('Datasets')),
-        ('organizations_index', _('Organizations')),
-        ('home.about', _('About')) )
-    }}
-{% endblock %}
+{% block header_wrapper %}
+    {%- block header_account %}
+        <div class="account-masthead">
+            <div class="container">
+                {%- block header_account_container_content %}
+                    <a class="concordia-logo-header" href="https://www.concordia.ca" title="{{ _('Concordia University') }}"><img alt="{{ _('Concordia University logo') }}" src="/images/logo-concordia-university.png"></a>
+                    <h1>
+                        <a href="{{ h.url_for('home.index') }}">{{ _('Data Portal on English-Speaking Quebec') }}</a>
+                    </h1>
+                    {%- if c.userobj %}
+                        <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
+                            <ul class="list-unstyled">
+                                {%- block header_account_logged %}
+                                    {%- if c.userobj.sysadmin %}
+                                        <li>
+                                        <a href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
+                                            <i class="fa fa-gavel" aria-hidden="true"></i>
+                                            <span class="text">{{ _('Admin') }}</span>
+                                        </a>
+                                        </li>
+                                    {%- endif %}
+                                    <li>
+                                        <a href="{{ h.url_for('user.read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
+                                            {{ h.user_image((c.user if c and c.user else ''), size=22) }}
+                                            <span class="username">{{ c.userobj.display_name }}</span>
+                                        </a>
+                                    </li>
+                                    {%- set new_activities = h.new_activities() %}
+                                    <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
+                                        {%- set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
+                                        <a href="{{ h.url_for('dashboard.index') }}" title="{{ notifications_tooltip }}">
+                                            <i class="fa fa-tachometer" aria-hidden="true"></i>
+                                            <span class="text">{{ _('Dashboard') }}</span>
+                                            <span class="badge">{{ new_activities }}</span>
+                                        </a>
+                                    </li>
+                                    {%- block header_account_settings_link %}
+                                        <li>
+                                            <a href="{{ h.url_for('user.edit', id=c.userobj.name) }}" title="{{ _('Profile settings') }}">
+                                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                                <span class="text">{{ _('Profile settings') }}</span>
+                                            </a>
+                                        </li>
+                                    {%- endblock %}
+                                    {%- block header_account_log_out_link %}
+                                        <li>
+                                            <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
+                                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                                <span class="text">{{ _('Log out') }}</span>
+                                            </a>
+                                        </li>
+                                    {%- endblock %}
+                                {%- endblock header_account_logged %}
+                            </ul>
+                        </div>
+                    {%- else %}
+                        <nav class="account not-authed" aria-label="{{ _('Account') }}">
+                            <ul class="list-unstyled">
+                                {%- block header_account_notlogged %}
+                                    {#- Deliberately left empty! #}
+                                {%- endblock header_account_notlogged %}
+                            </ul>
+                        </nav>
+                    {%- endif %}
+                {% endblock %}
+            </div>
+        </div>
+    {%- endblock header_account %}
+    <nav class="navbar navbar-static-top main-nav">
+        <div class="container">
+            <div class="navbar-right">
+                <button data-target="#main-navigation-toggle" data-toggle="collapse" class="navbar-toggle collapsed" type="button" aria-label="expand or collapse" aria-expanded="false">
+                    <span class="sr-only">{{ _('Toggle navigation') }}</span>
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="main-navigation-toggle">
+                <ul class="nav navbar-nav">
+                    {{ h.build_nav_main(
+                        ('search', _('Datasets')),
+                        ('organizations_index', _('Organizations')),
+                        ('home.about', _('About')) )
+                    }}
+                </ul>
+                <form class="navbar-form navbar-right" action="{% url_for 'dataset.search' %}" method="get">
+                    <div class="input-group">
+                        <label class="sr-only" for="field-sitewide-search">{{ _('Search datasets') }}</label>
+                        <input id="field-sitewide-search" type="text" class="form-control" name="q" placeholder="{{ _('Search') }}" aria-label="{{ _('Search datasets') }}"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit" aria-label="{{ _('Submit') }}"><span class="fa fa-search"></span></button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+{% endblock header_wrapper %}

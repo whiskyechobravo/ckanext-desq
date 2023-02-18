@@ -7,8 +7,8 @@
 #     preload:
 #       - base/main
 
-# desq-css:
-#   filter: cssrewrite
-#   output: ckanext-desq/%(version)s-desq.css
-#   contents:
-#     - css/desq.css
+desq-css:
+  filter: cssrewrite
+  output: ckanext-desq/%(version)s-desq.css
+  contents:
+    - css/desq.css

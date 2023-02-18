@@ -2,10 +2,16 @@
 
 {#- DESQ:
     - Replace g.site_name with translatable string.
+    - Load custom CSS.
 -#}
 
-{%- block title -%}
+{% block title -%}
     {%- block subtitle %}{% endblock -%}
     {%- if self.subtitle()|trim %} {{ g.template_title_delimiter }} {% endif -%}
     {{ _('Data Portal on English-Speaking Quebec') }}
-{%- endblock -%}
+{% endblock -%}
+
+{% block styles %}
+    {{ super() }}
+    {% asset 'desq/desq-css' %}  {#- Import desq.css #}
+{% endblock %}

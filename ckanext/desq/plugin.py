@@ -26,6 +26,7 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'desq')
+        toolkit.add_resource('assets', 'desq')
 
     # IValidators
     # Guide: https://docs.ckan.org/en/2.9/extensions/adding-custom-fields.html#custom-validators
