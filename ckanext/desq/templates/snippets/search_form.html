@@ -1,5 +1,6 @@
 {#- DESQ:
-    - Reorder some blocks.
+    - Change layout (thus having to override the whole file).
+    - Show labels instead of facet values in breadbox.
     - Show filter list facets in separate blocks (instead of all inline).
 -#}
 {% import 'macros/form.html' as form %}
@@ -46,10 +47,13 @@
         {%- endif %}
     {%- endblock %}
 
-    {%- block search_facets %}
+    {%- block search_facets %} {#- Breadbox #}
         {%- if facets %}
             <p class="filter-list">
                 {%- for field in facets.fields %}
+                    {%- if field in ['data_type', 'topic', 'geo_area', 'language'] %}
+                        {%- set field_choices = h.desq_dataset_field_choices(field) %}
+                    {%- endif %}
                     <div class="filter-list-facet">
                         {%- set search_facets_items = facets.search.get(field)['items'] if facets.search and field in facets.search else [] %}
                         <span class="facet">{{ facets.titles.get(field) }}:</span>
@@ -58,7 +62,13 @@
                                 {%- if facets.translated_fields and (field,value) in facets.translated_fields -%}
                                     {{ facets.translated_fields[(field,value)] }}
                                 {%- else -%}
-                                    {{ h.list_dict_filter(search_facets_items, 'name', 'display_name', value) }}
+                                    {%- if field == 'licence' %}
+                                        {{ h.get_translated(h.desq_get_licence(value), 'title') }}
+                                    {%- elif field_choices %}
+                                        {{ h.scheming_choices_label(field_choices, value) }}
+                                    {%- else %}
+                                        {{ h.list_dict_filter(search_facets_items, 'name', 'display_name', value) }}
+                                    {%- endif %}
                                 {%- endif %}
                                 <a href="{{ facets.remove_field(field, value) }}" class="remove" title="{{ _('Remove') }}"><i class="fa fa-times"></i></a>
                             </span>
