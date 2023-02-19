@@ -131,15 +131,12 @@ p {
   color: #4b4b4b;
   background: #fff;
 }
-.main-nav input {
-  font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
-}
-.main-nav .navbar-form {
-  margin-top: 13px;
-  margin-bottom: 13px;
+.main-nav .navbar-nav {
+  margin-left: -15px;
+  padding-left: 3px;
 }
 .main-nav .navbar-right {
-  margin-right: 0;
+  padding-right: 3px;
 }
 .main-nav .language-selector li > a {
   padding: 20px;
