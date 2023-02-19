@@ -106,7 +106,7 @@ h1,
 }
 h2,
 .h2 {
-  font-size: 2.25rem;
+  font-size: 2rem;
   margin-top: 1.25rem;
   margin-bottom: .625rem;
 }
@@ -321,6 +321,11 @@ output {
 .nav > li > a:focus {
   color: #0072a8;
 }
+.nav-item.active > a span,
+.nav-aside li.active a span {
+  white-space: initial;
+  overflow: initial;
+}
 .nav-item.active > a,
 .nav-item.active > a:hover,
 .nav-aside li.active a,
@@ -349,4 +354,15 @@ output {
   font-size: .875rem;
   font-weight: bold;
   background-color: inherit;
+}
+
+/* Facets */
+
+.filters .module-content.empty {
+  font-size: .875rem;
+}
+.filters-heading {
+  color: #912338;
+  padding-left: 15px;
+  padding-right: 15px;
 }

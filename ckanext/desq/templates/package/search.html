@@ -28,3 +28,8 @@
     %}
     {% snippet 'snippets/search_form.html', type='dataset', query=q, sorting=sorting, sorting_selected=sort_by_selected, count=page.item_count, facets=facets, show_empty=request.params, error=query_error %}
 {% endblock %}
+
+{% block secondary_content %}
+    <h1 class="h2 filters-heading">{{ _('Refine by') }}</h2>
+    {{ super() }}
+{% endblock %}
