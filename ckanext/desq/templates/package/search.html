@@ -4,7 +4,7 @@
     - Customize sorts (Guide: https://docs.ckan.org/en/2.9/extensions/adding-custom-fields.html#sorting-by-custom-fields-on-the-dataset-search-page)
         - Add 'Census year Ascending'
         - Add 'Census year Descending'
-    - Add heading above filters.
+    - Add heading above filters and search form.
     - Remove mention of API.
 -#}
 
@@ -25,7 +25,12 @@
         (_('Last Modified'), 'metadata_modified desc'),
         (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
     %}
-    {% snippet 'snippets/search_form.html', type='dataset', query=q, sorting=sorting, sorting_selected=sort_by_selected, count=page.item_count, facets=facets, show_empty=request.params, error=query_error %}
+    {% if q or fields %}
+        <h1 class="h2 search-heading">{{ _('Your search') }}</h1>
+    {% else %}
+        <h1 class="h2 search-heading">{{ _('Search') }}</h1>
+    {% endif %}
+    {% snippet 'snippets/search_form.html', form_id='dataset-search-form', type=dataset_type, query=q, sorting=sorting, sorting_selected=sort_by_selected, count=page.item_count, placeholder=_('Search ' + dataset_type + 's') + '...', facets=facets, show_empty=request.params, error=query_error, fields=fields %}
 {% endblock %}
 
 {% block package_search_results_api %}
@@ -33,6 +38,6 @@
 {% endblock %}
 
 {% block secondary_content %}
-    <h1 class="h2 filters-heading">{{ _('Refine by') }}</h2>
+    <h1 class="h2 filters-heading">{{ _('Filter') }}</h2>
     {{ super() }}
 {% endblock %}

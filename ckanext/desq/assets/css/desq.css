@@ -344,7 +344,7 @@ output {
 }
 .pill {
   background-color: #0072a8;  /* Replaces #4e5f65 */
-  border-radius: 0;
+  border-radius: 4px;
 }
 
 /* Modules */
@@ -369,7 +369,25 @@ output {
   font-size: .875rem;
 }
 .filters-heading {
-  color: #912338;
   padding-left: 15px;
   padding-right: 15px;
+  margin-top: 30px;
+  color: #912338;
+}
+@media (max-width: 767px) {
+  .filters-heading {
+    display: none;
+  }
+}
+
+/* Search */
+.module .search-heading {
+  margin-top: 30px;
+  color: #912338;
+}
+.module .search-heading:first-child {
+  margin-top: 0;
+}
+.filter-list-facet {
+  margin-top: .5rem;
 }
