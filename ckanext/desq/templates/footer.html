@@ -10,23 +10,23 @@
         <p>{{ _("The Data Portal on English-Speaking Quebec (DESQ) is a&nbsp;project&nbsp;of:") }}</p>
         <p>
             {%- set producer_name=_("QUESCREN") %}
-            <a href="{{ _('https://www.concordia.ca/artsci/scpa/quescren.html') }}" title="{{ producer_name }}">
+            <a target="_blank" href="{{ _('https://www.concordia.ca/artsci/scpa/quescren.html') }}" title="{{ producer_name }}">
                 <img width="210" height="59" src="/images/logo-quescren.png" alt="{{ producer_name }}">
             </a>
         </p>
         <p class="mb-0">{{- _("DESQ is&nbsp;funded&nbsp;by:") }}</p>
         <p class="mb-0">
             {%- set sponsor_name=_("Secrétariat aux relations avec les Québécois d’expression anglaise") %}
-            <a href="{{ _('https://www.quebec.ca/en/government/departments-and-agencies/srqea') }}" title="{{ sponsor_name }}">
+            <a target="_blank" href="{{ _('https://www.quebec.ca/en/government/departments-and-agencies/srqea') }}" title="{{ sponsor_name }}">
                 <img width="280" height="119" src="/images/logo-srqea.svg" alt="{{ sponsor_name }}">
             </a>
         </p>
         <p>{{ _("QUESCREN thanks its partners:") }}</p>
-        <p class="mb-0"><strong><a href="{{ _('https://www.canada.ca/en/canadian-heritage.html') }}">{{ _('Canadian Heritage') }}</a></strong></p>
-        <p class="mb-0"><strong><a href="{{ _('https://icrml.ca/en/') }}">{{ _('Canadian Institute for Research on Linguistic Minorities') }}</a></strong></p>
-        <p><strong><a href="{{ _('https://www.concordia.ca/') }}">{{ _('Concordia University') }}</a></strong></p>
+        <p class="mb-0"><strong><a target="_blank" href="{{ _('https://www.canada.ca/en/canadian-heritage.html') }}">{{ _('Canadian Heritage') }}</a></strong></p>
+        <p class="mb-0"><strong><a target="_blank" href="{{ _('https://icrml.ca/en/') }}">{{ _('Canadian Institute for Research on Linguistic Minorities') }}</a></strong></p>
+        <p><strong><a target="_blank" href="{{ _('https://www.concordia.ca/') }}">{{ _('Concordia University') }}</a></strong></p>
     </div>
     <div class="text-center footer-section footer-attribution">
-        {% trans %}Powered by <a href="http://ckan.org">CKAN</a>{% endtrans %}
+        {% trans %}Powered by <a target="_blank" href="http://ckan.org">CKAN</a>{% endtrans %}
     </div>
 </footer>
