@@ -134,7 +134,7 @@ h6,
   margin-bottom: .625rem;
 }
 a {
-  color: #0072a8;
+  color: #0072a8;  /* Replaces #206b82 */
 }
 p {
   margin: 0 0 1em;
@@ -190,6 +190,21 @@ output {
   .wrapper:before {
     border: 0;
   }
+}
+.label-primary {
+  background-color: #0072a8;  /* Replaces #206b82 */
+}
+
+/* Buttons */
+
+.btn-primary {
+  background-color: #0072a8;  /* Replaces #206b82 */
+}
+.btn-primary .badge {
+  color: #0072a8;  /* Replaces #206b82 */
+}
+.btn-link {
+  color: #0072a8;  /* Replaces #206b82 */
 }
 
 /* Header and main navigation */
@@ -381,6 +396,7 @@ output {
 }
 
 /* Search */
+
 .module .search-heading {
   margin-top: 30px;
   color: #912338;
@@ -390,4 +406,34 @@ output {
 }
 .filter-list-facet {
   margin-top: .5rem;
+}
+.search-form {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Dataset search */
+
+.dataset-heading {
+  font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+}
+.dataset-heading a {
+  color: #0072a8;
+}
+
+/* Pagination */
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #0072a8;  /* Replaces #206b82 */
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #0072a8;  /* Replaces #206b82 */
+  border-color: #0072a8;
 }
