@@ -1,0 +1,40 @@
+{#- DESQ:
+    - Add breadcrumb.
+-#}
+
+<div class="home-main">
+    <div class="container">
+        <div class="toolbar" role="navigation" aria-label="{{ _('Breadcrumb') }}">
+            <ol class="breadcrumb">
+                <li><a href="{{ _('https://www.concordia.ca/') }}">{{ _('Concordia.ca') }}</a></li>
+                <li><a href="{{ _('https://www.concordia.ca/artsci.html') }}">{{ _('Faculty of Arts and Science') }}</a></li>
+                <li><a href="{{ _('https://www.concordia.ca/artsci/scpa.html') }}">{{ _('School of Community & Public Affairs') }}</a></li>
+                <li><a href="{{ _('https://www.concordia.ca/artsci/scpa/quescren.html') }}">{{ _('QUESCREN') }}</a></li>
+                <li class="active"><a href="{{ h.url_for('home.index') }}">{{ _('DESQ') }}</a></li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div role="main" class="hero">
+    <div class="container">
+        {%- block search %}
+            {% snippet 'home/snippets/search.html' %}
+        {%- endblock %}
+    </div>
+</div>
+<div role="main">
+    <div class="container">
+        <div class="row row2">
+        <div class="col-md-6 col2">
+            {%- block promoted %}
+                {% snippet 'home/snippets/promoted.html' %}
+            {%- endblock %}
+        </div>
+        <div class="col-md-6 col1">
+            {%- block stats %}
+                {% snippet 'home/snippets/stats.html' %}
+            {%- endblock %}
+        </div>
+        </div>
+    </div>
+</div>

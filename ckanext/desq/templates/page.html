@@ -1,0 +1,18 @@
+{% ckan_extends %}
+
+{#- DESQ:
+    - Replace the breadcrumb.
+-#}
+
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="{{ _('https://www.concordia.ca/') }}">{{ _('Concordia.ca') }}</a></li>
+        <li><a href="{{ _('https://www.concordia.ca/artsci.html') }}">{{ _('Faculty of Arts and Science') }}</a></li>
+        <li><a href="{{ _('https://www.concordia.ca/artsci/scpa.html') }}">{{ _('School of Community & Public Affairs') }}</a></li>
+        <li><a href="{{ _('https://www.concordia.ca/artsci/scpa/quescren.html') }}">{{ _('QUESCREN') }}</a></li>
+        <li {% if not self.breadcrumb_content() | trim %}class="active"{% endif %}><a href="{{ h.url_for('home.index') }}">{{ _('DESQ') }}</a></li>
+        {%- if self.breadcrumb_content() | trim %}
+            {% block breadcrumb_content %}{% endblock %}
+        {%- endif %}
+    </ol>
+{% endblock %}
