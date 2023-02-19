@@ -142,6 +142,26 @@ p {
 .mb-0 {
   margin-bottom: 0;
 }
+.lead {
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .lead {
+    font-size: 1.25rem;
+  }
+}
+blockquote {
+  font-size: 1rem;
+}
+pre {
+  font-size: .875rem;
+}
+legend {
+  font-size: 1.25rem;
+}
+output {
+  font-size: .875rem;
+}
 
 /* Page elements */
 
