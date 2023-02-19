@@ -1,3 +1,4 @@
+/* Fonts */
 @font-face {
   font-family: 'GillSansMTPro';
   src:url('/webfonts/gillsansmtpro-book-webfont.woff') format('woff'),
@@ -71,6 +72,8 @@
   font-display: swap;
 }
 
+/* Base elements */
+
 html {
   font-size: 16px;
 }
@@ -139,6 +142,9 @@ p {
 .mb-0 {
   margin-bottom: 0;
 }
+
+/* Page elements */
+
 .main,
 .home-main {
   padding-top: .85rem;
@@ -149,6 +155,25 @@ p {
     padding-top: .85rem;
   }
 }
+.hero {
+  background: #fff;
+}
+.tooltip,
+.popover {
+  font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
+}
+.wrapper {
+  border: 0;
+  box-shadow: none;
+}
+@media (min-width: 768px) {
+  .wrapper:before {
+    border: 0;
+  }
+}
+
+/* Header and main navigation */
+
 .main-nav {
   margin-bottom: 0;
   border: 0;
@@ -221,9 +246,9 @@ p {
   width: 155px;
   height: 38px;
 }
-.hero {
-  background: #fff;
-}
+
+/* Breadcrumb */
+
 .toolbar .breadcrumb {
   font-size: .8125rem;
   font-weight: bold;
@@ -240,6 +265,9 @@ p {
   font-weight: normal;
   color: #4b4b4b;
 }
+
+/* Footer */
+
 .main-footer {
   font-family: "GillSansMTPro", Arial, Helvetica, "Helvetica Neue", sans-serif;
 }
@@ -266,10 +294,39 @@ p {
 .footer-attribution a:hover {
   color: #fff;
 }
-.tooltip,
-.popover {
-  font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
+
+/* Navigation/selection elements */
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  color: #0072a8;
 }
-.wrapper {
+.nav-item.active > a,
+.nav-item.active > a:hover,
+.nav-aside li.active a,
+.nav-aside li.active a:hover {
+  background-color: #0072a8;  /* Replaces #647A82 */
+}
+@media (min-width: 768px) {
+  .nav-item.active > a:before,
+  .nav-aside li.active a:before {
+    border-left-color: #0072a8;  /* Replaces #647A82 */
+  }
+}
+.pill {
+  background-color: #0072a8;  /* Replaces #4e5f65 */
+  border-radius: 0;
+}
+
+/* Modules */
+
+.secondary .module {
+  margin-top: 1rem;
+}
+.module-heading {
   border: 0;
+  font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
+  font-size: .875rem;
+  font-weight: bold;
+  background-color: inherit;
 }
