@@ -1,9 +1,20 @@
 {% ckan_extends %}
 
-{#- DESQ: Remove follower count. -#}
+{#- DESQ:
+    - Remove follower count.
+    - Remove description.
+    - Remove "read more" link. It is redundant, merely an alternate way to open
+      the About tab, and slightly misleading as one would expect it to just
+      expand the text.
+    - Remove "There is no description for this organization" message.
+-#}
+
+{% block description %}
+    {#- Deliberately made empty! #}
+{% endblock %}
 
 {% block nums %}
-    <div class="nums">{{ h.SI_number_span(organization.package_count) }}
+    <div class="nums">
         <dl>
             <dt>{{ _('Datasets') }}</dt>
             <dd>{{ h.SI_number_span(organization.package_count) }}</dd>
