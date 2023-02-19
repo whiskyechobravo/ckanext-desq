@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-desq 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-02-15 18:51-0500\n"
+"POT-Creation-Date: 2023-02-18 19:03-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: ckanext/desq/plugin.py:74
+#: ckanext/desq/plugin.py:75
 msgid "Census years"
 msgstr ""
 
-#: ckanext/desq/plugin.py:75
+#: ckanext/desq/plugin.py:76
 msgid "Data types"
 msgstr ""
 
-#: ckanext/desq/plugin.py:76
+#: ckanext/desq/plugin.py:77
 msgid "Topics"
 msgstr ""
 
-#: ckanext/desq/plugin.py:77
+#: ckanext/desq/plugin.py:78
 msgid "Geographical areas"
 msgstr ""
 
-#: ckanext/desq/plugin.py:78
+#: ckanext/desq/plugin.py:79
 msgid "Formats"
 msgstr ""
 
-#: ckanext/desq/plugin.py:79
+#: ckanext/desq/plugin.py:80
 msgid "Languages"
 msgstr ""
 
-#: ckanext/desq/plugin.py:80
+#: ckanext/desq/plugin.py:81
 msgid "Licences"
 msgstr ""
 
-#: ckanext/desq/plugin.py:81 ckanext/desq/templates/header.html:22
+#: ckanext/desq/plugin.py:82 ckanext/desq/templates/header.html:88
 msgid "Organizations"
 msgstr ""
 
@@ -61,32 +61,144 @@ msgstr ""
 msgid "Date may not be in the future."
 msgstr ""
 
-#: ckanext/desq/templates/base.html:10 ckanext/desq/templates/header.html:14
+#: ckanext/desq/templates/base.html:11 ckanext/desq/templates/header.html:15
 #: ckanext/desq/templates/organization/snippets/feeds.html:6
 #: ckanext/desq/templates/package/read_base.html:17
 #: ckanext/desq/templates/package/resource_read.html:16
 msgid "Data Portal on English-Speaking Quebec"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:21
-msgid "Datasets"
+#: ckanext/desq/templates/footer.html:10
+msgid "The Data Portal on English-Speaking Quebec (DESQ) is a&nbsp;project&nbsp;of:"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:12
+msgid "QUESCREN"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:13
+msgid "https://www.concordia.ca/artsci/scpa/quescren.html"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:17
+msgid "DESQ is&nbsp;funded&nbsp;by:"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:19
+msgid "Secrétariat aux relations avec les Québécois d’expression anglaise"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:20
+msgid "https://www.quebec.ca/en/government/departments-and-agencies/srqea"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:24
+msgid "QUESCREN thanks its partners:"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:25
+msgid "https://www.canada.ca/en/canadian-heritage.html"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:25
+msgid "Canadian Heritage"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:26
+msgid "https://icrml.ca/en/"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:26
+msgid "Canadian Institute for Research on Linguistic Minorities"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:27 ckanext/desq/templates/header.html:13
+msgid "https://www.concordia.ca/"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:27 ckanext/desq/templates/header.html:13
+msgid "Concordia University"
+msgstr ""
+
+#: ckanext/desq/templates/footer.html:30
+msgid "Powered by <a href=\"http://ckan.org\">CKAN</a>"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:13
+msgid "Concordia University logo"
 msgstr ""
 
 #: ckanext/desq/templates/header.html:23
+msgid "Sysadmin settings"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:25
+msgid "Admin"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:30
+msgid "View profile"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:37
+#, python-format
+msgid "Dashboard (%(num)d new item)"
+msgid_plural "Dashboard (%(num)d new items)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ckanext/desq/templates/header.html:40
+msgid "Dashboard"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:46 ckanext/desq/templates/header.html:48
+msgid "Profile settings"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:54 ckanext/desq/templates/header.html:56
+msgid "Log out"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:64
+msgid "Account"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:80
+msgid "Toggle navigation"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:87
+msgid "Datasets"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:89
 msgid "About"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:98 ckanext/desq/templates/header.html:99
+msgid "Search datasets"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:99
+msgid "Search"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:101
+msgid "Submit"
 msgstr ""
 
 #: ckanext/desq/templates/home/snippets/about_text.html:1
 msgid ""
-"<h2>Content</h2> The Data Portal on English-Speaking Quebec (DESQ) is a "
+"<h2>Content</h2> <p>The Data Portal on English-Speaking Quebec (DESQ) is a "
 "growing online database created by the <a "
 "href=\"https://www.concordia.ca/artsci/scpa/quescren.html\" "
 "target=\"_blank\">Quebec English-Speaking Communities Research Network "
 "(QUESCREN)</a> at Concordia University. DESQ stores statistical datasets "
 "related to English-speaking Quebec that are mostly drawn from Canadian census"
-" data. <h2>Dataset Formats</h2> Datasets are available in three formats: <ul>"
-" <li><strong>Ivation tables (IVT)</strong>. These can be opened using the "
-"freely available <a href=\"https://www.statcan.gc.ca/en/public/beyond20-20\" "
+" data.</p> <h2>Dataset Formats</h2> <p>Datasets are available in three "
+"formats:</p> <ul> <li><strong>Ivation tables (IVT)</strong>. These can be "
+"opened using the freely available <a "
+"href=\"https://www.statcan.gc.ca/en/public/beyond20-20\" "
 "target=\"_blank\">Beyond 20/20 Professional Browser</a>, which works only on "
 "Windows operating systems (not Mac). For a quick primer on using this "
 "browser, <a "
@@ -101,11 +213,11 @@ msgid ""
 "time. Files can be opened using <a href=\"https://www.microsoft.com/en-"
 "us/microsoft-365/excel\" target=\"_blank\">Microsoft Excel</a>, <a "
 "href=\"https://www.google.ca/sheets/about/\" target=\"_blank\">Google "
-"Sheets</a>, or other programs compatible with Excel.</li> </ul> <strong>The "
-"website is currently under development and all dataset formats listed here "
-"may not yet be available.</strong> <h2>Use of Material</h2> All datasets on "
-"this site were created by Statistics Canada for third-party organizations. "
-"They are freely available via an <a "
+"Sheets</a>, or other programs compatible with Excel.</li> </ul> "
+"<p><strong>The website is currently under development and all dataset formats"
+" listed here may not yet be available.</strong></p> <h2>Use of Material</h2> "
+"<p>All datasets on this site were created by Statistics Canada for third-"
+"party organizations. They are freely available via an <a "
 "href=\"https://www.statcan.gc.ca/en/reference/licence\" "
 "target=\"_blank\">open license from Statistics Canada</a> and open-use "
 "licensing agreements with the third-party organizations. You are free to use,"
@@ -113,29 +225,30 @@ msgid ""
 "acknowledgement of source (e.g.: <em>Statistics Canada, “name of product,” "
 "“reference date,” custom dataset created for “name of partner organization” "
 "by Statistics Canada. Reproduced and distributed on an as-is basis with the "
-"permission of Statistics Canada.</em>) <h2>Credits</h2> Producer of DESQ: "
-"Quebec English-Speaking Communities Research Network (QUESCREN) CKOL "
-"Management Team - <a "
+"permission of Statistics Canada.</em>)</p> <h2>Credits</h2> <p>Producer of "
+"DESQ: Quebec English-Speaking Communities Research Network (QUESCREN)</p> "
+"<p>CKOL Management Team</p> <ul> <li><a "
 "href=\"mailto:patrick.donovan1@concordia.ca?subject=DESQ\">Patrick "
-"Donovan</a> (QUESCREN) - <a "
+"Donovan</a> (QUESCREN)</li> <li><a "
 "href=\"mailto:lorraine.odonnell@concordia.ca?subject=DESQ\">Lorraine "
-"O’Donnell</a> (QUESCREN) IT Consultant - David Lesieur (<a "
-"href=\"https://whiskyechobravo.com/\">Whisky Echo Bravo</a>) Project "
-"Consultant - Jan Warnke (JW COMM) <h2>Funders and partners</h2> The <a "
+"O’Donnell</a> (QUESCREN)</li> </ul> <p>IT Consultant</p> <ul> <li>David "
+"Lesieur (<a href=\"https://whiskyechobravo.com/\">Whisky Echo Bravo</a>)</li>"
+" </ul> <p>Project Consultant</p> <ul> <li>Jan Warnke (JW COMM)</li> </ul> "
+"<h2>Funders and partners</h2> <p>The <a "
 "href=\"https://www.quebec.ca/en/government/departments-and-agencies/srqea\" "
 "target=\"_blank\">Secrétariat aux relations avec les Québécois d’expression "
-"anglaise</a>, Gouvernement du Quebec, funded this project. QUESCREN <a "
-"href=\"/organization/\">partner organizations</a> originally obtained the "
-"datasets from <a href=\"https://www.statcan.gc.ca/en/start\" "
+"anglaise</a>, Gouvernement du Quebec, funded this project.</p> <p>QUESCREN <a"
+" href=\"/en/organization/\">partner organizations</a> originally obtained the"
+" datasets from <a href=\"https://www.statcan.gc.ca/en/start\" "
 "target=\"_blank\">Statistics Canada</a>. We acknowledge their generosity in "
 "agreeing to make them available to the public via DESQ, and the work of "
-"project consultant Jan Warnke in facilitating their availability. QUESCREN "
-"also receives funding from the <a href=\"https://www.canada.ca/en/canadian-"
-"heritage.html\" target=\"_blank\">Department of Canadian Heritage</a>, the <a"
-" href=\"https://icrml.ca/en/\" target=\"_blank\">Canadian Institute for "
-"Research on Linguistic Minorities</a>, and <a "
+"project consultant Jan Warnke in facilitating their availability.</p> "
+"<p>QUESCREN also receives funding from the <a href=\"https://www.canada.ca/en"
+"/canadian-heritage.html\" target=\"_blank\">Department of Canadian "
+"Heritage</a>, the <a href=\"https://icrml.ca/en/\" target=\"_blank\">Canadian"
+" Institute for Research on Linguistic Minorities</a>, and <a "
 "href=\"https://www.concordia.ca/\" target=\"_blank\">Concordia "
-"University</a>."
+"University</a>.</p>"
 msgstr ""
 
 #: ckanext/desq/templates/home/snippets/promoted.html:8

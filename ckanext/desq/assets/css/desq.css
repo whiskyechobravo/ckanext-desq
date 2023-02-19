@@ -71,9 +71,13 @@
   font-display: swap;
 }
 
+html {
+  font-size: 16px;
+}
 body {
   font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
-  background: #353535;
+  font-size: inherit;
+  background: #fff;
 }
 h1,
 h2,
@@ -85,14 +89,23 @@ h6 {
   font-weight: normal;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 2.875rem;
   color: #912338;
 }
 h2 {
-  font-size: 3.25rem;
+  font-size: 2.25rem;
 }
 a {
   color: #0072a8;
+}
+p {
+  margin: 0 0 1em;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.main {
+  background: #fff;
 }
 .main-nav {
   margin-bottom: 0;
@@ -102,7 +115,7 @@ a {
 }
 .main-nav {
   font-family: "GillSansMTPro", Arial, Helvetica, "Helvetica Neue", sans-serif;
-  font-size: 16px;
+  font-size: initial;
 }
 .main-nav li > a {
   padding: 20px 12px;
@@ -137,15 +150,15 @@ a {
   background: #1d1d1d;
 }
 .account-masthead {
-  padding-top: 1.25rem;
+  padding-top: .75rem;
   color: #000;
   background: #fff;
 }
 .account-masthead h1 {
   font-family: "GillSansMTPro", Arial, Helvetica, "Helvetica Neue", sans-serif;
-  font-size: 3.25rem;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  font-size: 2rem;
+  margin-top: .75rem;
+  margin-bottom: .75rem;
 }
 .account-masthead a {
   color: #000;
@@ -172,9 +185,31 @@ a {
 .hero {
   background: #fff;
 }
-.site-footer {
+.main-footer {
+  font-family: "GillSansMTPro", Arial, Helvetica, "Helvetica Neue", sans-serif;
+}
+.footer-section {
+  padding: 1rem;
+}
+.footer-sponsors {
+  color: #212529;
+  background: #f2f2f2;
+}
+.footer-sponsors a {
+  color: #212529;
+}
+.footer-sponsors a:hover {
+  color: #000;
+}
+.footer-attribution {
+  color: rgb(255,255,255,0.8);
+  background: #912338;
+}
+.footer-attribution a {
+  color: rgb(255,255,255,0.8);
+}
+.footer-attribution a:hover {
   color: #fff;
-  background: #353535;
 }
 .tooltip,
 .popover {
