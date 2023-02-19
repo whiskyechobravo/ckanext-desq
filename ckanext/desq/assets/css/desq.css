@@ -200,6 +200,11 @@ p {
 .toolbar .breadcrumb .active a {
   font-weight: normal;
 }
+.toolbar .breadcrumb > li + li:before {
+  padding: 0 4px;
+  font-weight: normal;
+  color: #4b4b4b;
+}
 .main-footer {
   font-family: "GillSansMTPro", Arial, Helvetica, "Helvetica Neue", sans-serif;
 }
