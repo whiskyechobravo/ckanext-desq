@@ -395,6 +395,22 @@ output {
   }
 }
 
+/* Pagination */
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #0072a8;  /* Replaces #206b82 */
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #0072a8;  /* Replaces #206b82 */
+  border-color: #0072a8;
+}
+
 /* Search */
 
 .module .search-heading {
@@ -426,19 +442,22 @@ output {
 .dataset-heading a {
   color: #0072a8;
 }
-
-/* Pagination */
-
-.pagination > li > a,
-.pagination > li > span {
-  color: #0072a8;  /* Replaces #206b82 */
+.itemboxes {
+  margin-bottom: .5rem;
 }
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus {
-  background-color: #0072a8;  /* Replaces #206b82 */
-  border-color: #0072a8;
+.itembox {
+  padding: .15rem .5rem;
+}
+.itembox-strong {
+  font-weight: bold;
+}
+.itembox-border {
+  border: 1px solid #dee2e6;
+}
+
+/* Context info (in dataset sidebar). */
+
+.context-info h1.heading {
+  font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
+  color: #000;
 }
