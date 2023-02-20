@@ -29,23 +29,6 @@
             <span>{{ form.hidden_from_list(fields=fields) }}</span>
         {%- endif %}
     {%- endblock %}
-    {%- block search_sortby %}
-        {%- if sorting %}
-            <div class="form-select form-group control-order-by">
-                <label for="field-order-by">{{ _('Order by') }}</label>
-                <select id="field-order-by" name="sort" class="form-control">
-                    {%- for label, value in sorting %}
-                        {%- if label and value %}
-                            <option value="{{ value }}"{% if sorting_selected == value %} selected="selected"{% endif %}>{{ label }}</option>
-                        {%- endif %}
-                    {%- endfor %}
-                </select>
-                {%- block search_sortby_button %}
-                    <button class="btn btn-default js-hide" type="submit">{{ _('Go') }}</button>
-                {%- endblock %}
-            </div>
-        {%- endif %}
-    {%- endblock %}
 
     {%- block search_facets %} {#- Breadbox #}
         {%- if facets %}
@@ -55,6 +38,7 @@
                         {%- set field_choices = h.desq_dataset_field_choices(field) %}
                     {%- endif %}
                     <div class="filter-list-facet">
+                        {#- TODO: Consider formatting each facet into a table for nicer appearance. #}
                         {%- set search_facets_items = facets.search.get(field)['items'] if facets.search and field in facets.search else [] %}
                         <span class="facet">{{ facets.titles.get(field) }}:</span>
                         {%- for value in facets.fields[field] %}
@@ -77,6 +61,24 @@
                 {%- endfor %}
             </p>
             <a class="show-filters btn btn-default">{{ _('Filter Results') }}</a>
+        {%- endif %}
+    {%- endblock %}
+
+    {%- block search_sortby %}
+        {%- if sorting %}
+            <div class="form-select form-group control-order-by">
+                <label for="field-order-by">{{ _('Order by') }}</label>
+                <select id="field-order-by" name="sort" class="form-control">
+                    {%- for label, value in sorting %}
+                        {%- if label and value %}
+                            <option value="{{ value }}"{% if sorting_selected == value %} selected="selected"{% endif %}>{{ label }}</option>
+                        {%- endif %}
+                    {%- endfor %}
+                </select>
+                {%- block search_sortby_button %}
+                    <button class="btn btn-default js-hide" type="submit">{{ _('Go') }}</button>
+                {%- endblock %}
+            </div>
         {%- endif %}
     {%- endblock %}
 
