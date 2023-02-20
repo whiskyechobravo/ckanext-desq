@@ -25,7 +25,9 @@ dataset_fields:
   form_placeholder: eg. my-dataset
 
 - field_name: notes_translated
-  label: Description
+  label:
+    en: Description
+    fr: Description
   preset: fluent_core_translated
   form_snippet: fluent_markdown.html
   form_placeholder:
@@ -474,18 +476,24 @@ dataset_fields:
 resource_fields:
 
 - field_name: url
-  label: URL
+  label:
+    en: URL
+    fr: URL
   preset: resource_url_upload
 
 - field_name: name_translated
-  label: Name
+  label:
+    en: Name
+    fr: Nom
   preset: fluent_core_translated
   form_placeholder: eg. January 2011 Gold Prices
   form_attrs:
     class: form-control
 
 - field_name: description_translated
-  label: Description
+  label:
+    en: Description
+    fr: Description
   preset: fluent_core_translated
   form_placeholder:
     en: eg. Some useful notes about the data
@@ -495,5 +503,12 @@ resource_fields:
     class: form-control
 
 - field_name: format
-  label: Format
+  label:
+    en: Format
+    fr: Format
   preset: resource_format_autocomplete
+  classes: ["control-full"]
+  form_attrs:
+    data-module: autocomplete
+    data-module-source: /api/2/util/resource/format_autocomplete?incomplete=?
+    class:
