@@ -122,6 +122,10 @@ dataset_fields:
       fr: Scolarité
     value: education
   - label:
+      en: Education — Rights holders
+      fr: Scolarité — Ayants droit
+    value: education_rights_holders
+  - label:
       en: Ethnocultural and religious diversity
       fr: Diversité ethnoculturelle et religieuse
     value: ethnocultural_religious_diversity
@@ -173,10 +177,10 @@ dataset_fields:
       en: Language — Language at work
       fr: Langue — Langue au travail
     value: language_work
-  - label:
-      en: Language — Minority official language
-      fr: Langue — Langue officielle minoritaire
-    value: minority_official_language
+# - label:
+#     en: Language — Minority official language
+#     fr: Langue — Langue officielle minoritaire
+#   value: minority_official_language
   - label:
       en: Language — Mother tongue
       fr: Langue — Langue maternelle
