@@ -162,6 +162,12 @@ legend {
 output {
   font-size: .875rem;
 }
+.small {
+  font-size: .875em;
+}
+.accent {
+  color: #912338;
+}
 
 /* Page elements */
 
@@ -178,6 +184,9 @@ output {
 .hero {
   background: #fff;
 }
+
+/* Other elements */
+
 .tooltip,
 .popover {
   font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
@@ -193,6 +202,14 @@ output {
 }
 .label-primary {
   background-color: #0072a8;  /* Replaces #206b82 */
+}
+.label {
+  font-size: .875rem;
+}
+.next-to-label {
+  display: inline-block;
+  font-size: .875rem;
+  padding: .2em .6em .3em .3em;
 }
 
 /* Buttons */
@@ -447,12 +464,10 @@ output {
 }
 .itembox {
   padding: .15rem .5rem;
+  border: 1px solid #dee2e6;
 }
 .itembox-strong {
   font-weight: bold;
-}
-.itembox-border {
-  border: 1px solid #dee2e6;
 }
 
 /* Context info (in dataset sidebar). */
@@ -460,4 +475,20 @@ output {
 .context-info h1.heading {
   font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
   color: #000;
+}
+
+/* Resource list */
+
+.resource-list {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.resource-item {
+  padding: 10px;
+}
+.resource-item-heading {
+  font-size: 1rem;
+}
+.resource-item-actions {
+  float: right;
 }

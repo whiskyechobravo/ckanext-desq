@@ -1,8 +1,54 @@
-{% ckan_extends %}
+{#- DESQ:
+    - Avoid truncating title.
+    - Allow much longer description.
+    - Remove 'Explore' downdown, directly show Download and Edit buttons instead.
+    - Change layout.
+    - Simplify format display.
+    - Show resource file size.
+-#}
 
-{% block resource_item_title %}
-    <a class="heading" href="{{ url }}" title="{{ res.name or res.description }}">
-        {{ h.resource_display_name(res) }}<span class="format-label" property="dc:format" data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
-        {{ h.popular('views', res.tracking_summary.total, min=10) if res.tracking_summary }}
-    </a>
-{% endblock %}
+{%- set url_action = pkg.type ~ ('_resource.edit' if url_is_edit and can_edit else '_resource.read') %}
+{%- set url = h.url_for(url_action, id=pkg.id if is_activity_archive else pkg.name, resource_id=res.id, **({'activity_id': request.args['activity_id']} if 'activity_id' in request.args else {})) %}
+
+<li class="resource-item" data-id="{{ res.id }}">
+    {%- block resource_item_explore %}
+        <div class="resource-item-actions">
+            {%- if not url_is_edit %}
+                {%- block resource_item_explore_links %}
+                    {%- if res.url and h.is_url(res.url) %}
+                        <a href="{{ res.url }}" class="btn btn-primary resource-url-analytics" target="_blank">
+                            {%- if res.has_views or res.url_type == 'upload' %}
+                                <i class="fa fa-arrow-circle-o-down"></i>
+                                {{ _('Download') }}
+                            {%- else %}
+                                <i class="fa fa-external-link"></i>
+                                {{ _('Go to resource') }}
+                            {%- endif %}
+                        </a>
+                    {%- endif %}
+                    {%- if can_edit %}
+                        <a href="{{ h.url_for(pkg.type ~ '_resource.edit', id=pkg.name, resource_id=res.id) }}" class="btn btn-default">
+                            <i class="fa fa-pencil-square-o"></i>
+                            {{ _('Edit') }}
+                        </a>
+                    {%- endif %}
+                {%- endblock %}
+            {%- endif %}
+        </div>
+    {%- endblock %}
+    <p>
+        <a class="resource-item-heading" href="{{ url }}" title="{{ res.name or res.description }}">
+            {{ h.resource_display_name(res) }}
+            {{ h.popular('views', res.tracking_summary.total, min=10) if res.tracking_summary }}
+        </a>
+    </p>
+    {%- if res.description %}
+        <p class="small">{{ h.markdown_extract(h.get_translated(res, 'description'), extract_length=500) }}</p>
+    {%- endif %}
+    <div>
+        <span class="label label-default" property="dc:format" data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
+        {%- if res.size %}
+            <div class="next-to-label">{{ h.localised_filesize(res.size) }}</div>
+        {%- endif %}
+    </div>
+</li>
