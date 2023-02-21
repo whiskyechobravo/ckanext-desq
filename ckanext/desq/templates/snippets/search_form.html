@@ -47,8 +47,8 @@
                                 {%- if facets.translated_fields and (field,value) in facets.translated_fields -%}
                                     {{ facets.translated_fields[(field,value)] }}
                                 {%- else -%}
-                                    {%- if field == 'licence' %}
-                                        {{ h.get_translated(h.desq_get_licence(value), 'title') }}
+                                    {%- if field == 'license' %}
+                                        {{ h.get_translated(h.desq_get_license(value), 'title') }}
                                     {%- elif field_choices %}
                                         {{ h.scheming_choices_label(field_choices, value) }}
                                     {%- else %}

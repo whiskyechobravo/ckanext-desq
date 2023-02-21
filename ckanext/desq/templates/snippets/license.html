@@ -1,0 +1,39 @@
+{#- DESQ:
+    - Use license schema field
+    - Show usage_conditions and source_notice from licenses JSON.
+-#}
+
+{% ckan_extends %}
+
+{% macro license_string_from_license(license) %}
+    <span property="dc:rights">
+        {%- if license['url'] %}
+            <a href="{{ h.get_translated(license, 'url') }}" rel="dc:rights">{{ h.get_translated(license, 'title') }}</a>
+        {%- else %}
+            {{ h.get_translated(license, 'title') }}
+        {%- endif %}
+    </span>
+{% endmacro %}
+
+
+{% block license_content %}
+    {%- if 'license' in pkg_dict %}
+        {%- with license = h.desq_get_license(pkg_dict.license) %}
+            <p class="module-content">
+                {{ license_string_from_license(license) }}
+                {%- if pkg_dict.isopen %}
+                    <a href="http://opendefinition.org/okd/" title="{{ _('This dataset satisfies the Open Definition.') }}">
+                        <img class="open-data" src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="[Open Data]" />
+                    </a>
+                {%- endif %}
+            </p>
+            {%- if h.get_translated(license, 'description') %}
+                <p class="module-content small">
+                    {{ h.get_translated(license, 'description') }}
+                </p>
+            {%- endif %}
+        {%- endwith %}
+    {%- else %}
+        <p class="module-content">{{ _('No license provided') }}</p>
+    {%- endif %}
+{% endblock %}

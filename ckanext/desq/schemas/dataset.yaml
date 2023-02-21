@@ -365,7 +365,7 @@ dataset_fields:
       fr: Sans objet
     value: x
 
-- field_name: licence
+- field_name: license
   label:
     en: Licence
     fr: Licence
@@ -374,21 +374,6 @@ dataset_fields:
     fr: Licence s’appliquant au jeu de données.
   form_snippet: license.html
   required: true
-
-- field_name: usage_conditions
-  label:
-    en: Usage Conditions
-    fr: Conditions d’utilisation
-  preset: fluent_text
-  help_text:
-    en: Limitations or restrictions on how the dataset can be used.
-    fr: Limitations et restrictions concernant la façon dont le jeu de données peut être utilisé.
-  form_snippet: fluent_markdown.html
-  form_placeholder:
-    en: eg. Statistics Canada hereby grants you the permission to use, reproduce, publish, freely distribute or sell information covered by the Statistics Canada Open Licence. In any use of this information, you must adhere to the conditions of the Statistics Canada Open Licence. If you do not agree to these terms, you may not use the information.
-    fr: p.ex. Statistique Canada vous accorde la permission d’utiliser, de reproduire, de publier, de diffuser gratuitement ou de vendre l’information régie par la licence ouverte de Statistique Canada. Lors de toute utilisation de cette information, vous devez adhérer aux conditions de la licence ouverte de Statistique Canada. Si vous n’acceptez pas ces conditions, il ne vous est pas permis d’utiliser l’information.
-  form_attrs:
-    class: form-control
 
 - field_name: url
   label:

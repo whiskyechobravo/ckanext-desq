@@ -78,7 +78,7 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
             'geo_area': toolkit._('Geographical areas'),
             'res_format': toolkit._('Formats'),
             'language': toolkit._('Languages'),
-            'licence': toolkit._('Licences'),
+            'license': toolkit._('Licenses'),
             'organization': toolkit._('Organizations'),
         })
         return facets_dict
@@ -92,7 +92,7 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
             'geo_area': toolkit._('Geographical areas'),
             'res_format': toolkit._('Formats'),
             'language': toolkit._('Languages'),
-            'licence': toolkit._('Licences'),
+            'license': toolkit._('Licenses'),
         })
         return facets_dict
 
@@ -108,7 +108,7 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
             # TODO: 'desq_get_topic': helpers.get_topic,
             # TODO: 'desq_get_geo_area': helpers.get_geo_area,
             # TODO: 'desq_get_language': helpers.get_language,
-            'desq_get_licence': helpers.get_licence,
+            'desq_get_license': helpers.get_license,
             'desq_dataset_field_choices': helpers.get_dataset_field_choices,
         }
 

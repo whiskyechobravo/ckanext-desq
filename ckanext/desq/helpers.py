@@ -5,8 +5,8 @@ from ckanext.scheming.helpers import (scheming_field_by_name,
                                       scheming_get_dataset_schema)
 
 
-def get_licence(licence):
-    return Package.get_license_register().get(licence, licence)
+def get_license(license):
+    return Package.get_license_register().get(license, license)
 
 
 def get_dataset_field_choices(field_name):

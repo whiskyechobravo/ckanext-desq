@@ -12,8 +12,8 @@
                         {%- set choices = h.desq_dataset_field_choices(name) %}
                     {%- endif %}
                     {%- for item in items %}
-                        {%- if name == "licence" %}
-                            {%- do item.update({'display_name': h.get_translated(h.desq_get_licence(item.name), 'title')}) %}
+                        {%- if name == "license" %}
+                            {%- do item.update({'display_name': h.get_translated(h.desq_get_license(item.name), 'title')}) %}
                         {%- elif choices %}
                             {%- do item.update({'display_name': h.scheming_choices_label(choices, item.name)}) %}
                         {%- endif %}
