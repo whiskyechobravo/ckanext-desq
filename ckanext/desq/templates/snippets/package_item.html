@@ -2,21 +2,9 @@
 
 {#- DESQ:
     - Avoid truncating titles.
-    - Show census year.
     - Allow longer descriptions.
     - Show nothing when no description is available.
 -#}
-
-{% block heading %}
-    {%- set census_year = package.get('census_year', '') %}
-    {%- set catalog_number = package.get('catalog_number', '') %}
-    {%- if census_year or catalog_number %}
-        <div class="itemboxes">
-            <span class="itembox itembox-strong itembox-border">{{ _('{} census').format(census_year) }}</span>
-        </div>
-    {%- endif %}
-    {{ super() }}
-{% endblock %}
 
 {% block heading_title %}
     {{ h.link_to(title, h.url_for('%s.read' % package.type, id=package.name)) }}
