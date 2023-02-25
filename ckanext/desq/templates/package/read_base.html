@@ -6,7 +6,7 @@
       "package/base.html", but we don't want it to inherit from the
       "package/read_base.html" template we're replacing.
     - Replace g.site_name with translatable string.
-    - Remove group tab from content_primary_nav block.
+    - Remove all tabs from the content_primary_nav block.
     - Remove package info.
 -#}
 
@@ -19,18 +19,22 @@
     <meta property="og:description" content="{{ description|forceescape|trim }}">
 {%- endblock -%}
 
-{%- block content_action %}
-    {%- if not is_activity_archive %}
-        {%- if h.check_access('package_update', {'id':pkg.id }) %}
-            {% link_for _('Manage'), named_route=pkg.type ~ '.edit', id=pkg.name, class_='btn btn-default', icon='wrench' %}
-        {%- endif %}
+{% block page_header %}
+    {#- Remove content_primary_nav block (tabs). #}
+    {%- if self.content_action() | trim %}
+        <header class="module-content page-header page-header-dataset">
+            <div class="content_action">
+                {%- block content_action %}
+                    {%- if not is_activity_archive %}
+                        {%- if h.check_access('package_update', {'id':pkg.id }) %}
+                            {% link_for _('Manage'), named_route=pkg.type ~ '.edit', id=pkg.name, class_='btn btn-default', icon='wrench' %}
+                        {%- endif %}
+                    {%- endif %}
+                {% endblock %}
+            </div>
+        </header>
     {%- endif %}
-{%- endblock %}
-
-{%- block content_primary_nav %}
-  {{ h.build_nav_icon(dataset_type ~ '.read', _('Dataset'), id=pkg.id if is_activity_archive else pkg.name, icon='sitemap') }}
-  {{ h.build_nav_icon(dataset_type ~ '.activity', _('Activity Stream'), id=pkg.id if is_activity_archive else pkg.name, icon='clock-o') }}
-{%- endblock %}
+{% endblock %}
 
 {%- block secondary_content %}
 

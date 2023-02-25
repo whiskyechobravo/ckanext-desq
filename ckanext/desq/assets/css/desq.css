@@ -487,6 +487,13 @@ output {
   font-weight: bold;
 }
 
+/* Dataset page */
+
+.page-header-dataset {
+  border-bottom: 0;
+  background: transparent;
+}
+
 /* Context info (in dataset sidebar). */
 
 .context-info h1.heading {
