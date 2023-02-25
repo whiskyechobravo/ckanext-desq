@@ -6,10 +6,7 @@
     <div class="container">
         <div class="toolbar" role="navigation" aria-label="{{ _('Breadcrumb') }}">
             <ol class="breadcrumb">
-                <li><a href="{{ _('https://www.concordia.ca/') }}">{{ _('Concordia.ca') }}</a></li>
-                <li><a href="{{ _('https://www.concordia.ca/artsci.html') }}">{{ _('Faculty of Arts and Science') }}</a></li>
-                <li><a href="{{ _('https://www.concordia.ca/artsci/scpa.html') }}">{{ _('School of Community & Public Affairs') }}</a></li>
-                <li><a href="{{ _('https://www.concordia.ca/artsci/scpa/quescren.html') }}">{{ _('QUESCREN') }}</a></li>
+                {% snippet 'snippets/desq_breadcrumb_base_items.html' %}
                 <li class="active"><a href="{{ h.url_for('home.index') }}">{{ _('DESQ') }}</a></li>
             </ol>
         </div>
