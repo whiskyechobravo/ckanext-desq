@@ -479,10 +479,32 @@ output {
 
 /* Dataset page */
 
+.additional-info .table thead {
+  display: none;
+}
+.additional-info .table tbody tr th,
+.additional-info .table tbody tr td {
+  border-top: 0;
+}
 .page-header-dataset,
 .page-header-organization {
   border-bottom: 0;
   background: transparent;
+}
+.dataset-label {
+  text-align: right;
+  width: 40% !important;
+}
+.dataset-details {
+  width: auto !important;
+}
+@media (min-width: 992px) {
+  .dataset-label {
+    width: 30% !important;
+  }
+  .dataset-details {
+    width: auto !important;
+  }
 }
 
 /* Context info (in dataset sidebar). */
