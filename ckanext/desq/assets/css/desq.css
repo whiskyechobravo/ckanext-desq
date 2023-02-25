@@ -255,7 +255,7 @@ output {
   padding-left: 3px;
 }
 .main-nav .navbar-right {
-  padding-right: 3px;
+  margin-right: 0;
 }
 .main-nav .language-selector li > a {
   padding: 20px;
@@ -297,6 +297,16 @@ output {
 .concordia-logo-header img {
   width: 155px;
   height: 38px;
+}
+.quescren-logo-header {
+  display: none;
+}
+@media (min-width: 768px) {
+  .quescren-logo-header {
+    display: block;
+    float: right;
+    margin: 1rem 0 0 2rem;
+  }
 }
 
 /* Breadcrumb */
