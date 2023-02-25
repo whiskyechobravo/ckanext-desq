@@ -489,7 +489,8 @@ output {
 
 /* Dataset page */
 
-.page-header-dataset {
+.page-header-dataset,
+.page-header-organization {
   border-bottom: 0;
   background: transparent;
 }

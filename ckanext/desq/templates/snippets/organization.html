@@ -2,15 +2,15 @@
 
 {#- DESQ:
     - Remove follower count.
-    - Remove description.
-    - Remove "read more" link. It is redundant, merely an alternate way to open
-      the About tab, and slightly misleading as one would expect it to just
-      expand the text.
-    - Remove "There is no description for this organization" message.
+    - Remove description text.
+    - Remove the "There is no description for this organization" message.
+    - Customize the "read more" link (now "About").
 -#}
 
 {% block description %}
-    {#- Deliberately made empty! #}
+    <p class="read-more">
+        {% link_for _('About'), controller='organization', action='about', id=organization.name, icon='info-circle' %}
+    </p>
 {% endblock %}
 
 {% block nums %}

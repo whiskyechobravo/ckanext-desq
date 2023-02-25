@@ -1,0 +1,20 @@
+{% ckan_extends %}
+
+{#- DESQ:
+    - Remove all tabs from the content_primary_nav block.
+-#}
+
+{% block page_header %}
+    {#- Remove content_primary_nav block (tabs). #}
+    {%- if self.content_action() | trim %}
+        <header class="module-content page-header page-header-organization">
+            <div class="content_action">
+                {%- block content_action %}
+                    {%- if h.check_access('organization_update', {'id': group_dict.id}) %}
+                        {% link_for _('Manage'), named_route=group_type+'.edit', id=group_dict.name, class_='btn btn-default', icon='wrench' %}
+                    {%- endif %}
+                {% endblock %}
+            </div>
+        </header>
+    {%- endif %}
+{% endblock %}
