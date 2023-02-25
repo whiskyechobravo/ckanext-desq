@@ -45,10 +45,10 @@
     {%- if res.description %}
         <p class="small">{{ h.markdown_extract(h.get_translated(res, 'description'), extract_length=500) }}</p>
     {%- endif %}
+    {%- if res.size %}
+        <p class="small">{{ _('File size: {}').format(h.localised_filesize(res.size)) }}</p>
+    {%- endif %}
     <div>
         <span class="label label-default" property="dc:format" data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
-        {%- if res.size %}
-            <div class="next-to-label">{{ h.localised_filesize(res.size) }}</div>
-        {%- endif %}
     </div>
 </li>
