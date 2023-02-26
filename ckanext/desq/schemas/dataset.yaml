@@ -98,7 +98,7 @@ dataset_fields:
     en: Topics
     fr: Thèmes
   preset: multiple_select
-  # TODO: display_snippet: list_inline.html
+  display_snippet: multiple_choice_unstyled.html
   required: true
   select_size: 10
   help_text:
@@ -199,7 +199,7 @@ dataset_fields:
     en: Geographical areas
     fr: Régions géographiques
   preset: multiple_select
-  # TODO: display_snippet: list_inline.html
+  display_snippet: multiple_choice_unstyled.html
   select_size: 10
   help_text:
     en: "Select every area that is present in the dataset. You may select or deselect multiple areas (ctrl+click)."
@@ -350,7 +350,7 @@ dataset_fields:
     fr: Langue du jeu de données. Vous pouvez sélectionner ou désélectionner de multiples langues (ctrl+clic).
   required: true
   select_size: 4
-  # TODO: display_snippet: list_inline.html
+  display_snippet: multiple_choice_unstyled.html
   choices:
   - label:
       en: English

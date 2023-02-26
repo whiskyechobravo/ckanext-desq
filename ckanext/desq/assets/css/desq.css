@@ -168,6 +168,12 @@ output {
 .accent {
   color: #912338;
 }
+.list-spaced li {
+  margin-top: .5em;
+}
+.list-spaced li:first-child {
+  margin-top: 0;
+}
 
 /* Page elements */
 
@@ -525,6 +531,7 @@ output {
 }
 .resource-item-heading {
   font-size: 1rem;
+  font-weight: bold;
 }
 .resource-item-actions {
   float: right;
