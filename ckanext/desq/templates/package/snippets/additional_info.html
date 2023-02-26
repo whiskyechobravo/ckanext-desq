@@ -1,7 +1,9 @@
 {#- DESQ:
     - CAUTION: This merges both package/snippets/additional_info.html from both
-      CKAN and Scheming. We could not *extend* the CKAN template because we
-      needed to override stuff that CKAN has not wrapped in a template block.
+      CKAN and Scheming. We could not extend the CKAN template because we needed
+      to override stuff that CKAN has not wrapped in a template block. We also
+      did not define block package_additional_info because we did not want
+      Scheming to then override it with its own.
     - Adapt exclude_fields list.
     - Hide empty fields.
     - Change heading style (forced to override the whole thing!).
@@ -9,14 +11,14 @@
     - Reindent code, filter whitespaces.
 -#}
 
-{% set exclude_fields = [
+{%- set exclude_fields = [
         'title_translated',
         'name',
         'notes_translated',
         'license',
         'owner_org',
     ]
-%}
+-%}
 
 <section class="additional-info">
     <h2 class="h3">{{ _('Additional Info') }}</h3>
