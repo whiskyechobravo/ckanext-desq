@@ -1,0 +1,12 @@
+{#- DESQ:
+    - Format newline-separated paragraphs as a list.
+-#}
+{%- set value = h.scheming_language_text(data[field.field_name]) %}
+{%- if value|trim %}
+    {%- set values = h.scheming_language_text(data[field.field_name]).split('\n') %}
+    <ul class="list-unstyled list-spaced">
+        {%- for value in values %}
+            <li>{{ value|trim }}</li>
+        {%- endfor %}
+    </ul>
+{%- endif %}

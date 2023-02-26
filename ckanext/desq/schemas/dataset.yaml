@@ -303,6 +303,7 @@ dataset_fields:
     en: Variables
     fr: Variables
   form_blanks: 0
+  display_snippet: variable_field.html
   repeating_subfields:
   - field_name: variable_name
     label:
@@ -326,6 +327,7 @@ dataset_fields:
       en: Member values, or value descriptions if values are codes, using the Markdown ordered list or bulleted list syntax.
       fr: Valeurs membres ou, si les valeurs sont des codes, descriptions des valeurs, en utilisant la syntaxe Markdown pour une liste ordonnée ou une liste à puces.
     form_snippet: fluent_markdown.html
+    display_snippet: newlines_to_list.html
     form_attrs:
       class: form-control
   - field_name: variable_notes

@@ -37,7 +37,6 @@
                             {{- h.scheming_language_text(field.label) -}}
                         </th>
                         <td class="dataset-details"{% if field.display_property %} property="{{ field.display_property }}"{% endif %}>
-                            {#- <p>DEBUG:  {{ field.display_snippet }}</p> #}
                             {%- snippet 'scheming/snippets/display_field.html', field=field, data=pkg_dict, schema=schema -%}
                         </td>
                     </tr>

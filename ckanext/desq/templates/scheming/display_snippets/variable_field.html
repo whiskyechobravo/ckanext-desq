@@ -1,0 +1,40 @@
+{#- DESQ:
+    - Custom display for the 'variable' field. Based on scheming/display_snippets/repeating_subfields.html.
+-#}
+
+{%- set fields = data[field.field_name] %}
+
+{%- block subfield_display %}
+    {%- for field_data in fields %}
+        {%- for subfield in field.repeating_subfields %}
+            {%- if h.scheming_language_text(field_data[subfield.field_name])|trim %} {#- Assuming fluent field. #}
+                {%- if subfield.field_name == 'variable_name' %}
+                    <p class="fw-bold">
+                        {%- snippet 'scheming/snippets/display_field.html',
+                            field=subfield,
+                            data=field_data,
+                            entity_type=entity_type,
+                            object_type=object_type
+                        -%}
+                    </p>
+                {%- elif subfield.field_name == 'variable_notes' %}
+                    <p class="mt-3">
+                        {%- snippet 'scheming/snippets/display_field.html',
+                            field=subfield,
+                            data=field_data,
+                            entity_type=entity_type,
+                            object_type=object_type
+                        -%}
+                    </p>
+                {%- else %}
+                    {%- snippet 'scheming/snippets/display_field.html',
+                        field=subfield,
+                        data=field_data,
+                        entity_type=entity_type,
+                        object_type=object_type
+                    -%}
+                {%- endif %}
+            {%- endif %}
+        {%- endfor %}
+    {%- endfor %}
+{%- endblock %}
