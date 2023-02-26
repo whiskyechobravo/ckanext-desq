@@ -38,7 +38,7 @@ dataset_fields:
 
 - field_name: catalog_number
   label:
-    en: File number or catalog number
+    en: File or catalog number
     fr: Numéro de dossier ou de catalogue
   help_text:
     en: File number or catalog number of the dataset, if applicable.
