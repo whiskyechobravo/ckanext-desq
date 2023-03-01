@@ -10,7 +10,9 @@ dataset_fields:
     fr: Titre
   preset: fluent_core_translated
   required: true
-  form_placeholder: eg. A descriptive title
+  form_placeholder:
+    en: eg. A descriptive title
+    fr: p.ex. Un titre descriptif
   form_attrs:
     class: form-control
 
@@ -22,7 +24,9 @@ dataset_fields:
   help_text:
     en: Name to use to produce a unique URL for this dataset.
     fr: Nom à utiliser pour produire un URL unique pour ce jeu de données.
-  form_placeholder: eg. my-dataset
+  form_placeholder:
+    en: eg. my-dataset
+    en: p.ex. mon-jeu-de-donnees
 
 - field_name: notes_translated
   label:
@@ -35,30 +39,6 @@ dataset_fields:
     fr: p.ex. Quelques notes utiles à propos des données
   form_attrs:
     class: form-control
-
-- field_name: catalog_number
-  label:
-    en: File or catalog number
-    fr: Numéro de dossier ou de catalogue
-  help_text:
-    en: File number or catalog number of the dataset, if applicable.
-    fr: Numéro de dossier ou de catalogue du jeu de données, s’il y a lieu.
-  form_placeholder:
-    en: eg. CO-9999
-    fr: p.ex. CO-9999
-  validators: ignore_missing unicode
-
-- field_name: series_id
-  label:
-    en: Series identifier
-    fr: Identifiant de la série
-  help_text:
-    en: Identifier of the series, or aggregate dataset, or which the dataset is a part, if applicable.
-    fr: Identifiant de la série ou du jeu de données global dont fait partie le jeu de données, s’il y a lieu.
-  form_placeholder:
-    en: eg. CO-9999
-    fr: p.ex. CO-9999
-  validators: ignore_missing unicode
 
 - field_name: census_year
   label:
@@ -348,8 +328,8 @@ dataset_fields:
     fr: Langue
   preset: multiple_select
   help_text:
-    en: Language of the dataset. You may select or deselect multiple languages (ctrl+click).
-    fr: Langue du jeu de données. Vous pouvez sélectionner ou désélectionner de multiples langues (ctrl+clic).
+    en: Language(s) present in the dataset. You may select or deselect multiple languages (ctrl+click).
+    fr: Langue(s) présentes dans le jeu de données. Vous pouvez sélectionner ou désélectionner de multiples langues (ctrl+clic).
   required: true
   select_size: 4
   display_snippet: multiple_choice_unstyled.html
@@ -370,45 +350,6 @@ dataset_fields:
       en: Not applicable
       fr: Sans objet
     value: x
-
-- field_name: license
-  label:
-    en: Licence
-    fr: Licence
-  help_text:
-    en: Licence applied to the dataset.
-    fr: Licence s’appliquant au jeu de données.
-  form_snippet: license.html
-  required: true
-
-- field_name: url
-  label:
-    en: Source website
-    fr: Page web de la source
-  form_placeholder:
-    en: eg. http://example.com/dataset
-    fr: p.ex. http://example.com/dataset
-  help_text:
-    en: URL of the webpage that describes this dataset.
-    fr: URL de la page web qui décrit ce jeu de données.
-  display_property: foaf:homepage
-  display_snippet: link.html
-  # TODO: Make this field translatable, in case the page is available in different languages?
-
-- field_name: source_notice
-  label:
-    en: Acknowledgement of source
-    fr: Mention de la source
-  preset: fluent_text
-  help_text:
-    en: Notice about the source or licence might require. Statistics Canada requires a different notice if its product has been modified; see https://www.statcan.gc.ca/en/reference/licence.
-    fr: Mention qui pourrait être requise par la source ou la licence. Statistique Canada exige une mention différente si son produit a été modifié; voyez https://www.statcan.gc.ca/fr/reference/licence.
-  form_snippet: fluent_markdown.html
-  form_placeholder:
-    en: eg. Adapted from Statistics Canada, name of product, reference date. This does not constitute an endorsement by Statistics Canada of this product.
-    fr: p.ex. Adapté de Statistique Canada, nom du produit, date de référence. Cela ne constitue pas une approbation de ce produit par Statistique Canada.
-  form_attrs:
-    class: form-control
 
 - field_name: owner_org
   label:
@@ -441,6 +382,71 @@ dataset_fields:
       fr: p.ex. http://example.com/page-du-contributeur
     form_attrs:
       class: form-control
+
+- field_name: source_notice
+  label:
+    en: Notice
+    fr: Mention
+  preset: fluent_text
+  help_text:
+    en: Notice that may be required by the author or publisher. Statistics Canada requires a specific notice if its product has been modified; see https://www.statcan.gc.ca/en/reference/licence.
+    fr: Mention qui pourrait être requise par l’auteur ou l’éditeur. Statistique Canada exige une mention particulière si son produit a été modifié; voyez https://www.statcan.gc.ca/fr/reference/licence.
+  form_snippet: fluent_markdown.html
+  form_placeholder:
+    en: eg. Adapted from Statistics Canada, name of product, reference date. This does not constitute an endorsement by Statistics Canada of this product.
+    fr: p.ex. Adapté de Statistique Canada, nom du produit, date de référence. Cela ne constitue pas une approbation de ce produit par Statistique Canada.
+  form_attrs:
+    class: form-control
+
+- field_name: url
+  label:
+    en: Source website
+    fr: Page web de la source
+  form_placeholder:
+    en: eg. http://example.com/dataset
+    fr: p.ex. http://example.com/dataset
+  help_text:
+    en: URL of the webpage that describes this dataset.
+    fr: URL de la page web qui décrit ce jeu de données.
+  display_property: foaf:homepage
+  display_snippet: link.html
+  # TODO: Make this field translatable, in case the page is available in different languages?
+
+- field_name: license
+  label:
+    en: Licence
+    fr: Licence
+  help_text:
+    en: Licence applied to the dataset.
+    fr: Licence s’appliquant au jeu de données.
+  form_snippet: license.html
+  required: true
+
+- field_name: file_number
+  label:
+    en: File number
+    fr: Numéro de fichier
+  help_text:
+    en: File number or catalog number of the dataset as provided by the author or publisher, if applicable.
+    fr: Numéro de fichier ou de catalogue du jeu de données, tel que fourni par l’auteur ou l’éditeur, s’il y a lieu.
+  form_placeholder:
+    en: eg. CO-9999
+    fr: p.ex. CO-9999
+  validators: ignore_missing unicode
+
+- field_name: section_name
+  label:
+    en: Section name
+    fr: Nom de la section
+  preset: fluent_text
+  help_text:
+    en: Section name as provided by the author or publisher, if the dataset is part of a larger whole.
+    fr: Nom de la section tel que fourni par l’auteur ou l’éditeur, si le jeu de données fait partie d’un ensemble plus grand.
+  form_placeholder:
+    en: eg. Table 1
+    fr: p.ex. Tableau 1
+  form_attrs:
+    class: form-control
 
 - field_name: date_published
   label:
