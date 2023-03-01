@@ -385,7 +385,7 @@ dataset_fields:
       class: form-control
     display_snippet: desq_link_generic.html
 
-- field_name: source_notice
+- field_name: source_notice_translated
   label:
     en: Notice
     fr: Mention
@@ -412,7 +412,7 @@ dataset_fields:
     fr: URL de la page web qui décrit ce jeu de données.
   display_property: foaf:homepage
   display_snippet: link.html
-  # TODO: Make this field translatable, in case the page is available in different languages?
+  # TODO: Make this field translatable, in case the source page is available in different languages?
 
 - field_name: license
   label:
@@ -436,7 +436,7 @@ dataset_fields:
     fr: p.ex. CO-9999
   validators: ignore_missing unicode
 
-- field_name: section_name
+- field_name: section_name_translated
   label:
     en: Section name
     fr: Nom de la section
