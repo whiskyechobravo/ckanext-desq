@@ -1,0 +1,44 @@
+{% ckan_extends %}
+
+{#- DESQ:
+    - Exclude more fields.
+    - Remove resource view section.
+    - Remove "more info" section of Additional Info table.
+    - Remove license section (it belongs to the dataset).
+-#}
+
+{% set desq_exclude_fields = [
+        'name',
+        'name_translated',
+        'description',
+        'description_translated',
+        'url',
+        'format',
+    ]
+%}
+
+{% block resource_more_items -%}
+    {#- Deliberately made empty! This block brought no value to the general user. #}
+{% endblock -%}
+
+{% block resource_fields -%}
+    {%- for field in schema.resource_fields -%}
+        {%- if field.field_name not in desq_exclude_fields and field.display_snippet is not none -%}
+            <tr>
+                <th scope="row">
+                    {{- h.scheming_language_text(field.label) -}}
+                </th>
+                <td>
+                    {%- snippet 'scheming/snippets/display_field.html', field=field, data=res, entity_type='dataset', object_type=dataset_type -%}
+                </td>
+            </tr>
+        {%- endif -%}
+    {%- endfor -%}
+{% endblock -%}
+
+{% block resource_license -%}
+{% endblock resource_license -%}
+
+{% block resource_view_content %}
+    {#- Deliberately made empty! Unused feature. #}
+{% endblock resource_view_content %}
