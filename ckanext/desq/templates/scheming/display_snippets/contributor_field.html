@@ -1,0 +1,33 @@
+{#- DESQ:
+    - Custom display for the 'contributor' field. Based on scheming/display_snippets/repeating_subfields.html.
+-#}
+
+{%- set fields = data[field.field_name] %}
+
+{%- block subfield_display %}
+    <ul class="list-unstyled list-spaced">
+        {%- for field_data in fields %}
+            <li>
+                {%- for subfield in field.repeating_subfields %}
+                    {%- if h.scheming_language_text(field_data[subfield.field_name])|trim %} {#- Assuming fluent field. #}
+                        {%- if subfield.field_name == 'contributor_url' %}
+                            ({%- snippet 'scheming/snippets/display_field.html',
+                                field=subfield,
+                                data=field_data,
+                                entity_type=entity_type,
+                                object_type=object_type
+                            -%})
+                        {%- else %}
+                            {%- snippet 'scheming/snippets/display_field.html',
+                                field=subfield,
+                                data=field_data,
+                                entity_type=entity_type,
+                                object_type=object_type
+                            -%}
+                        {%- endif %}
+                    {%- endif %}
+                {%- endfor %}
+            </li>
+        {%- endfor %}
+    </ul>
+{%- endblock %}

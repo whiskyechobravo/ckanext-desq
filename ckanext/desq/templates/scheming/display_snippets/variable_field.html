@@ -9,6 +9,7 @@
         {%- for subfield in field.repeating_subfields %}
             {%- if h.scheming_language_text(field_data[subfield.field_name])|trim %} {#- Assuming fluent field. #}
                 {%- if subfield.field_name == 'variable_name' %}
+                    {#- TODO: More semantic markup. #}
                     <p class="fw-bold">
                         {%- snippet 'scheming/snippets/display_field.html',
                             field=subfield,

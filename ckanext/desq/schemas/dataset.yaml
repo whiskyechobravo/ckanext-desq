@@ -362,6 +362,7 @@ dataset_fields:
     en: Authors and contributors
     fr: Auteurs et contributeurs
   form_blanks: 0
+  display_snippet: contributor_field.html
   repeating_subfields:
   - field_name: contributor_name
     label:
@@ -382,6 +383,7 @@ dataset_fields:
       fr: p.ex. http://example.com/page-du-contributeur
     form_attrs:
       class: form-control
+    display_snippet: desq_link_generic.html
 
 - field_name: source_notice
   label:

@@ -1,0 +1,11 @@
+{#- DESQ:
+    - Custom display for the 'contributor_url' field.
+        - Based on fluent/templates/scheming/display_snippets/fluent_link.html.
+        - Use "website" as the link text.
+-#}
+
+{{- h.link_to(_("website"),
+    url=h.scheming_language_text(data[field.field_name]),
+    rel=field.display_property,
+    target='_blank',
+    **field.get('display_attributes', {}) ) -}}
