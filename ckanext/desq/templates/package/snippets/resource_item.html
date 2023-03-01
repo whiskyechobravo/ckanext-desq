@@ -37,10 +37,10 @@
         </div>
     {%- endblock %}
     <p>
-        <a class="resource-item-heading" href="{{ url }}" title="{{ res.name or res.description }}">
+        <span class="resource-item-heading">
             {{ h.resource_display_name(res) }}
             {{ h.popular('views', res.tracking_summary.total, min=10) if res.tracking_summary }}
-        </a>
+        </span>
     </p>
     {%- if res.description %}
         <p class="small">{{ h.markdown_extract(h.get_translated(res, 'description'), extract_length=500) }}</p>
