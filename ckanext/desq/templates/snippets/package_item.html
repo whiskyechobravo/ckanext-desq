@@ -1,17 +1,20 @@
 {% ckan_extends %}
 
 {#- DESQ:
+    - Display translated title and description.
     - Avoid truncating titles.
     - Allow longer descriptions.
     - Show nothing when no description is available.
 -#}
 
+{% set dataset_title = h.dataset_display_name(package) or package.name %}
+
 {% block heading_title %}
-    {{ h.link_to(title, h.url_for('%s.read' % package.type, id=package.name)) }}
+    {{ h.link_to(dataset_title, h.url_for('%s.read' % package.type, id=package.name)) }}
 {% endblock %}
 
 {% block notes %}
-    {%- set notes = h.markdown_extract(package.notes, extract_length=500) %}
+    {%- set notes = h.markdown_extract(h.get_translated(package, 'notes'), extract_length=500) %}
     {%- if notes %}
         <div>{{ notes|urlize }}</div>
     {%- endif %}
