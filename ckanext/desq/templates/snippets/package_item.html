@@ -20,3 +20,9 @@
         <div>{{ notes }}</div>
     {%- endif %}
 {% endblock %}
+
+{% block resources_inner %}
+    {% for format in h.dict_list_reduce(package.resources, 'format') %}
+        <li><span class="label label-default">{{ format }}</span></li>
+    {% endfor %}
+{% endblock %}
