@@ -4,6 +4,14 @@
     - Remove all tabs from the content_primary_nav block.
 -#}
 
+{% set title = h.get_translated(group_dict, "title") %}
+{% set title_abbr = h.get_translated(group_dict, "title_abbr") %}
+
+{% block breadcrumb_content %}
+    <li>{% link_for _('Organizations'), named_route=group_type+'.index' %}</li>
+    <li class="active">{% link_for title_abbr or title, named_route=group_type+'.read', id=group_dict.name %}</li>
+{% endblock %}
+
 {% block page_header %}
     {#- Remove content_primary_nav block (tabs). #}
     {%- if self.content_action() | trim %}
