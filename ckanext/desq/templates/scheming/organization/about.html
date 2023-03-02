@@ -21,10 +21,9 @@
 {% set schema = h.scheming_get_organization_schema(group_type) -%}
 
 {% block primary_content_inner %}
-    {%- with title = h.get_translated(c.group_dict, "title"),
-        title_abbr = h.get_translated(c.group_dict, "title_abbr") %}
-        <h1>{{ title }}{% if title_abbr|trim %} ({{ title_abbr }}){% endif %}</h1>
-    {%- endwith %}
+    {%- set title = h.get_translated(c.group_dict, "title") %}
+    {%- set title_abbr = h.get_translated(c.group_dict, "title_abbr") %}
+    <h1>{{ title }}{% if title_abbr|trim %} ({{ title_abbr }}){% endif %}</h1>
     <dl>
         {%- for field in schema.fields %}
             {%- if field.field_name not in exclude_fields and field.display_snippet is not none and c.group_dict[field.field_name] %}
@@ -37,4 +36,7 @@
             {%- endif %}
         {%- endfor %}
     </dl>
+    {%- with search_url = h.url_for(group_type ~ '.read', id=group_dict['name']) %}
+        <p><a href="{{ search_url }}">{{ _('View datasets in DESQ') }}</a></p>
+    {%- endwith %}
 {% endblock primary_content_inner %}
