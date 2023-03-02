@@ -16,7 +16,7 @@ fields:
   form_attrs:
     class: form-control
 
-- field_name: title_abbr
+- field_name: title_abbr_translated
   label:
     en: Abbreviation
     fr: Abréviation
@@ -40,10 +40,50 @@ fields:
   form_snippet: slug.html
   validators: not_empty unicode_safe name_validator group_name_validator
 
-- field_name: description_translated
-  label: Description
-  preset: fluent_core_translated
-  form_snippet: fluent_markdown.html
+- field_name: founded
+  label:
+    en: Founded
+    fr: Fondation
+  form_placeholder:
+    en: eg. 2021
+    fr: p.ex. 2021
+  validators: ignore_missing desq_is_year
+  form_attrs:
+    class: form-control
+
+- field_name: constituents_translated
+  label:
+    en: Constituents
+    fr: Public cible
+  preset: fluent_markdown
+  form_attrs:
+    class: form-control
+
+- field_name: website_translated
+  label:
+    en: Website
+    fr: Site web
+  preset: fluent_link
+  form_placeholder:
+    en: eg. http://example.com/
+    fr: p.ex. http://example.com/
+  display_property: foaf:homepage
+  form_attrs:
+    class: form-control
+
+- field_name: activities_translated
+  label:
+    en: Activities
+    fr: Activités
+  preset: fluent_markdown
+  form_attrs:
+    class: form-control
+
+- field_name: other_names_translated
+  label:
+    en: Former or alternate names
+    fr: Anciens ou autres noms
+  preset: fluent_markdown
   form_attrs:
     class: form-control
 
@@ -51,14 +91,3 @@ fields:
   label: Image URL
   preset: organization_url_upload
   form_placeholder: http://example.com/org-logo.jpg
-
-- field_name: website
-  label:
-    en: Website
-    fr: Site web
-  form_placeholder:
-    en: eg. http://example.com/
-    fr: p.ex. http://example.com/
-  display_property: foaf:homepage
-  display_snippet: link.html
-  # TODO: Make this field translatable, in case the page is available in different languages?

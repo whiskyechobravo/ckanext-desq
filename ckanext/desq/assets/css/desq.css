@@ -139,6 +139,9 @@ a {
 p {
   margin: 0 0 1em;
 }
+dd {
+  margin-bottom: 1em;
+}
 .mb-0 {
   margin-bottom: 0;
 }

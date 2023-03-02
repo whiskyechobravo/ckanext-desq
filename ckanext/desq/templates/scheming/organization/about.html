@@ -1,0 +1,40 @@
+{% ckan_extends %}
+
+{#- DESQ:
+    - Add proper page heading.
+    - Adapt to use scheming fields.
+    - Exclude some fields.
+-#}
+
+{% set exclude_fields = [
+        'name',
+        'title',
+        'title_translated',
+        'title_abbr_translated',
+        'org_contact',
+        'url',
+        'description',
+        'description_translated'
+    ]
+%}
+
+{% set schema = h.scheming_get_organization_schema(group_type) -%}
+
+{% block primary_content_inner %}
+    {%- with title = h.get_translated(c.group_dict, "title"),
+        title_abbr = h.get_translated(c.group_dict, "title_abbr") %}
+        <h1>{{ title }}{% if title_abbr|trim %} ({{ title_abbr }}){% endif %}</h1>
+    {%- endwith %}
+    <dl>
+        {%- for field in schema.fields %}
+            {%- if field.field_name not in exclude_fields and field.display_snippet is not none and c.group_dict[field.field_name] %}
+                <dt>
+                    {{- h.scheming_language_text(field.label) -}}
+                </dt>
+                <dd {% if field.display_property %}property="{{ field.display_property }}"{% endif %}>
+                    {%- snippet 'scheming/snippets/display_field.html', field=field, data=c.group_dict, schema=schema -%}
+                </dd>
+            {%- endif %}
+        {%- endfor %}
+    </dl>
+{% endblock primary_content_inner %}
