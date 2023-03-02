@@ -514,6 +514,9 @@ output {
 .dataset-details {
   width: auto !important;
 }
+.dataset-details p:last-child {
+  margin-bottom: 0;
+}
 @media (min-width: 992px) {
   .dataset-label {
     width: 30% !important;

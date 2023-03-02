@@ -389,7 +389,7 @@ dataset_fields:
   label:
     en: Notice
     fr: Mention
-  preset: fluent_text
+  preset: fluent_markdown
   help_text:
     en: Notice that may be required by the author or publisher. Statistics Canada requires a specific notice if its product has been modified; see https://www.statcan.gc.ca/en/reference/licence.
     fr: Mention qui pourrait être requise par l’auteur ou l’éditeur. Statistique Canada exige une mention particulière si son produit a été modifié; voyez https://www.statcan.gc.ca/fr/reference/licence.
