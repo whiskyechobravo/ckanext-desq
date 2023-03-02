@@ -1,0 +1,19 @@
+{% ckan_extends %}
+
+{#- DESQ:
+    - Make breadcrumb consistent with the dataset breadcrumb (see package/read_base.html).
+-#}
+
+{% block breadcrumb_content %}
+    {%- if pkg %}
+        {%- set dataset = h.dataset_display_name(pkg) %}
+        <li>{% link_for _("Datasets"), named_route=dataset_type ~ '.search' %}</li>
+        <li {{ self.breadcrumb_content_selected() }}>{% link_for dataset|truncate(40), named_route=pkg.type ~ '.read', id=pkg.id if is_activity_archive else pkg.name %}</li>
+    {%- else %}
+        <li>{% link_for _("Datasets"), named_route=dataset_type ~ '.search' %}</li>
+        <li class="active"><a href="">{{ _('Create Dataset') }}</a></li>
+    {%- endif %}
+    <li class="active"><a href="">{{ h.resource_display_name(res)|truncate(40) }}</a></li>
+{% endblock %}
+
+{# TODO: Show translated description. For now we don't care because we never link to resource pages. #}

@@ -8,9 +8,23 @@
     - Replace g.site_name with translatable string.
     - Remove all tabs from the content_primary_nav block.
     - Remove package info.
+    - Use plural "Datasets" string literal in breadcrumb (instead of singular dataset_type.title()).
+    - Remove organization from breadcrumb.
+    - Truncate dataset title a bit less in breadcrumb.
 -#}
 
 {%- block subtitle %}{{ h.dataset_display_name(pkg) }} {{ g.template_title_delimiter }} {{ super() }}{% endblock %}
+
+{% block breadcrumb_content %}
+    {%- if pkg %}
+        {%- set dataset = h.dataset_display_name(pkg) %}
+        <li>{% link_for _("Datasets"), named_route=dataset_type ~ '.search' %}</li>
+        <li {{ self.breadcrumb_content_selected() }}>{% link_for dataset|truncate(40), named_route=pkg.type ~ '.read', id=pkg.id if is_activity_archive else pkg.name %}</li>
+    {%- else %}
+        <li>{% link_for _("Datasets"), named_route=dataset_type ~ '.search' %}</li>
+        <li class="active"><a href="">{{ _('Create Dataset') }}</a></li>
+    {%- endif %}
+{% endblock %}
 
 {%- block head_extras -%}
     {{ super() }}
