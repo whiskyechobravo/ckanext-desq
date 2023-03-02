@@ -5,6 +5,7 @@
     - Avoid truncating titles.
     - Allow longer descriptions.
     - Show nothing when no description is available.
+    - Do not urlize description.
 -#}
 
 {% set dataset_title = h.dataset_display_name(package) or package.name %}
@@ -16,6 +17,6 @@
 {% block notes %}
     {%- set notes = h.markdown_extract(h.get_translated(package, 'notes'), extract_length=500) %}
     {%- if notes %}
-        <div>{{ notes|urlize }}</div>
+        <div>{{ notes }}</div>
     {%- endif %}
 {% endblock %}
