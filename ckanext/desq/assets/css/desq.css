@@ -290,14 +290,22 @@ output {
 /* Header and main navigation */
 
 .main-nav {
-  margin-bottom: 0;
+  margin: 0;
   border: 0;
+  font-family: "GillSansMTPro", Arial, Helvetica, "Helvetica Neue", sans-serif;
+  font-size: initial;
   color: #fff;
   background: #353535;
 }
-.main-nav {
-  font-family: "GillSansMTPro", Arial, Helvetica, "Helvetica Neue", sans-serif;
-  font-size: initial;
+.main-nav .navbar-nav {
+  margin: 0 0 0 -15px;
+  padding-left: 3px;
+}
+.main-nav .navbar-right {
+  margin-right: 0;
+}
+.main-nav .navbar-collapse {
+  border-top: 0;
 }
 .main-nav li > a {
   padding: 20px 12px;
@@ -312,13 +320,6 @@ output {
 .main-nav li > a:hover {
   color: #4b4b4b !important;
   background: #fff;
-}
-.main-nav .navbar-nav {
-  margin-left: -15px;
-  padding-left: 3px;
-}
-.main-nav .navbar-right {
-  margin-right: 0;
 }
 .main-nav .language-selector li > a {
   padding: 20px;
