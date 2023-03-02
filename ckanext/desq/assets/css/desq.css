@@ -479,9 +479,10 @@ output {
   margin-bottom: 0;
 }
 
-/* Dataset search */
+/* Dataset, organization search */
 
-.dataset-heading {
+.dataset-heading,
+.organization-heading {
   font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
   font-size: 1.25rem;
 }
@@ -544,4 +545,14 @@ output {
 }
 .resource-item-actions {
   float: right;
+}
+
+/* Media grid */
+
+.media-grid {
+  border: 0;
+  margin-left: -15px;
+}
+.media-item {
+  width: calc(50% - 15px); /* Double the default width */
 }

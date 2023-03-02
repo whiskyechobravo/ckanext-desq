@@ -1,0 +1,18 @@
+{% ckan_extends %}
+
+{#- DESQ:
+    - Get translated organization title and abbreviation.
+    - Change heading style.
+    - Remove description.
+-#}
+
+{% set title = h.get_translated(organization, "title") %}
+{% set title_abbr = h.get_translated(organization, "title_abbr") %}
+
+{% block title %}
+    <h2 class="organization-heading">{{ title }}{% if title_abbr|trim %} ({{ title_abbr }}){% endif %}</h2>
+{% endblock %}
+
+{% block description %}
+    {# Deliberately made empty! #}
+{% endblock %}
