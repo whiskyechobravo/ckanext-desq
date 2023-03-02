@@ -16,3 +16,9 @@
 {% block description %}
     {# Deliberately made empty! #}
 {% endblock %}
+
+{% block link %}
+    <a href="{{ url }}" title="{{ _('View datasets from {}').format(title) }}" class="media-view">
+        <span>{{ _('View datasets from {}').format(title) }}</span>
+    </a>
+{% endblock %}
