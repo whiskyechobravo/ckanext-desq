@@ -18,7 +18,7 @@
 {% endblock %}
 
 {% block link %}
-    <a href="{{ url }}" title="{{ _('View datasets from {}').format(title) }}" class="media-view">
-        <span>{{ _('View datasets from {}').format(title) }}</span>
+    <a href="{{ url }}" title="{{ _('View datasets from {}').format(title) }}{% if title_abbr|trim %} ({{ title_abbr }}){% endif %}" class="media-view">
+        <span>{{ _('View datasets from {}').format(title) }}{% if title_abbr|trim %} ({{ title_abbr }}){% endif %}</span>
     </a>
 {% endblock %}
