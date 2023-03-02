@@ -28,7 +28,7 @@
 
 {%- block head_extras -%}
     {{ super() }}
-    {%- set description = h.markdown_extract(pkg.notes, extract_length=200)|forceescape %}
+    {%- set description = h.markdown_extract(pkg.notes, extract_length=200) %}
     <meta property="og:title" content="{{ h.dataset_display_name(pkg) }} - {{ _('Data Portal on English-Speaking Quebec') }}">
     <meta property="og:description" content="{{ description|forceescape|trim }}">
 {%- endblock -%}
