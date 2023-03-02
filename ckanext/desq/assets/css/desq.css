@@ -305,12 +305,12 @@ output {
   background: transparent;
   text-transform: uppercase;
 }
-.main-nav .active a {
-  color: #fff;
+.main-nav li.active > a {
+  color: #fff !important;
   background: #6e6e6e;
 }
-.main-nav a:hover {
-  color: #4b4b4b;
+.main-nav li > a:hover {
+  color: #4b4b4b !important;
   background: #fff;
 }
 .main-nav .navbar-nav {
@@ -326,6 +326,7 @@ output {
   background: #000;
 }
 .main-nav .language-selector li > a:hover {
+  color: #fff !important;
   background: #1d1d1d;
 }
 .account-masthead {
