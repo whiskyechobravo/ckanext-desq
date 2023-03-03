@@ -110,6 +110,7 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
             # TODO: 'desq_get_language': helpers.get_language,
             'desq_get_license': helpers.get_license,
             'desq_dataset_field_choices': helpers.get_dataset_field_choices,
+            'desq_get_full_organization_title': helpers.get_full_organization_title,
         }
 
     # IPackageController

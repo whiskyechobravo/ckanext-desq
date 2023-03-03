@@ -1,6 +1,6 @@
 {#- DESQ:
     - Change layout (thus having to override the whole file).
-    - Show labels instead of facet values in breadbox.
+    - Show translated labels instead of facet values in breadbox.
     - Show filter list facets in separate blocks (instead of all inline).
     - Move sort selector next to search heading.
 -#}
@@ -49,6 +49,14 @@
                                 {%- else -%}
                                     {%- if field == 'license' %}
                                         {{ h.get_translated(h.desq_get_license(value), 'title') }}
+                                    {%- elif field == "organization" %}
+                                        {%- with organization = h.get_organization(value) %}
+                                            {%- if organization %}
+                                                {{ h.desq_get_full_organization_title(organization) }}
+                                            {%- else %}
+                                                {{ h.list_dict_filter(search_facets_items, 'name', 'display_name', value) }}
+                                            {%- endif %}
+                                        {%- endwith %}
                                     {%- elif field_choices %}
                                         {{ h.scheming_choices_label(field_choices, value) }}
                                     {%- else %}

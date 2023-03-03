@@ -2,6 +2,7 @@
 
 {#- DESQ: Block modified in order to:
     - Provide translated field choices from facet value.
+    - Provide translated organization names.
  #}
 {% block facet_list_items %}
     {%- with items = items or h.get_facet_items_dict(name, search_facets or c.search_facets) %}
@@ -14,6 +15,12 @@
                     {%- for item in items %}
                         {%- if name == "license" %}
                             {%- do item.update({'display_name': h.get_translated(h.desq_get_license(item.name), 'title')}) %}
+                        {%- elif name == "organization" %}
+                            {%- with organization = h.get_organization(item.name) %}
+                                {%- if organization %}
+                                    {%- do item.update({'display_name': h.desq_get_full_organization_title(organization)})%}
+                                {%- endif %}
+                            {%- endwith %}
                         {%- elif choices %}
                             {%- do item.update({'display_name': h.scheming_choices_label(choices, item.name)}) %}
                         {%- endif %}
