@@ -3,6 +3,7 @@
 {#- DESQ: Block modified in order to:
     - Provide translated field choices from facet value.
     - Provide translated organization names.
+    - Sort facet items alpgabetically (except for census_year, whose order is reversed).
 -#}
 
 {% block facet_list_items %}
@@ -13,6 +14,7 @@
                     {%- if name in ['data_type', 'topic', 'geo_area', 'language'] %}
                         {%- set choices = h.desq_dataset_field_choices(name) %}
                     {%- endif %}
+                    {#- Update display_name in each item #}
                     {%- for item in items %}
                         {%- if name == "license" %}
                             {%- do item.update({'display_name': h.get_translated(h.desq_get_license(item.name), 'title')}) %}
@@ -25,6 +27,9 @@
                         {%- elif choices %}
                             {%- do item.update({'display_name': h.scheming_choices_label(choices, item.name)}) %}
                         {%- endif %}
+                    {%- endfor %}
+                    {#- Render the item as a filter #}
+                    {%- for item in items|sort(attribute='display_name', reverse=(name == 'census_year')) %}
                         {%- set href = h.remove_url_param(name, item.name, extras=extras, alternative_url=alternative_url) if item.active else h.add_url_param(new_params={name: item.name}, extras=extras, alternative_url=alternative_url) %}
                         {%- set label = label_function(item) if label_function else item.display_name %}
                         {%- set count = count_label(item['count']) if count_label else ('%d' % item['count']) %}
