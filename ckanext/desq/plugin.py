@@ -4,15 +4,16 @@ import json
 from collections import OrderedDict
 
 from ckan import plugins
-from ckan.plugins import toolkit
 from ckan.lib.plugins import DefaultTranslation
+from ckan.plugins import toolkit
 
+from ckanext.desq import helpers, jinja
 from ckanext.desq import validators as desq_validators
-from ckanext.desq import helpers
 
 
 class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
+    plugins.implements(plugins.IMiddleware)
     plugins.implements(plugins.IPluginObserver)
     plugins.implements(plugins.IValidators)
     plugins.implements(plugins.IFacets)
@@ -27,6 +28,17 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'desq')
         toolkit.add_resource('assets', 'desq')
+
+    # IMiddleware
+    # Guide: https://docs.ckan.org/en/2.9/extensions/plugin-interfaces.html#ckan.plugins.interfaces.IMiddleware
+
+    def make_middleware(self, app, config):
+        app.jinja_env.filters['humansort'] = jinja.do_humansort
+        app.jinja_env.filters['dicthumansort'] = jinja.do_dicthumansort
+        return app
+
+    def make_error_log_middleware(self, app, config):
+        return app
 
     # IValidators
     # Guide: https://docs.ckan.org/en/2.9/extensions/adding-custom-fields.html#custom-validators
