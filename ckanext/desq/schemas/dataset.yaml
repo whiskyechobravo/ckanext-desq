@@ -369,7 +369,7 @@ dataset_fields:
       en: Name
       fr: Nom
     preset: fluent_text
-    # TODO: display_property: dc:contributor
+    # TODO: display_property: dc:contributor. But need to make sure that the display_snippet uses it.
     form_attrs:
       class: form-control
     form_placeholder:
