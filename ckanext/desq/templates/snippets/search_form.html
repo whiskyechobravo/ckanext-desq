@@ -52,7 +52,7 @@
                                     {%- elif field == "organization" %}
                                         {%- with organization = h.get_organization(value) %}
                                             {%- if organization %}
-                                                {{ h.desq_get_full_organization_title(organization) }}
+                                                {{ h.desq_organization_title(organization) }}
                                             {%- else %}
                                                 {{ h.list_dict_filter(search_facets_items, 'name', 'display_name', value) }}
                                             {%- endif %}

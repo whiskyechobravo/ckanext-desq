@@ -19,17 +19,15 @@
 %}
 
 {% set schema = h.scheming_get_organization_schema(group_type) -%}
-{% set title = h.get_translated(c.group_dict, "title") %}
-{% set title_abbr = h.get_translated(c.group_dict, "title_abbr") %}
 
 {% block breadcrumb_content %}
     <li>{% link_for _('Organizations'), named_route=group_type+'.index' %}</li>
-    <li>{% link_for title_abbr or title, named_route=group_type+'.read', id=group_dict.name %}</li>
+    <li>{% link_for h.desq_organization_abbr_or_title(c.group_dict), named_route=group_type+'.read', id=group_dict.name %}</li>
     <li class="active">{{ _("About") }}</li>
 {% endblock %}
 
 {% block primary_content_inner %}
-    <h1>{{ title }}{% if title_abbr|trim %} ({{ title_abbr }}){% endif %}</h1>
+    <h1>{{ h.desq_organization_title(c.group_dict) }}</h1>
     <dl>
         {%- for field in schema.fields %}
             {%- if field.field_name not in exclude_fields and field.display_snippet is not none and c.group_dict[field.field_name] %}

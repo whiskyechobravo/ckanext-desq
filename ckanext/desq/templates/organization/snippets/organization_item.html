@@ -6,11 +6,10 @@
     - Remove description.
 -#}
 
-{% set title = h.get_translated(organization, "title") or organization.name %}
-{% set title_abbr = h.get_translated(organization, "title_abbr") %}
+{% set title = h.desq_organization_title(organization) %}
 
 {% block title %}
-    <h2 class="organization-heading">{{ title }}{% if title_abbr|trim %} ({{ title_abbr }}){% endif %}</h2>
+    <h2 class="organization-heading">{{ title }}</h2>
 {% endblock %}
 
 {% block description %}
@@ -18,7 +17,7 @@
 {% endblock %}
 
 {% block link %}
-    <a href="{{ url }}" title="{{ _('View datasets from {}').format(title) }}{% if title_abbr|trim %} ({{ title_abbr }}){% endif %}" class="media-view">
-        <span>{{ _('View datasets from {}').format(title) }}{% if title_abbr|trim %} ({{ title_abbr }}){% endif %}</span>
+    <a href="{{ url }}" title="{{ _('View datasets from {}').format(title) }}" class="media-view">
+        <span>{{ _('View datasets from {}').format(title) }}</span>
     </a>
 {% endblock %}

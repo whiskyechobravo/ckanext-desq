@@ -105,12 +105,10 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
 
     def get_helpers(self):
         return {
-            # TODO: 'desq_get_topic': helpers.get_topic,
-            # TODO: 'desq_get_geo_area': helpers.get_geo_area,
-            # TODO: 'desq_get_language': helpers.get_language,
             'desq_get_license': helpers.get_license,
             'desq_dataset_field_choices': helpers.get_dataset_field_choices,
-            'desq_get_full_organization_title': helpers.get_full_organization_title,
+            'desq_organization_title': helpers.get_organization_title,
+            'desq_organization_abbr_or_title': helpers.get_organization_abbr_or_title,
         }
 
     # IPackageController

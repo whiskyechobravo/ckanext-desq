@@ -5,14 +5,11 @@
     - Use translated organization title and abbreviation in meta title.
 -#}
 
-{% set title = h.get_translated(group_dict, "title") or group_dict.name %}
-{% set title_abbr = h.get_translated(group_dict, "title_abbr") %}
-
-{% block subtitle %}{{ title }}{% if title_abbr %} ({{ title_abbr }}){% endif %} {{ g.template_title_delimiter }} {{ _('Organizations') }}{% endblock %}
+{% block subtitle %}{{ h.desq_organization_title(group_dict) }} {{ g.template_title_delimiter }} {{ _('Organizations') }}{% endblock %}
 
 {% block breadcrumb_content %}
     <li>{% link_for _('Organizations'), named_route=group_type+'.index' %}</li>
-    <li class="active">{% link_for title_abbr or title, named_route=group_type+'.read', id=group_dict.name %}</li>
+    <li class="active">{% link_for h.desq_organization_abbr_or_title(group_dict), named_route=group_type+'.read', id=group_dict.name %}</li>
 {% endblock %}
 
 {% block page_header %}

@@ -17,10 +17,18 @@ def get_dataset_field_choices(field_name):
         return scheming_field_choices(field)
 
 
-def get_full_organization_title(organization):
-    """Return the translated organization name, including the abbreviation if applicable."""
-    title = get_translated(organization, 'title') or organization.get('name', '')
-    title_abbr = get_translated(organization, 'title_abbr')
+def get_organization_title(organization):
+    """Return the organization's translated name, including the abbreviation if applicable."""
+    title = get_translated(organization, 'title').strip() or organization.get('name', '')
+    title_abbr = get_translated(organization, 'title_abbr').strip()
     if title_abbr:
         return f"{title} ({title_abbr})"
     return title
+
+
+def get_organization_abbr_or_title(organization):
+    """Return the organization's translated abbreviation, or available, otherwise return its name."""
+    title_abbr = get_translated(organization, 'title_abbr').strip()
+    if title_abbr:
+        return title_abbr
+    return get_translated(organization, 'title').strip() or organization.get('name', '')

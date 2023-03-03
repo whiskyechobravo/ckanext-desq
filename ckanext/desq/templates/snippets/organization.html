@@ -8,11 +8,8 @@
     - Customize the "read more" link (now "About").
 -#}
 
-{% set title = h.get_translated(organization, "title") or organization.name %}
-{% set title_abbr = h.get_translated(organization, "title_abbr") %}
-
 {% block heading %}
-    <h1 class="heading">{{ title }}{% if title_abbr|trim %} ({{ title_abbr }}){% endif %}
+    <h1 class="heading">{{ h.desq_organization_title(organization) }}
         {%- if organization.state == 'deleted' %}
             [{{ _('Deleted') }}]
         {%- endif -%}
