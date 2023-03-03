@@ -428,7 +428,7 @@ msgstr ""
 
 #: ckanext/desq/templates/organization/read.html:25
 msgid "Search this organization's datasets..."
-msgstr "Rechercher les jeux de données de cette organisation"
+msgstr "Rechercher les jeux de données de cette organisation..."
 
 #: ckanext/desq/templates/organization/read_base.html:25
 #: ckanext/desq/templates/package/read_base.html:44
