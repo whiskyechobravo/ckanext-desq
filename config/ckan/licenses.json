@@ -1,0 +1,373 @@
+[
+  {
+    "domain_content": false,
+    "domain_data": false,
+    "domain_software": false,
+    "family": "",
+    "id": "notspecified",
+    "is_generic": true,
+    "maintainer": "",
+    "od_conformance": "not reviewed",
+    "osd_conformance": "not reviewed",
+    "status": "active",
+    "title": "Licence not specified",
+    "title_translated": {
+      "en": "Licence not specified",
+      "fr": "Licence non spécifiée"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "",
+    "url_translated": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "domain_content": true,
+    "domain_data": true,
+    "domain_software": true,
+    "family": "",
+    "id": "ca-statcan-ol-lo",
+    "is_generic": false,
+    "maintainer": "",
+    "od_conformance": false,
+    "osd_conformance": false,
+    "status": "active",
+    "title": "Statistics Canada Open Licence",
+    "title_translated": {
+      "en": "Statistics Canada Open Licence",
+      "fr": "Licence ouverte de Statistique Canada"
+    },
+    "description": "Statistics Canada hereby grants you the permission to use, reproduce, publish, freely distribute or sell information covered by the Statistics Canada Open Licence. In any use of this information, you must adhere to the conditions of the Statistics Canada Open Licence. If you do not agree to these terms, you may not use the information.",
+    "description_translated": {
+      "en": "Statistics Canada hereby grants you the permission to use, reproduce, publish, freely distribute or sell information covered by the Statistics Canada Open Licence. In any use of this information, you must adhere to the conditions of the Statistics Canada Open Licence. If you do not agree to these terms, you may not use the information.",
+      "fr": "Statistique Canada vous accorde la permission d’utiliser, de reproduire, de publier, de diffuser gratuitement ou de vendre l’information régie par la licence ouverte de Statistique Canada. Lors de toute utilisation de cette information, vous devez adhérer aux conditions de la licence ouverte de Statistique Canada. Si vous n’acceptez pas ces conditions, il ne vous est pas permis d’utiliser l’information."
+    },
+    "url": "https://www.statcan.gc.ca/en/reference/licence",
+    "url_translated": {
+      "en": "https://www.statcan.gc.ca/en/reference/licence",
+      "fr": "https://www.statcan.gc.ca/fr/reference/licence"
+    }
+  },
+  {
+    "domain_content": true,
+    "domain_data": true,
+    "domain_software": false,
+    "family": "",
+    "id": "ca-ogl-lgo",
+    "od_conformance": false,
+    "osd_conformance": false,
+    "maintainer": "",
+    "status": "active",
+    "title": "Open Government Licence - Canada",
+    "title_translated": {
+      "en": "Open Government Licence - Canada",
+      "fr": "Licence du gouvernement ouvert - Canada"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "https://open.canada.ca/en/open-government-licence-canada",
+    "url_translated": {
+      "en": "https://open.canada.ca/en/open-government-licence-canada",
+      "fr": "https://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada"
+    }
+  },
+  {
+    "domain_content": true,
+    "domain_data": true,
+    "domain_software": true,
+    "family": "",
+    "id": "CC0-1.0",
+    "maintainer": "Creative Commons",
+    "od_conformance": "approved",
+    "osd_conformance": "not reviewed",
+    "status": "active",
+    "title": "CC0 1.0 Universal - Public Domain Dedication",
+    "title_translated": {
+      "en": "CC0 1.0 Universal, Public Domain Dedication",
+      "fr": "CC0 1.0 universel, Transfert dans le domaine public"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url_translated": {
+      "en": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "fr": "https://creativecommons.org/publicdomain/zero/1.0/deed.fr"
+    }
+  },
+  {
+    "domain_content": true,
+    "domain_data": true,
+    "domain_software": false,
+    "family": "",
+    "id": "CC-BY-4.0",
+    "maintainer": "Creative Commons",
+    "od_conformance": "approved",
+    "osd_conformance": "not reviewed",
+    "status": "active",
+    "title": "Creative Commons Attribution 4.0",
+    "title_translated": {
+      "en": "Creative Commons Attribution 4.0",
+      "fr": "Creative Commons Attribution 4.0"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "url_translated": {
+      "en": "https://creativecommons.org/licenses/by/4.0/",
+      "fr": "https://creativecommons.org/licenses/by/4.0/deed.fr"
+    }
+  },
+  {
+    "domain_content": true,
+    "domain_data": true,
+    "domain_software": false,
+    "family": "",
+    "id": "CC-BY-SA-4.0",
+    "maintainer": "Creative Commons",
+    "od_conformance": "approved",
+    "osd_conformance": "not reviewed",
+    "status": "active",
+    "title": "Creative Commons Attribution Share-Alike 4.0",
+    "title_translated": {
+      "en": "Creative Commons Attribution Share-Alike 4.0",
+      "fr": "Creative Commons Attribution, partage dans les mêmes conditions 4.0"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "url_translated": {
+      "en": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "fr": "https://creativecommons.org/licenses/by-sa/4.0/deed.fr"
+    }
+  },
+  {
+    "domain_content": true,
+    "domain_data": true,
+    "domain_software": false,
+    "family": "Creative Commons",
+    "id": "CC-BY-NC-4.0",
+    "maintainer": "Creative Commons",
+    "od_conformance": "rejected",
+    "osd_conformance": "not reviewed",
+    "status": "active",
+    "title": "Creative Commons Attribution-NonCommercial 4.0",
+    "title_translated": {
+      "en": "Creative Commons Attribution-NonCommercial 4.0",
+      "fr": "Creative Commons Attribution, pas d’utilisation commerciale 4.0"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "url_translated": {
+      "en": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "fr": "https://creativecommons.org/licenses/by-nc/4.0/deed.fr"
+    }
+  },
+  {
+    "domain_content": true,
+    "domain_data": true,
+    "domain_software": false,
+    "family": "Creative Commons",
+    "id": "CC-BY-ND-4.0",
+    "maintainer": "Creative Commons",
+    "od_conformance": "rejected",
+    "osd_conformance": "not reviewed",
+    "status": "active",
+    "title": "Attribution-NoDerivatives 4.0",
+    "title_translated": {
+      "en": "Attribution-NoDerivatives 4.0",
+      "fr": "Attribution, pas d'œuvre dérivée 4.0"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "https://creativecommons.org/licenses/by-nd/4.0/",
+    "url_translated": {
+      "en": "https://creativecommons.org/licenses/by-nd/4.0/",
+      "fr": "https://creativecommons.org/licenses/by-nd/4.0/deed.fr"
+    }
+  },
+  {
+    "domain_content": true,
+    "domain_data": true,
+    "domain_software": false,
+    "family": "Creative Commons",
+    "id": "CC-BY-NC-ND-4.0",
+    "maintainer": "Creative Commons",
+    "od_conformance": "rejected",
+    "osd_conformance": "not reviewed",
+    "status": "active",
+    "title": "Attribution-NonCommercial-NoDerivatives 4.0 ",
+    "title_translated": {
+      "en": "Attribution-NonCommercial-NoDerivatives 4.0",
+      "fr": "Attribution, utilisation non commerciale, pas d'œuvre dérivée 4.0"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "url_translated": {
+      "en": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "fr": "https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr"
+    }
+  },
+  {
+    "domain_content": true,
+    "domain_data": false,
+    "domain_software": false,
+    "family": "",
+    "id": "other-open",
+    "is_generic": true,
+    "maintainer": "",
+    "od_conformance": "approved",
+    "osd_conformance": "not reviewed",
+    "status": "active",
+    "title": "Other (Open)",
+    "title_translated": {
+      "en": "Other (Open)",
+      "fr": "Autre (ouverte)"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "",
+    "url_translated": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "domain_content": true,
+    "domain_data": false,
+    "domain_software": false,
+    "family": "",
+    "id": "other-pd",
+    "is_generic": true,
+    "maintainer": "",
+    "od_conformance": "approved",
+    "osd_conformance": "not reviewed",
+    "status": "active",
+    "title": "Other (Public Domain)",
+    "title_translated": {
+      "en": "Other (Public Domain)",
+      "fr": "Autre (domaine public)"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "",
+    "url_translated": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "domain_content": true,
+    "domain_data": false,
+    "domain_software": false,
+    "family": "",
+    "id": "other-at",
+    "is_generic": true,
+    "maintainer": "",
+    "od_conformance": "approved",
+    "osd_conformance": "not reviewed",
+    "status": "active",
+    "title": "Other (Attribution)",
+    "title_translated": {
+      "en": "Other (Attribution)",
+      "fr": "Autre (attribution)"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "",
+    "url_translated": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "domain_content": false,
+    "domain_data": false,
+    "domain_software": false,
+    "family": "",
+    "id": "other-nc",
+    "is_generic": true,
+    "maintainer": "",
+    "od_conformance": "not reviewed",
+    "osd_conformance": "not reviewed",
+    "status": "active",
+    "title": "Other (Non-Commercial)",
+    "title_translated": {
+      "en": "Other (Non-Commercial)",
+      "fr": "Autre (non commerciale)"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "",
+    "url_translated": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "domain_content": false,
+    "domain_data": false,
+    "domain_software": false,
+    "family": "",
+    "id": "other-closed",
+    "is_generic": true,
+    "maintainer": "",
+    "od_conformance": "not reviewed",
+    "osd_conformance": "not reviewed",
+    "status": "active",
+    "title": "Other (Not Open)",
+    "title_translated": {
+      "en": "Other (Not Open)",
+      "fr": "Autre (non ouverte)"
+    },
+    "description": "",
+    "description_translated": {
+      "en": "",
+      "fr": ""
+    },
+    "url": "",
+    "url_translated": {
+      "en": "",
+      "fr": ""
+    }
+  }
+]
