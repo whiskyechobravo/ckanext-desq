@@ -544,6 +544,13 @@ output {
   padding-bottom: 0;
   border-bottom: 0;
 }
+.search-form .filter-list {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.search-form .search-input-group {
+  margin-bottom: 30px;
+}
 .search-form .control-order-by {
   float: right;
   margin-top: 0;
