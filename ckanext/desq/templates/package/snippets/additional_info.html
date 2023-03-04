@@ -31,7 +31,7 @@
         </thead>
         <tbody>
             {%- for field in schema.dataset_fields -%}
-                {%- if field.field_name not in exclude_fields and field.display_snippet is not none and pkg_dict[field.field_name] %}
+                {%- if field.field_name not in exclude_fields and not h.desq_is_field_empty(pkg_dict, field) %}
                     <tr>
                         <th scope="row" class="dataset-label">
                             {{- h.scheming_language_text(field.label) -}}

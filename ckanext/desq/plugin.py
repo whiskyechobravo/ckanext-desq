@@ -122,6 +122,7 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
             'desq_dataset_field_choices': helpers.get_dataset_field_choices,
             'desq_organization_title': helpers.get_organization_title,
             'desq_organization_abbr_or_title': helpers.get_organization_abbr_or_title,
+            'desq_is_field_empty': helpers.is_field_empty,
         }
 
     # IPackageController

@@ -30,7 +30,7 @@
     <h1>{{ h.desq_organization_title(c.group_dict) }}</h1>
     <dl>
         {%- for field in schema.fields %}
-            {%- if field.field_name not in exclude_fields and field.display_snippet is not none and c.group_dict[field.field_name] %}
+            {%- if field.field_name not in exclude_fields and not h.desq_is_field_empty(c.group_dict, field) %}
                 <dt>
                     {{- h.scheming_language_text(field.label) -}}
                 </dt>
