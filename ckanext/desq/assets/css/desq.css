@@ -280,11 +280,7 @@ output {
 .label {
   font-size: .875rem;
   border-radius: 0;
-}
-.next-to-label {
-  display: inline-block;
-  font-size: .875rem;
-  padding: .2em .6em .3em .3em;
+  padding: .2em .6em;
 }
 
 /* Header and main navigation */
@@ -496,6 +492,7 @@ output {
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 30px;
+  line-height: 1.1;
   color: #912338;
 }
 @media (max-width: 767px) {
@@ -531,6 +528,7 @@ output {
 
 .module .search-heading {
   margin-top: 30px;
+  line-height: 1.1;
   color: #912338;
 }
 .module .search-heading:first-child {
@@ -606,8 +604,10 @@ output {
 
 /* Context info (in dataset sidebar). */
 
-.context-info h1.heading {
+.context-info h2.heading {
   font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.1;
   color: #000;
 }
 

@@ -2,6 +2,7 @@
 
 {#- DESQ:
     - Display translated title and description.
+    - Change heading level.
     - Avoid truncating titles.
     - Allow longer descriptions.
     - Show nothing when no description is available.
@@ -10,8 +11,28 @@
 
 {% set dataset_title = h.dataset_display_name(package) or package.name %}
 
-{% block heading_title %}
-    {{ h.link_to(dataset_title, h.url_for('%s.read' % package.type, id=package.name)) }}
+{% block heading %}
+    <h3 class="dataset-heading">
+        {%- block heading_private %}
+            {%- if package.private %}
+                <span class="dataset-private label label-inverse">
+                    <i class="fa fa-lock"></i>
+                    {{ _('Private') }}
+                </span>
+            {%- endif %}
+        {%- endblock %}
+        {%- block heading_title %}
+            {{ h.link_to(dataset_title, h.url_for('%s.read' % package.type, id=package.name)) }}
+        {%- endblock %}
+        {%- block heading_meta %}
+            {%- if package.get('state', '').startswith('draft') %}
+                <span class="label label-info">{{ _('Draft') }}</span>
+            {%- elif package.get('state', '').startswith('deleted') %}
+                <span class="label label-danger">{{ _('Deleted') }}</span>
+            {%- endif %}
+            {{- h.popular('recent views', package.tracking_summary.recent, min=10) if package.tracking_summary }}
+        {%- endblock %}
+    </h3>
 {% endblock %}
 
 {% block notes %}

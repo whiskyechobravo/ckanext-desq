@@ -2,14 +2,14 @@
 
 {#- DESQ:
     - Get translated organization title and abbreviation.
-    - Change heading style.
+    - Change heading level and style.
     - Remove description.
 -#}
 
 {% set title = h.desq_organization_title(organization) %}
 
 {% block title %}
-    <h2 class="organization-heading">{{ title }}</h2>
+    <h3 class="organization-heading">{{ title }}</h3>
 {% endblock %}
 
 {% block description %}

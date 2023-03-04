@@ -1,5 +1,6 @@
 {#- DESQ:
     - Change layout (thus having to override the whole file).
+    - Change heading level.
     - Show translated labels instead of facet values in breadbox.
     - Show filter list facets in separate blocks (instead of all inline).
     - Move sort selector next to search heading.
@@ -92,7 +93,7 @@
 
     {%- block search_title %}
         {%- if not error %}
-            <h1 class="h2 search-heading">{% snippet 'snippets/search_result_text.html', query=query, count=count, type=type %}</h1>
+            <h2 class="search-heading">{% snippet 'snippets/search_result_text.html', query=query, count=count, type=type %}</h2>
         {%- else %}
             <h2>Error</h2>
         {%- endif %}

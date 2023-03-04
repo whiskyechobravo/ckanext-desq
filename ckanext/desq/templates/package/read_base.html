@@ -11,6 +11,7 @@
     - Use plural "Datasets" string literal in breadcrumb (instead of singular dataset_type.title()).
     - Remove organization from breadcrumb.
     - Truncate dataset title a bit less in breadcrumb.
+    - Pass `has_context_title=false` to 'organization.html' snippet (to remove unwanted heading).
 -#}
 
 {%- block subtitle %}{{ h.dataset_display_name(pkg) }} {{ g.template_title_delimiter }} {{ super() }}{% endblock %}
@@ -61,7 +62,7 @@
     {%- block package_organization %}
         {%- if pkg.organization %}
             {%- set org = h.get_organization(pkg.organization.id) %}
-            {% snippet "snippets/organization.html", organization=org, has_context_title=true %}
+            {% snippet "snippets/organization.html", organization=org, has_context_title=false %}
         {%- endif %}
     {%- endblock %}
 

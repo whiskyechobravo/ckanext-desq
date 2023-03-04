@@ -2,6 +2,7 @@
 
 {#- DESQ:
     - Use translated organization title and abbreviation.
+    - Change heading level.
     - Remove follower count.
     - Remove description text.
     - Remove the "There is no description for this organization" message.
@@ -9,11 +10,11 @@
 -#}
 
 {% block heading %}
-    <h1 class="heading">{{ h.desq_organization_title(organization) }}
+    <h2 class="heading">{{ h.desq_organization_title(organization) }}
         {%- if organization.state == 'deleted' %}
             [{{ _('Deleted') }}]
         {%- endif -%}
-    </h1>
+    </h2>
 {% endblock %}
 
 {% block description %}
