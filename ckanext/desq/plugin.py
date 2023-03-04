@@ -9,6 +9,7 @@ from ckan.plugins import toolkit
 
 from ckanext.desq import helpers, jinja
 from ckanext.desq import validators as desq_validators
+from ckanext.desq.blueprint import blueprint as desq_blueprint
 
 
 class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
@@ -20,6 +21,7 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IPackageController)
+    plugins.implements(plugins.IBlueprint)
 
     # IConfigurer
 
@@ -30,7 +32,6 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
         toolkit.add_resource('assets', 'desq')
 
     # IMiddleware
-    # Guide: https://docs.ckan.org/en/2.9/extensions/plugin-interfaces.html#ckan.plugins.interfaces.IMiddleware
 
     def make_middleware(self, app, config):
         app.jinja_env.filters['humansort'] = jinja.do_humansort
@@ -230,3 +231,8 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
         sent to the template.
         """
         return data_dict
+
+    # IBlueprint
+
+    def get_blueprint(self):
+        return desq_blueprint
