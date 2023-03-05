@@ -7,12 +7,16 @@ easily applicable to other data portals.
 ## Requirements
 
 - Python 3.9
+- Ubuntu packages required by PyICU:
+  ```bash
+  sudo apt install libicu-dev python3-icu pkg-config
+  ```
 - CKAN 2.9.5 fork, installed with:
   ```bash
   pip install -e 'git+https://github.com/whiskyechobravo/ckan.git@desq-2.9.5#egg=ckan[requirements]'
   ```
 
-Tested under Ubuntu 22.04.
+Tested under Ubuntu 20.04 and 22.04.
 
 
 ## Installation
