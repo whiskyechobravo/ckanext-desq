@@ -39,8 +39,6 @@ def get_organization_abbr_or_title(organization):
 
 def is_field_empty(data_dict, field):
     """Check if a field is empty. Works with translatable fields."""
-    if field.get('display_snippet') is None:
-        return True
     field_data = data_dict.get(field.get('field_name', ''))
     if not field_data:
         return True
