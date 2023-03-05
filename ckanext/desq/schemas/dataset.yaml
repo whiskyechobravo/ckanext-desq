@@ -414,23 +414,13 @@ dataset_fields:
   display_snippet: link.html
   # TODO: Make this field translatable, in case the source page is available in different languages?
 
-- field_name: license
+- field_name: product_number
   label:
-    en: Licence
-    fr: Licence
+    en: Product number
+    fr: Numéro de produit
   help_text:
-    en: Licence applied to the dataset.
-    fr: Licence s’appliquant au jeu de données.
-  form_snippet: license.html
-  required: true
-
-- field_name: file_number
-  label:
-    en: File number
-    fr: Numéro de fichier
-  help_text:
-    en: File number or catalog number of the dataset as provided by the author or publisher, if applicable.
-    fr: Numéro de fichier ou de catalogue du jeu de données, tel que fourni par l’auteur ou l’éditeur, s’il y a lieu.
+    en: Product, file, or catalog number of the dataset as provided by the author or publisher, if applicable.
+    fr: Numéro de produit, de fichier ou de catalogue du jeu de données, tel que fourni par l’auteur ou l’éditeur, s’il y a lieu.
   form_placeholder:
     en: eg. CO-9999
     fr: p.ex. CO-9999
@@ -449,6 +439,16 @@ dataset_fields:
     fr: p.ex. Tableau 1
   form_attrs:
     class: form-control
+
+- field_name: license
+  label:
+    en: Licence
+    fr: Licence
+  help_text:
+    en: Licence applied to the dataset.
+    fr: Licence s’appliquant au jeu de données.
+  form_snippet: license.html
+  required: true
 
 - field_name: date_published
   label:
