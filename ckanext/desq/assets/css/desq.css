@@ -601,6 +601,20 @@ output {
     width: auto !important;
   }
 }
+.dataset-details dl {
+  margin-bottom: 0;
+}
+.dataset-details dd {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+.dataset-details dt {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+.dataset-details dt:first-child {
+  margin-top: 0;
+}
 
 /* Context info (in dataset sidebar). */
 
