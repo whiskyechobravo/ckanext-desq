@@ -426,14 +426,14 @@ dataset_fields:
     fr: p.ex. CO-9999
   validators: ignore_missing unicode
 
-- field_name: section_name_translated
+- field_name: product_part_translated
   label:
-    en: Section name
-    fr: Nom de la section
+    en: Product part
+    fr: Partie du produit
   preset: fluent_text
   help_text:
-    en: Section name as provided by the author or publisher, if the dataset is part of a larger whole.
-    fr: Nom de la section tel que fourni par l’auteur ou l’éditeur, si le jeu de données fait partie d’un ensemble plus grand.
+    en: Name of product part or section as provided by the author or publisher, if the dataset is part of a larger whole.
+    fr: Nom de la partie ou section du produit tel que fourni par l’auteur ou l’éditeur, si le jeu de données fait partie d’un ensemble plus grand.
   form_placeholder:
     en: eg. Table 1
     fr: p.ex. Tableau 1
