@@ -157,10 +157,6 @@ dataset_fields:
       en: Language — Language at work
       fr: Langue — Langue au travail
     value: language_work
-# - label:
-#     en: Language — Minority official language
-#     fr: Langue — Langue officielle minoritaire
-#   value: minority_official_language
   - label:
       en: Language — Mother tongue
       fr: Langue — Langue maternelle
@@ -170,8 +166,8 @@ dataset_fields:
       fr: Mobilité et migration
     value: mobility_migration
   - label:
-      en: Population and dwelling counts
-      fr: Chiffres de population et des logements
+      en: Population and demography
+      fr: Population et démographie
     value: population
 
 - field_name: geo_area
