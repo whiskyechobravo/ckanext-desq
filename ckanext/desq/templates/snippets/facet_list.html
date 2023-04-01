@@ -5,11 +5,11 @@
     - Provide translated organization names.
     - Sort facet items alpgabetically (except for census_year, whose order is reversed).
     - Change facet heading level.
+    - Remove fa-filter icon near each facet title.
 -#}
 
 {% block facet_list_heading %}
     <h3 class="module-heading">
-        <i class="fa fa-filter"></i>
         {%- set title = title or h.get_facet_title(name) %}
         {{ title }}
     </h3>
