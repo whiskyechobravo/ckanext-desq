@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-desq 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-02 19:40-0500\n"
-"PO-Revision-Date: 2023-02-14 19:14-0500\n"
+"POT-Creation-Date: 2023-04-01 16:33-0400\n"
+"PO-Revision-Date: 2023-04-01 16:33-0400\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -19,38 +19,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: ckanext/desq/plugin.py:75 ckanext/desq/plugin.py:89
-msgid "Census years"
-msgstr "Années du recensement"
+#: ckanext/desq/plugin.py:88 ckanext/desq/plugin.py:102
+msgid "Census year"
+msgstr "Année du recensement"
 
-#: ckanext/desq/plugin.py:76 ckanext/desq/plugin.py:90
-msgid "Data types"
-msgstr "Types de données"
+#: ckanext/desq/plugin.py:89 ckanext/desq/plugin.py:103
+msgid "Data type"
+msgstr "Type de données"
 
-#: ckanext/desq/plugin.py:77 ckanext/desq/plugin.py:91
-msgid "Topics"
-msgstr "Thèmes"
+#: ckanext/desq/plugin.py:90 ckanext/desq/plugin.py:104
+msgid "Topic"
+msgstr "Thème"
 
-#: ckanext/desq/plugin.py:78 ckanext/desq/plugin.py:92
-msgid "Geographical areas"
-msgstr "Régions géographiques"
+#: ckanext/desq/plugin.py:91 ckanext/desq/plugin.py:105
+msgid "Geographical area"
+msgstr "Région géographique"
 
-#: ckanext/desq/plugin.py:79 ckanext/desq/plugin.py:93
-msgid "Formats"
-msgstr "Formats"
+#: ckanext/desq/plugin.py:92
+#: ckanext/desq/plugin.py:106
+msgid "Format"
+msgstr "Format"
 
-#: ckanext/desq/plugin.py:80 ckanext/desq/plugin.py:94
-msgid "Languages"
-msgstr "Langues"
+#: ckanext/desq/plugin.py:93 ckanext/desq/plugin.py:107
+msgid "Language of dataset"
+msgstr "Langue du jeu de données"
 
-#: ckanext/desq/plugin.py:81 ckanext/desq/plugin.py:95
-msgid "Licenses"
-msgstr "Licences"
+#: ckanext/desq/plugin.py:94 ckanext/desq/plugin.py:108
+msgid "License"
+msgstr "Licence"
 
-#: ckanext/desq/plugin.py:82 ckanext/desq/templates/header.html:89
+#: ckanext/desq/plugin.py:95 ckanext/desq/templates/header.html:89
+#: ckanext/desq/templates/organization/read_base.html:8
 #: ckanext/desq/templates/organization/read_base.html:11
-#: ckanext/desq/templates/organization/read_base.html:14
-#: ckanext/desq/templates/scheming/organization/about.html:26
+#: ckanext/desq/templates/scheming/organization/about.html:24
 msgid "Organizations"
 msgstr "Organisations"
 
@@ -67,8 +68,8 @@ msgid "Date may not be in the future."
 msgstr "La date ne doit pas être dans le futur."
 
 #: ckanext/desq/templates/base.html:11 ckanext/desq/templates/header.html:16
-#: ckanext/desq/templates/organization/snippets/feeds.html:6
-#: ckanext/desq/templates/package/read_base.html:32
+#: ckanext/desq/templates/organization/snippets/feeds.html:7
+#: ckanext/desq/templates/package/read_base.html:33
 msgid "Data Portal on English-Speaking Quebec"
 msgstr "Portail de données statistiques sur le Québec d’expression anglaise"
 
@@ -183,17 +184,17 @@ msgid "Toggle navigation"
 msgstr "Basculer la navigation"
 
 #: ckanext/desq/templates/header.html:88
-#: ckanext/desq/templates/package/read_base.html:21
-#: ckanext/desq/templates/package/read_base.html:24
+#: ckanext/desq/templates/package/read_base.html:22
+#: ckanext/desq/templates/package/read_base.html:25
 #: ckanext/desq/templates/package/resource_read.html:10
 #: ckanext/desq/templates/package/resource_read.html:13
-#: ckanext/desq/templates/snippets/organization.html:31
+#: ckanext/desq/templates/snippets/organization.html:29
 msgid "Datasets"
 msgstr "Jeux de données"
 
 #: ckanext/desq/templates/header.html:90
-#: ckanext/desq/templates/scheming/organization/about.html:28
-#: ckanext/desq/templates/snippets/organization.html:24
+#: ckanext/desq/templates/scheming/organization/about.html:26
+#: ckanext/desq/templates/snippets/organization.html:22
 msgid "About"
 msgstr "À propos"
 
@@ -406,13 +407,13 @@ msgstr "Année du recensement décroissante"
 
 #: ckanext/desq/templates/organization/read.html:20
 #: ckanext/desq/templates/package/search.html:23
-#: ckanext/desq/templates/snippets/search_form.html:10
+#: ckanext/desq/templates/snippets/search_form.html:12
 msgid "Name Ascending"
 msgstr "Nom A-Z"
 
 #: ckanext/desq/templates/organization/read.html:21
 #: ckanext/desq/templates/package/search.html:24
-#: ckanext/desq/templates/snippets/search_form.html:10
+#: ckanext/desq/templates/snippets/search_form.html:12
 msgid "Name Descending"
 msgstr "Nom Z-A"
 
@@ -430,12 +431,12 @@ msgstr ""
 msgid "Search this organization's datasets..."
 msgstr "Rechercher les jeux de données de cette organisation..."
 
-#: ckanext/desq/templates/organization/read_base.html:25
-#: ckanext/desq/templates/package/read_base.html:44
+#: ckanext/desq/templates/organization/read_base.html:22
+#: ckanext/desq/templates/package/read_base.html:45
 msgid "Manage"
 msgstr ""
 
-#: ckanext/desq/templates/organization/snippets/feeds.html:6
+#: ckanext/desq/templates/organization/snippets/feeds.html:7
 msgid "Datasets in organization: {group}"
 msgstr ""
 
@@ -452,12 +453,13 @@ msgid ""
 "Warnke in facilitating their availability."
 msgstr ""
 
+#: ckanext/desq/templates/organization/snippets/organization_item.html:20
 #: ckanext/desq/templates/organization/snippets/organization_item.html:21
-#: ckanext/desq/templates/organization/snippets/organization_item.html:22
 msgid "View datasets from {}"
 msgstr "Voir les jeux de données de {}"
 
 #: ckanext/desq/templates/package/read.html:16
+#: ckanext/desq/templates/snippets/package_item.html:20
 msgid "Private"
 msgstr ""
 
@@ -469,15 +471,17 @@ msgid ""
 msgstr ""
 
 #: ckanext/desq/templates/package/read.html:33
+#: ckanext/desq/templates/snippets/package_item.html:29
 msgid "Draft"
 msgstr ""
 
 #: ckanext/desq/templates/package/read.html:36
-#: ckanext/desq/templates/snippets/organization.html:17
+#: ckanext/desq/templates/snippets/organization.html:15
+#: ckanext/desq/templates/snippets/package_item.html:31
 msgid "Deleted"
 msgstr ""
 
-#: ckanext/desq/templates/package/read_base.html:25
+#: ckanext/desq/templates/package/read_base.html:26
 #: ckanext/desq/templates/package/resource_read.html:14
 msgid "Create Dataset"
 msgstr ""
@@ -491,6 +495,7 @@ msgid "Search"
 msgstr ""
 
 #: ckanext/desq/templates/package/search.html:41
+#: ckanext/desq/templates/snippets/search_form.html:72
 msgid "Filter"
 msgstr "Filtrer"
 
@@ -545,7 +550,7 @@ msgstr ""
 msgid "website"
 msgstr "site web"
 
-#: ckanext/desq/templates/scheming/organization/about.html:46
+#: ckanext/desq/templates/scheming/organization/about.html:44
 msgid "View datasets in DESQ"
 msgstr "Voir les jeux de données dans DESQ"
 
@@ -577,15 +582,15 @@ msgstr "https://www.concordia.ca/artsci/eapc/quescren/ressources.html"
 msgid "Resources"
 msgstr "Ressources"
 
-#: ckanext/desq/templates/snippets/facet_list.html:36
+#: ckanext/desq/templates/snippets/facet_list.html:58
 msgid "Show More {facet_type}"
 msgstr ""
 
-#: ckanext/desq/templates/snippets/facet_list.html:39
+#: ckanext/desq/templates/snippets/facet_list.html:61
 msgid "Show Only Popular {facet_type}"
 msgstr ""
 
-#: ckanext/desq/templates/snippets/facet_list.html:43
+#: ckanext/desq/templates/snippets/facet_list.html:65
 msgid "There are no {facet_type} that match this search"
 msgstr ""
 
@@ -597,37 +602,32 @@ msgstr ""
 msgid "No license provided"
 msgstr "Aucune licence fournie"
 
-#: ckanext/desq/templates/snippets/search_form.html:9
+#: ckanext/desq/templates/snippets/search_form.html:11
 msgid "Search datasets..."
 msgstr "Chercher des jeux de données..."
 
-#: ckanext/desq/templates/snippets/search_form.html:21
+#: ckanext/desq/templates/snippets/search_form.html:23
 msgid "Submit"
 msgstr "Soumettre"
 
-#: ckanext/desq/templates/snippets/search_form.html:58
+#: ckanext/desq/templates/snippets/search_form.html:66
 msgid "Remove"
 msgstr ""
 
-#: ckanext/desq/templates/snippets/search_form.html:64
-msgid "Filter Results"
-msgstr ""
-
-#: ckanext/desq/templates/snippets/search_form.html:71
+#: ckanext/desq/templates/snippets/search_form.html:79
 msgid "Order by"
 msgstr ""
 
-#: ckanext/desq/templates/snippets/search_form.html:80
+#: ckanext/desq/templates/snippets/search_form.html:88
 msgid "Go"
 msgstr ""
 
-#: ckanext/desq/templates/snippets/search_form.html:96
+#: ckanext/desq/templates/snippets/search_form.html:104
 msgid "<p class=\"extra\">Please try another search.</p>"
 msgstr ""
 
-#: ckanext/desq/templates/snippets/search_form.html:102
+#: ckanext/desq/templates/snippets/search_form.html:110
 msgid ""
 "<p id=\"search-error\"><strong>There was an error while "
 "searching.</strong> Please try again.</p>"
 msgstr ""
-

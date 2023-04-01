@@ -85,13 +85,13 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
         """Modify and return the facets_dict for the dataset search page."""
         # Instead of updating facets_dict, we fully replace it to reorder everything.
         facets_dict = OrderedDict({
-            'census_year': toolkit._('Census years'),
-            'data_type': toolkit._('Data types'),
-            'topic': toolkit._('Topics'),
-            'geo_area': toolkit._('Geographical areas'),
-            'res_format': toolkit._('Formats'),
-            'language': toolkit._('Languages'),
-            'license': toolkit._('Licenses'),
+            'census_year': toolkit._('Census year'),
+            'data_type': toolkit._('Data type'),
+            'topic': toolkit._('Topic'),
+            'geo_area': toolkit._('Geographical area'),
+            'res_format': toolkit._('Format'),
+            'language': toolkit._('Language of dataset'),
+            'license': toolkit._('License'),
             'organization': toolkit._('Organizations'),
         })
         return facets_dict
@@ -99,13 +99,13 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
     def group_facets(self, facets_dict, group_type, package_type):
         """Modify and return the facets_dict for a group’s page."""
         facets_dict = OrderedDict({
-            'census_year': toolkit._('Census years'),
-            'data_type': toolkit._('Data types'),
-            'topic': toolkit._('Topics'),
-            'geo_area': toolkit._('Geographical areas'),
-            'res_format': toolkit._('Formats'),
-            'language': toolkit._('Languages'),
-            'license': toolkit._('Licenses'),
+            'census_year': toolkit._('Census year'),
+            'data_type': toolkit._('Data type'),
+            'topic': toolkit._('Topic'),
+            'geo_area': toolkit._('Geographical area'),
+            'res_format': toolkit._('Format'),
+            'language': toolkit._('Language of dataset'),
+            'license': toolkit._('License'),
         })
         return facets_dict
 

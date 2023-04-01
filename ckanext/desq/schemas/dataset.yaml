@@ -51,8 +51,8 @@ dataset_fields:
 
 - field_name: data_type
   label:
-    en: Data types
-    fr: Types de données
+    en: Data type
+    fr: Type de données
   preset: select
   required: true
   choices:
@@ -75,8 +75,8 @@ dataset_fields:
 
 - field_name: topic
   label:
-    en: Topics
-    fr: Thèmes
+    en: Topic
+    fr: Thème
   preset: multiple_select
   display_snippet: desq_multiple_choice_unstyled.html
   required: true
@@ -172,8 +172,8 @@ dataset_fields:
 
 - field_name: geo_area
   label:
-    en: Geographical areas
-    fr: Régions géographiques
+    en: Geographical area
+    fr: Région géographique
   preset: multiple_select
   display_snippet: desq_multiple_choice_unstyled.html
   select_size: 10
@@ -320,8 +320,8 @@ dataset_fields:
 
 - field_name: language
   label:
-    en: Language
-    fr: Langue
+    en: Language of dataset
+    fr: Langue du jeu de données
   preset: multiple_select
   help_text:
     en: Language(s) present in the dataset. You may select or deselect multiple languages (ctrl+click).
