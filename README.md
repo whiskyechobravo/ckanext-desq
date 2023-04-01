@@ -54,6 +54,29 @@ Tested under Ubuntu 20.04 and 22.04.
    ```
 
 
+## Performing manual backup and restore
+
+References:
+- https://docs.ckan.org/en/2.9/maintaining/database-management.html#import-and-export
+- https://docs.ckan.org/en/2.9/maintaining/cli.html#search-index-rebuild-search-index
+
+Backup:
+
+```bash
+sudo -u postgres pg_dump --format=custom -d ckan_default > desq-$(date +%Y%m%d-%H%M).pgdump
+```
+
+Restore (replace path to `.ini` file if necessary):
+
+```bash
+ckan -c /etc/ckan/default/ckan.ini db clean
+sudo -u postgres pg_restore --clean --if-exists -d ckan_default < desq-YYYYMMDD-HHMM.pgdump
+ckan -c /etc/ckan/default/ckan.ini search-index rebuild
+```
+
+**TODO:** Document backing up the files as well.
+
+
 ## Managing translations
 
 References:
