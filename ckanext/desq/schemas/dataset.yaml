@@ -250,10 +250,6 @@ dataset_fields:
       fr: Région sociosanitaire (RSS)
     value: rss
   - label:
-      en: Local area services network (RLS), or territorial area services network (RTS)
-      fr: Réseau local de services (RLS) ou réseau territorial de services (RTS)
-    value: rls_rts
-  - label:
       en: Territorial area services network (RTS)
       fr: Réseau territorial de services (RTS)
     value: rts
