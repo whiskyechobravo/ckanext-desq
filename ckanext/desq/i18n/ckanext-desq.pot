@@ -1,14 +1,14 @@
 # Translations template for ckanext-desq.
-# Copyright (C) 2023 ORGANIZATION
+# Copyright (C) 2024 ORGANIZATION
 # This file is distributed under the same license as the ckanext-desq project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-desq 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-01 16:33-0400\n"
+"POT-Creation-Date: 2024-01-07 15:56-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Geographical area"
 msgstr ""
 
-#: ckanext/desq/plugin.py:92
+#: ckanext/desq/plugin.py:92 ckanext/desq/plugin.py:106
 msgid "Format"
 msgstr ""
 
@@ -50,10 +50,6 @@ msgstr ""
 #: ckanext/desq/templates/organization/read_base.html:11
 #: ckanext/desq/templates/scheming/organization/about.html:24
 msgid "Organizations"
-msgstr ""
-
-#: ckanext/desq/plugin.py:106
-msgid "Formats"
 msgstr ""
 
 #: ckanext/desq/validators.py:16
@@ -256,10 +252,12 @@ msgstr ""
 msgid ""
 "<h2>Credits</h2> <p>Producer of DESQ: Quebec English-Speaking Communities "
 "Research Network (QUESCREN)</p> <p>Project Management</p> <ul> <li><a "
-"href=\"mailto:patrick.donovan1@concordia.ca?subject=DESQ\">Patrick "
-"Donovan</a> (QUESCREN)</li> </ul> <p>IT Consultant</p> <ul> <li>David Lesieur"
-" (<a href=\"https://whiskyechobravo.com/\">Whisky Echo Bravo</a>)</li> </ul> "
-"<p>Project Consultant</p> <ul> <li>Jan Warnke (JW COMM)</li> </ul>"
+"href=\"https://www.concordia.ca/artsci/scpa/quescren/researchers/portraits"
+"/patrick-donovan.html\" target=\"_blank\">Patrick Donovan</a> (QUESCREN)</li>"
+" </ul> <p>IT Consultant</p> <ul> <li>David Lesieur (<a "
+"href=\"https://whiskyechobravo.com/\" target=\"_blank\">Whisky Echo "
+"Bravo</a>)</li> </ul> <p>Project Consultant</p> <ul> <li>Jan Warnke (<a "
+"href=\"https://jwcomm.ca/en/\" target=\"_blank\">JW COMM</a>)</li> </ul>"
 msgstr ""
 
 #: ckanext/desq/templates/home/snippets/about_text.html:35
@@ -271,7 +269,7 @@ msgid ""
 " href=\"/en/organization/\">partner organizations</a> originally obtained the"
 " datasets from <a href=\"https://www.statcan.gc.ca/en/start\" "
 "target=\"_blank\">Statistics Canada</a>. We acknowledge their generosity in "
-"agreeing to make them available to the public via DESQ, and the work of "
+"agreeing to make the data available to the public via DESQ, and the work of "
 "project consultant Jan Warnke in facilitating their availability.</p> "
 "<p>QUESCREN also receives funding from the <a href=\"https://www.canada.ca/en"
 "/canadian-heritage.html\" target=\"_blank\">Department of Canadian "
