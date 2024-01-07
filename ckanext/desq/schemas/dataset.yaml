@@ -254,6 +254,14 @@ dataset_fields:
       fr: Réseau local de services (RLS) ou réseau territorial de services (RTS)
     value: rls_rts
   - label:
+      en: Territorial area services network (RTS)
+      fr: Réseau territorial de services (RTS)
+    value: rts
+  - label:
+      en: Local area services network (RLS)
+      fr: Réseau local de services (RLS)
+    value: rls
+  - label:
       en: Integrated health and social services centre (CISSS), Integrated university health and social services centre (CIUSSS), or Health and social services centre (CSSS)
       fr: Centre intégré de santé et de services sociaux (CISSS), Centre intégré universitaire de santé et de services sociaux (CIUSSS) ou Centre de santé et de services sociaux (CSSS)
     value: cisss_ciusss
@@ -273,6 +281,10 @@ dataset_fields:
       en: Place name
       fr: Nom de localité
     value: place_name
+  - label:
+      en: Historical area
+      fr: Région historique
+    value: historical_area
 
 - field_name: variable
   label:
