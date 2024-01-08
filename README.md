@@ -74,8 +74,6 @@ sudo -u postgres pg_restore --clean --if-exists -d ckan_default < desq-YYYYMMDD-
 ckan -c /etc/ckan/default/ckan.ini search-index rebuild
 ```
 
-**TODO:** Document backing up the files as well.
-
 
 ## Managing translations
 
