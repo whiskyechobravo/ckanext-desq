@@ -1,7 +1,8 @@
 # ckanext-desq
 
 Customizations for DESQ. This CKAN plugin is *not* designed to be generic or
-easily applicable to other data portals.
+easily applicable to other data portals. It requires specific changes to the
+CKAN configuration and the Solr schema.
 
 
 ## Requirements

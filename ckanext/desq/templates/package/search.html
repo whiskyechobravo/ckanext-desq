@@ -4,6 +4,7 @@
     - Customize sorts (Guide: https://docs.ckan.org/en/2.9/extensions/adding-custom-fields.html#sorting-by-custom-fields-on-the-dataset-search-page)
         - Add 'Census year Ascending'
         - Add 'Census year Descending'
+        - Alter sort options according to current language.
     - Add heading above filters and search form.
     - Remove mention of API.
 -#}
@@ -16,21 +17,35 @@
         'translated_fields': translated_fields,
         'remove_field': remove_field }
     %}
-    {%- set sorting = [
-        (_('Relevance'), 'score desc, metadata_modified desc'),
-        (_('Census year Ascending'), 'census_year asc'),
-        (_('Census year Descending'), 'census_year desc'),
-        (_('Name Ascending'), 'title_string asc'),
-        (_('Name Descending'), 'title_string desc'),
-        (_('Last Modified'), 'metadata_modified desc'),
-        (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
-    %}
-    {% if q or fields %}
-        <h2 class="search-heading">{{ _('Your search') }}</h1>
-    {% else %}
-        <h2 class="search-heading">{{ _('Search') }}</h1>
-    {% endif %}
-    {% snippet 'snippets/search_form.html', form_id='dataset-search-form', type=dataset_type, query=q, sorting=sorting, sorting_selected=sort_by_selected, count=page.item_count, placeholder=_('Search ' + dataset_type + 's') + '...', facets=facets, show_empty=request.params, error=query_error, fields=fields %}
+    {%- with current_lang = request.environ.CKAN_LANG %}
+        {%- if current_lang == 'fr' %}
+            {%- set sorting = [
+                (_('Relevance'), 'score desc, metadata_modified desc'),
+                (_('Census year Ascending'), 'census_year asc'),
+                (_('Census year Descending'), 'census_year desc'),
+                (_('Name Ascending'), 'fr_sort_title asc'),
+                (_('Name Descending'), 'fr_sort_title desc'),
+                (_('Last Modified'), 'metadata_modified desc'),
+                (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
+            %}
+        {%- else %}
+            {%- set sorting = [
+                (_('Relevance'), 'score desc, metadata_modified desc'),
+                (_('Census year Ascending'), 'census_year asc'),
+                (_('Census year Descending'), 'census_year desc'),
+                (_('Name Ascending'), 'en_sort_title asc'),
+                (_('Name Descending'), 'en_sort_title desc'),
+                (_('Last Modified'), 'metadata_modified desc'),
+                (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
+            %}
+        {%- endif %}
+        {% if q or fields %}
+            <h2 class="search-heading">{{ _('Your search') }}</h1>
+        {% else %}
+            <h2 class="search-heading">{{ _('Search') }}</h1>
+        {% endif %}
+        {% snippet 'snippets/search_form.html', form_id='dataset-search-form', type=dataset_type, query=q, sorting=sorting, sorting_selected=sort_by_selected, count=page.item_count, placeholder=_('Search ' + dataset_type + 's') + '...', facets=facets, show_empty=request.params, error=query_error, fields=fields %}
+    {% endwith %}
 {% endblock %}
 
 {% block package_search_results_api %}

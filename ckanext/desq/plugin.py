@@ -213,6 +213,10 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
         altered version.
         """
 
+        # Index language-specific fields.
+        data_dict['en_sort_title'] = json.loads(data_dict.get('title_translated', {})).get('en', "")
+        data_dict['fr_sort_title'] = json.loads(data_dict.get('title_translated', {})).get('fr', "")
+
         # TODO: Index full strings of multiple_select fields.
         data_dict['topic'] = json.loads(data_dict.get('topic', '[]'))
         data_dict['geo_area'] = json.loads(data_dict.get('geo_area', '[]'))
