@@ -3,7 +3,7 @@
 {#- DESQ:
     - Change search field placeholder to clarify that it searches just the
       organization's datasets.
-    - Alter sort options depending on current language.
+    - Alter sort options according to current language.
 -#}
 
 {% block groups_search_form %}
@@ -18,8 +18,6 @@
         {%- if current_lang == 'fr' %}
             {%- set sorting = [
                 (_('Relevance'), 'score desc, metadata_modified desc'),
-                (_('Census year Ascending'), 'census_year asc'),
-                (_('Census year Descending'), 'census_year desc'),
                 (_('Name Ascending'), 'fr_sort_title asc'),
                 (_('Name Descending'), 'fr_sort_title desc'),
                 (_('Last Modified'), 'metadata_modified desc'),
@@ -28,8 +26,6 @@
         {%- else %}
             {%- set sorting = [
                 (_('Relevance'), 'score desc, metadata_modified desc'),
-                (_('Census year Ascending'), 'census_year asc'),
-                (_('Census year Descending'), 'census_year desc'),
                 (_('Name Ascending'), 'en_sort_title asc'),
                 (_('Name Descending'), 'en_sort_title desc'),
                 (_('Last Modified'), 'metadata_modified desc'),
