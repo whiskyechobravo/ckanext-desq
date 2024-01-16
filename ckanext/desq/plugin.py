@@ -121,6 +121,7 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
         return {
             'desq_get_license': helpers.get_license,
             'desq_dataset_field_choices': helpers.get_dataset_field_choices,
+            'desq_dataset_sort_variables': helpers.dataset_sort_variables,
             'desq_organization_title': helpers.get_organization_title,
             'desq_organization_abbr_or_title': helpers.get_organization_abbr_or_title,
             'desq_is_field_empty': helpers.is_field_empty,

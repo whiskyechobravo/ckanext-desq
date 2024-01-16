@@ -1,5 +1,8 @@
 import re
 
+from natsort import humansorted
+
+from ckan.lib import i18n
 from ckan.lib.helpers import get_translated
 from ckan.model import Package
 
@@ -45,3 +48,20 @@ def is_field_empty(data_dict, field):
     if re.match('^fluent_', field.get('form_snippet', '')) and not scheming_language_text(field_data).strip():
         return True
     return False
+
+
+def dataset_sort_variables(data_dict):
+    """
+    Alter the data_dict to sort dataset variables by name, for the current language.
+
+    This is totally specific to the dataset 'variable' field!
+    """
+    if 'variable' not in data_dict:
+        return
+    language = i18n.get_lang()
+
+    def key_func(item):
+        return item.get('variable_name', {}).get(language, '')
+
+    data_dict['variable'] = humansorted(data_dict['variable'], key=key_func)
+    return data_dict
