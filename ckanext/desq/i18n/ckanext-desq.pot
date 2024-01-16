@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-desq 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-07 15:56-0500\n"
+"POT-Creation-Date: 2024-01-16 17:43-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: ckanext/desq/plugin.py:88 ckanext/desq/plugin.py:102
+#: ckanext/desq/plugin.py:89 ckanext/desq/plugin.py:103
 msgid "Census year"
 msgstr ""
 
-#: ckanext/desq/plugin.py:89 ckanext/desq/plugin.py:103
+#: ckanext/desq/plugin.py:90 ckanext/desq/plugin.py:104
 msgid "Data type"
 msgstr ""
 
-#: ckanext/desq/plugin.py:90 ckanext/desq/plugin.py:104
+#: ckanext/desq/plugin.py:91 ckanext/desq/plugin.py:105
 msgid "Topic"
 msgstr ""
 
-#: ckanext/desq/plugin.py:91 ckanext/desq/plugin.py:105
+#: ckanext/desq/plugin.py:92 ckanext/desq/plugin.py:106
 msgid "Geographical area"
 msgstr ""
 
-#: ckanext/desq/plugin.py:92 ckanext/desq/plugin.py:106
+#: ckanext/desq/plugin.py:93 ckanext/desq/plugin.py:107
 msgid "Format"
 msgstr ""
 
-#: ckanext/desq/plugin.py:93 ckanext/desq/plugin.py:107
+#: ckanext/desq/plugin.py:94 ckanext/desq/plugin.py:108
 msgid "Language of dataset"
 msgstr ""
 
-#: ckanext/desq/plugin.py:94 ckanext/desq/plugin.py:108
+#: ckanext/desq/plugin.py:95 ckanext/desq/plugin.py:109
 msgid "License"
 msgstr ""
 
-#: ckanext/desq/plugin.py:95 ckanext/desq/templates/header.html:89
+#: ckanext/desq/plugin.py:96 ckanext/desq/templates/header.html:89
 #: ckanext/desq/templates/organization/read_base.html:8
 #: ckanext/desq/templates/organization/read_base.html:11
 #: ckanext/desq/templates/scheming/organization/about.html:24
@@ -185,10 +185,10 @@ msgstr ""
 msgid "Datasets"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:90
-#: ckanext/desq/templates/scheming/organization/about.html:26
-#: ckanext/desq/templates/snippets/organization.html:22
-msgid "About"
+#: ckanext/desq/templates/header.html:90 ckanext/desq/templates/home/about.html:3
+#: ckanext/desq/templates/home/about.html:6
+#: ckanext/desq/templates/home/about.html:16
+msgid "About the Portal"
 msgstr ""
 
 #: ckanext/desq/templates/home/layout3.html:10 ckanext/desq/templates/page.html:10
@@ -310,44 +310,44 @@ msgstr ""
 msgid "organizations"
 msgstr ""
 
-#: ckanext/desq/templates/organization/read.html:17
-#: ckanext/desq/templates/package/search.html:20
+#: ckanext/desq/templates/organization/read.html:20
+#: ckanext/desq/templates/organization/read.html:28
+#: ckanext/desq/templates/package/search.html:21
+#: ckanext/desq/templates/package/search.html:29
 msgid "Relevance"
 msgstr ""
 
-#: ckanext/desq/templates/organization/read.html:18
-#: ckanext/desq/templates/package/search.html:21
-msgid "Census year Ascending"
-msgstr ""
-
-#: ckanext/desq/templates/organization/read.html:19
+#: ckanext/desq/templates/organization/read.html:21
+#: ckanext/desq/templates/organization/read.html:29
 #: ckanext/desq/templates/package/search.html:22
-msgid "Census year Descending"
-msgstr ""
-
-#: ckanext/desq/templates/organization/read.html:20
-#: ckanext/desq/templates/package/search.html:23
+#: ckanext/desq/templates/package/search.html:30
 #: ckanext/desq/templates/snippets/search_form.html:12
 msgid "Name Ascending"
 msgstr ""
 
-#: ckanext/desq/templates/organization/read.html:21
-#: ckanext/desq/templates/package/search.html:24
+#: ckanext/desq/templates/organization/read.html:22
+#: ckanext/desq/templates/organization/read.html:30
+#: ckanext/desq/templates/package/search.html:23
+#: ckanext/desq/templates/package/search.html:31
 #: ckanext/desq/templates/snippets/search_form.html:12
 msgid "Name Descending"
 msgstr ""
 
-#: ckanext/desq/templates/organization/read.html:22
-#: ckanext/desq/templates/package/search.html:25
+#: ckanext/desq/templates/organization/read.html:23
+#: ckanext/desq/templates/organization/read.html:31
+#: ckanext/desq/templates/package/search.html:24
+#: ckanext/desq/templates/package/search.html:32
 msgid "Last Modified"
 msgstr ""
 
-#: ckanext/desq/templates/organization/read.html:23
-#: ckanext/desq/templates/package/search.html:26
+#: ckanext/desq/templates/organization/read.html:24
+#: ckanext/desq/templates/organization/read.html:32
+#: ckanext/desq/templates/package/search.html:25
+#: ckanext/desq/templates/package/search.html:33
 msgid "Popular"
 msgstr ""
 
-#: ckanext/desq/templates/organization/read.html:25
+#: ckanext/desq/templates/organization/read.html:35
 msgid "Search this organization's datasets..."
 msgstr ""
 
@@ -406,15 +406,15 @@ msgstr ""
 msgid "Create Dataset"
 msgstr ""
 
-#: ckanext/desq/templates/package/search.html:29
+#: ckanext/desq/templates/package/search.html:37
 msgid "Your search"
 msgstr ""
 
-#: ckanext/desq/templates/package/search.html:31
+#: ckanext/desq/templates/package/search.html:39
 msgid "Search"
 msgstr ""
 
-#: ckanext/desq/templates/package/search.html:41
+#: ckanext/desq/templates/package/search.html:50
 #: ckanext/desq/templates/snippets/search_form.html:72
 msgid "Filter"
 msgstr ""
@@ -431,7 +431,7 @@ msgstr ""
 msgid "Value"
 msgstr ""
 
-#: ckanext/desq/templates/package/snippets/additional_info.html:47
+#: ckanext/desq/templates/package/snippets/additional_info.html:48
 msgid "State"
 msgstr ""
 
@@ -468,6 +468,11 @@ msgstr ""
 
 #: ckanext/desq/templates/scheming/display_snippets/desq_link_generic.html:7
 msgid "website"
+msgstr ""
+
+#: ckanext/desq/templates/scheming/organization/about.html:26
+#: ckanext/desq/templates/snippets/organization.html:22
+msgid "About"
 msgstr ""
 
 #: ckanext/desq/templates/scheming/organization/about.html:44
