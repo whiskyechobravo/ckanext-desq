@@ -1,5 +1,6 @@
 """Custom Jinja2 filters."""
 
+from jinja2.exceptions import FilterArgumentError
 from jinja2.filters import environmentfilter, ignore_case, make_attrgetter
 from natsort import humansorted
 
@@ -27,7 +28,7 @@ def do_dicthumansort(value, case_sensitive=False, by='key', reverse=False):
             'You can only sort by either "key" or "value"'
         )
 
-    def sort_func(item):
+    def key_func(item):
         value = item[pos]
 
         if not case_sensitive:
@@ -35,4 +36,4 @@ def do_dicthumansort(value, case_sensitive=False, by='key', reverse=False):
 
         return value
 
-    return humansorted(value.items(), key=sort_func, reverse=reverse)
+    return humansorted(value.items(), key=key_func, reverse=reverse)
