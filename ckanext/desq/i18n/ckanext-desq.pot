@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-desq 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-16 17:43-0500\n"
+"POT-Creation-Date: 2024-01-16 18:47-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,11 +45,8 @@ msgstr ""
 msgid "License"
 msgstr ""
 
-#: ckanext/desq/plugin.py:96 ckanext/desq/templates/header.html:89
-#: ckanext/desq/templates/organization/read_base.html:8
-#: ckanext/desq/templates/organization/read_base.html:11
-#: ckanext/desq/templates/scheming/organization/about.html:24
-msgid "Organizations"
+#: ckanext/desq/plugin.py:96 ckanext/desq/templates/organization/index.html:14
+msgid "Contributing DESQ Partners"
 msgstr ""
 
 #: ckanext/desq/validators.py:16
@@ -64,7 +61,7 @@ msgstr ""
 msgid "Date may not be in the future."
 msgstr ""
 
-#: ckanext/desq/templates/base.html:11 ckanext/desq/templates/header.html:16
+#: ckanext/desq/templates/base.html:11 ckanext/desq/templates/header.html:17
 #: ckanext/desq/templates/organization/snippets/feeds.html:7
 #: ckanext/desq/templates/package/read_base.html:33
 msgid "Data Portal on English-Speaking Quebec"
@@ -74,12 +71,12 @@ msgstr ""
 msgid "The Data Portal on English-Speaking Quebec (DESQ) is a&nbsp;project&nbsp;of:"
 msgstr ""
 
-#: ckanext/desq/templates/footer.html:12 ckanext/desq/templates/header.html:14
+#: ckanext/desq/templates/footer.html:12 ckanext/desq/templates/header.html:15
 #: ckanext/desq/templates/snippets/desq_breadcrumb_base_items.html:4
 msgid "QUESCREN"
 msgstr ""
 
-#: ckanext/desq/templates/footer.html:13 ckanext/desq/templates/header.html:14
+#: ckanext/desq/templates/footer.html:13 ckanext/desq/templates/header.html:15
 #: ckanext/desq/templates/snippets/desq_breadcrumb_base_items.html:4
 msgid "https://www.concordia.ca/artsci/scpa/quescren.html"
 msgstr ""
@@ -116,12 +113,12 @@ msgstr ""
 msgid "Canadian Institute for Research on Linguistic Minorities"
 msgstr ""
 
-#: ckanext/desq/templates/footer.html:27 ckanext/desq/templates/header.html:13
+#: ckanext/desq/templates/footer.html:27 ckanext/desq/templates/header.html:14
 #: ckanext/desq/templates/snippets/desq_breadcrumb_base_items.html:1
 msgid "https://www.concordia.ca/"
 msgstr ""
 
-#: ckanext/desq/templates/footer.html:27 ckanext/desq/templates/header.html:13
+#: ckanext/desq/templates/footer.html:27 ckanext/desq/templates/header.html:14
 msgid "Concordia University"
 msgstr ""
 
@@ -129,54 +126,54 @@ msgstr ""
 msgid "Powered by <a target=\"_blank\" href=\"http://ckan.org\">CKAN</a>"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:13
+#: ckanext/desq/templates/header.html:14
 msgid "Concordia University logo"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:14
+#: ckanext/desq/templates/header.html:15
 msgid "QUESCREN logo"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:24
+#: ckanext/desq/templates/header.html:25
 msgid "Sysadmin settings"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:26
+#: ckanext/desq/templates/header.html:27
 msgid "Admin"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:31
+#: ckanext/desq/templates/header.html:32
 msgid "View profile"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:38
+#: ckanext/desq/templates/header.html:39
 #, python-format
 msgid "Dashboard (%(num)d new item)"
 msgid_plural "Dashboard (%(num)d new items)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ckanext/desq/templates/header.html:41
+#: ckanext/desq/templates/header.html:42
 msgid "Dashboard"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:47 ckanext/desq/templates/header.html:49
+#: ckanext/desq/templates/header.html:48 ckanext/desq/templates/header.html:50
 msgid "Profile settings"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:55 ckanext/desq/templates/header.html:57
+#: ckanext/desq/templates/header.html:56 ckanext/desq/templates/header.html:58
 msgid "Log out"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:65
+#: ckanext/desq/templates/header.html:66
 msgid "Account"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:81
+#: ckanext/desq/templates/header.html:82
 msgid "Toggle navigation"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:88
+#: ckanext/desq/templates/header.html:89
 #: ckanext/desq/templates/package/read_base.html:22
 #: ckanext/desq/templates/package/read_base.html:25
 #: ckanext/desq/templates/package/resource_read.html:10
@@ -185,9 +182,18 @@ msgstr ""
 msgid "Datasets"
 msgstr ""
 
-#: ckanext/desq/templates/header.html:90 ckanext/desq/templates/home/about.html:3
-#: ckanext/desq/templates/home/about.html:6
-#: ckanext/desq/templates/home/about.html:16
+#: ckanext/desq/templates/header.html:90
+#: ckanext/desq/templates/organization/index.html:8
+#: ckanext/desq/templates/organization/index.html:11
+#: ckanext/desq/templates/organization/read_base.html:9
+#: ckanext/desq/templates/organization/read_base.html:12
+#: ckanext/desq/templates/scheming/organization/about.html:25
+msgid "Partners"
+msgstr ""
+
+#: ckanext/desq/templates/header.html:91 ckanext/desq/templates/home/about.html:7
+#: ckanext/desq/templates/home/about.html:10
+#: ckanext/desq/templates/home/about.html:17
 msgid "About the Portal"
 msgstr ""
 
@@ -351,7 +357,7 @@ msgstr ""
 msgid "Search this organization's datasets..."
 msgstr ""
 
-#: ckanext/desq/templates/organization/read_base.html:22
+#: ckanext/desq/templates/organization/read_base.html:23
 #: ckanext/desq/templates/package/read_base.html:45
 msgid "Manage"
 msgstr ""
@@ -361,7 +367,7 @@ msgid "Datasets in organization: {group}"
 msgstr ""
 
 #: ckanext/desq/templates/organization/snippets/helper.html:6
-msgid "Who are the project partners?"
+msgid "Who are the contributing DESQ partners?"
 msgstr ""
 
 #: ckanext/desq/templates/organization/snippets/helper.html:9
@@ -419,19 +425,19 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
-#: ckanext/desq/templates/package/snippets/additional_info.html:24
+#: ckanext/desq/templates/package/snippets/additional_info.html:25
 msgid "Additional Information"
 msgstr ""
 
-#: ckanext/desq/templates/package/snippets/additional_info.html:28
+#: ckanext/desq/templates/package/snippets/additional_info.html:29
 msgid "Field"
 msgstr ""
 
-#: ckanext/desq/templates/package/snippets/additional_info.html:29
+#: ckanext/desq/templates/package/snippets/additional_info.html:30
 msgid "Value"
 msgstr ""
 
-#: ckanext/desq/templates/package/snippets/additional_info.html:48
+#: ckanext/desq/templates/package/snippets/additional_info.html:49
 msgid "State"
 msgstr ""
 
@@ -470,12 +476,12 @@ msgstr ""
 msgid "website"
 msgstr ""
 
-#: ckanext/desq/templates/scheming/organization/about.html:26
+#: ckanext/desq/templates/scheming/organization/about.html:27
 #: ckanext/desq/templates/snippets/organization.html:22
 msgid "About"
 msgstr ""
 
-#: ckanext/desq/templates/scheming/organization/about.html:44
+#: ckanext/desq/templates/scheming/organization/about.html:45
 msgid "View datasets in DESQ"
 msgstr ""
 

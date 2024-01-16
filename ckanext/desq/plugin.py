@@ -93,7 +93,7 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
             'res_format': toolkit._('Format'),
             'language': toolkit._('Language of dataset'),
             'license': toolkit._('License'),
-            'organization': toolkit._('Organizations'),
+            'organization': toolkit._('Contributing DESQ Partners'),
         })
         return facets_dict
 

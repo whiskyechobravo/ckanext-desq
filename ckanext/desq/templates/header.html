@@ -4,6 +4,7 @@
     - Remove site logo, remove site description.
     - Remove Groups link from 'header_site_navigation_tabs' block.
     - Remove Log in, Register links.
+    - Change labels in site navigation.
 -#}
 {% block header_wrapper %}
     {%- block header_account %}
@@ -86,7 +87,7 @@
                 <ul class="nav navbar-nav">
                     {{ h.build_nav_main(
                         ('search', _('Datasets')),
-                        ('organizations_index', _('Organizations')),
+                        ('organizations_index', _('Partners')),
                         ('home.about', _('About the Portal')) )
                     }}
                 </ul>

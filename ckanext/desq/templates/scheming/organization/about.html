@@ -4,6 +4,7 @@
     - Add proper page heading.
     - Adapt to use scheming fields.
     - Exclude some fields.
+    - Replace 'Organizations' with 'Partners' in breadcrumb.
 -#}
 
 {% set exclude_fields = [
@@ -21,7 +22,7 @@
 {% set schema = h.scheming_get_organization_schema(group_type) -%}
 
 {% block breadcrumb_content %}
-    <li>{% link_for _('Organizations'), named_route=group_type+'.index' %}</li>
+    <li>{% link_for _('Partners'), named_route=group_type+'.index' %}</li>
     <li>{% link_for h.desq_organization_abbr_or_title(c.group_dict), named_route=group_type+'.read', id=group_dict.name %}</li>
     <li class="active">{{ _("About") }}</li>
 {% endblock %}
