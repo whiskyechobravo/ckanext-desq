@@ -1,24 +1,20 @@
-{% extends "page.html" %}
+{% ckan_extends %}
+
+{#- DESQ:
+    - Replace 'About' with 'About the Portal'.
+#}
 
 {% block subtitle %}{{ _('About the Portal') }}{% endblock %}
 
 {% block breadcrumb_content %}
-  <li class="active">{% link_for _('About the Portal'), 'home.about' %}</li>
+    <li class="active">{% link_for _('About the Portal'), 'home.about' %}</li>
 {% endblock %}
 
-{% block primary %}
-  <article class="module" role="main">
-    <div class="module-content">
-      {% block about %}
-        {% if g.site_about %}
-          {{ h.render_markdown(g.site_about) }}
-        {% else %}
-          <h1 class="page-heading">{{ _('About the Portal') }}</h1>
-          {% snippet 'home/snippets/about_text.html' %}
-        {% endif %}
-      {% endblock %}
-    </div>
-  </article>
+{% block about %}
+    {% if g.site_about %}
+        {{ h.render_markdown(g.site_about) }}
+    {% else %}
+        <h1 class="page-heading">{{ _('About the Portal') }}</h1>
+        {% snippet 'home/snippets/about_text.html' %}
+    {% endif %}
 {% endblock %}
-
-{% block secondary %}{% endblock %}
