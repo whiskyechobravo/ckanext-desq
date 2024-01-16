@@ -5,6 +5,7 @@ from collections import OrderedDict
 
 from ckan import plugins
 from ckan.lib.plugins import DefaultTranslation
+from ckan.lib.search.query import QUERY_FIELDS
 from ckan.plugins import toolkit
 
 from ckanext.desq import helpers, jinja
@@ -183,6 +184,8 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
         from fields starting with `ext_`, so extensions can receive user
         input from specific fields.
         """
+        # Add and boost the product_number field to list of query fields.
+        search_params['qf'] = f"{QUERY_FIELDS} product_number^32"
         return search_params
 
     def after_search(self, search_results, search_params):
