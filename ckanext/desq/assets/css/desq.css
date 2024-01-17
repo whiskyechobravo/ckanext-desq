@@ -313,7 +313,8 @@ output {
   color: #fff !important;
   background: #6e6e6e;
 }
-.main-nav li > a:hover {
+.main-nav li > a:hover,
+.main-nav li > a:focus {
   color: #4b4b4b !important;
   background: #fff;
 }
@@ -322,7 +323,8 @@ output {
   color: #fff;
   background: #000;
 }
-.main-nav .language-selector li > a:hover {
+.main-nav .language-selector li > a:hover,
+.main-nav .language-selector li > a:focus {
   color: #fff !important;
   background: #1d1d1d;
 }
