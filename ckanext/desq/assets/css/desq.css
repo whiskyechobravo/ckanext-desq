@@ -635,6 +635,7 @@ output {
 }
 .resource-item {
   padding: 10px;
+  background-color: #eee;
 }
 .resource-item-heading {
   font-size: 1rem;
