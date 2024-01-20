@@ -452,7 +452,7 @@ msgstr "Jeux de données dans l'organisation: {group}"
 
 #: ckanext/desq/templates/organization/snippets/helper.html:6
 msgid "Who are the contributing DESQ partners?"
-msgstr "Qui sont les partenaires participants de DESQ?"
+msgstr "Qui sont les partenaires participants du DESQ&nbsp;?"
 
 #: ckanext/desq/templates/organization/snippets/helper.html:9
 msgid ""
@@ -462,6 +462,11 @@ msgid ""
 "available to the public via DESQ, and the work of project consultant Jan "
 "Warnke in facilitating their availability."
 msgstr ""
+"Les organisations partenaires ont initialement obtenu les ensembles de "
+"données auprès de Statistique Canada. Nous les remercions de leur "
+"générosité en acceptant de les mettre à la disposition du public via ce "
+"portail. Nous remercions également Jan Warnke, consultant du projet, qui "
+"nous a aidé à obtenir plusieurs ensembles de données."
 
 #: ckanext/desq/templates/organization/snippets/organization_item.html:20
 #: ckanext/desq/templates/organization/snippets/organization_item.html:21
