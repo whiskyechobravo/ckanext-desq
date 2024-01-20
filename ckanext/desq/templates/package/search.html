@@ -2,7 +2,8 @@
 
 {#- DESQ:
     - Add heading above filters and search form.
-    - Alter sort options according to current language.
+    - Make sort key translatable so that a language-specific Solr field can be
+      used for sorting.
     - Remove mention of API.
 -#}
 
@@ -14,32 +15,21 @@
         'translated_fields': translated_fields,
         'remove_field': remove_field }
     %}
-    {%- with current_lang = request.environ.CKAN_LANG %}
-        {#- Guide on customizing sorts: https://docs.ckan.org/en/2.9/extensions/adding-custom-fields.html#sorting-by-custom-fields-on-the-dataset-search-page #}
-        {%- if current_lang == 'fr' %}
-            {%- set sorting = [
-                (_('Relevance'), 'score desc, metadata_modified desc'),
-                (_('Name Ascending'), 'fr_sort_title asc'),
-                (_('Name Descending'), 'fr_sort_title desc'),
-                (_('Last Modified'), 'metadata_modified desc'),
-                (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
-            %}
-        {%- else %}
-            {%- set sorting = [
-                (_('Relevance'), 'score desc, metadata_modified desc'),
-                (_('Name Ascending'), 'en_sort_title asc'),
-                (_('Name Descending'), 'en_sort_title desc'),
-                (_('Last Modified'), 'metadata_modified desc'),
-                (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
-            %}
-        {%- endif %}
-        {%- if q or fields %}
-            <h2 class="search-heading">{{ _('Your search') }}</h1>
-        {%- else %}
-            <h2 class="search-heading">{{ _('Search') }}</h1>
-        {%- endif %}
-        {%- snippet 'snippets/search_form.html', form_id='dataset-search-form', type=dataset_type, query=q, sorting=sorting, sorting_selected=sort_by_selected, count=page.item_count, placeholder=_('Search ' + dataset_type + 's') + '...', facets=facets, show_empty=request.params, error=query_error, fields=fields %}
-    {% endwith %}
+    {#- Guide on customizing sorts: https://docs.ckan.org/en/2.9/extensions/adding-custom-fields.html#sorting-by-custom-fields-on-the-dataset-search-page #}
+    {#- Caution: See also sort options on templates/organization/read.html #}
+    {%- set sorting = [
+        (_('Relevance'), 'score desc, metadata_modified desc'),
+        (_('Name Ascending'), _('sort_title asc')),
+        (_('Name Descending'), _('sort_title desc')),
+        (_('Last Modified'), 'metadata_modified desc'),
+        (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
+    %}
+    {%- if q or fields %}
+        <h2 class="search-heading">{{ _('Your search') }}</h1>
+    {%- else %}
+        <h2 class="search-heading">{{ _('Search') }}</h1>
+    {%- endif %}
+    {%- snippet 'snippets/search_form.html', form_id='dataset-search-form', type=dataset_type, query=q, sorting=sorting, sorting_selected=sort_by_selected, count=page.item_count, placeholder=_('Search ' + dataset_type + 's') + '...', facets=facets, show_empty=request.params, error=query_error, fields=fields %}
 {% endblock %}
 
 {% block package_search_results_api %}

@@ -3,7 +3,8 @@
 {#- DESQ:
     - Change search field placeholder to clarify that it searches just the
       organization's datasets.
-    - Alter sort options according to current language.
+    - Make sort key translatable so that a language-specific Solr field can be
+      used for sorting.
 -#}
 
 {% block groups_search_form %}
@@ -14,24 +15,13 @@
         'translated_fields': translated_fields,
         'remove_field': remove_field }
     %}
-    {%- with current_lang = request.environ.CKAN_LANG %}
-        {%- if current_lang == 'fr' %}
-            {%- set sorting = [
-                (_('Relevance'), 'score desc, metadata_modified desc'),
-                (_('Name Ascending'), 'fr_sort_title asc'),
-                (_('Name Descending'), 'fr_sort_title desc'),
-                (_('Last Modified'), 'metadata_modified desc'),
-                (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
-            %}
-        {%- else %}
-            {%- set sorting = [
-                (_('Relevance'), 'score desc, metadata_modified desc'),
-                (_('Name Ascending'), 'en_sort_title asc'),
-                (_('Name Descending'), 'en_sort_title desc'),
-                (_('Last Modified'), 'metadata_modified desc'),
-                (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
-            %}
-        {%- endif %}
-        {% snippet 'snippets/search_form.html', form_id='organization-datasets-search-form', type='dataset', query=q, sorting=sorting, sorting_selected=sort_by_selected, count=page.item_count, facets=facets, placeholder=_("Search this organization's datasets..."), show_empty=request.params, fields=fields %}
-    {% endwith %}
+    {#- Caution: See also sort options on templates/package/search.html #}
+    {%- set sorting = [
+        (_('Relevance'), 'score desc, metadata_modified desc'),
+        (_('Name Ascending'), _('sort_title asc')),
+        (_('Name Descending'), _('sort_title desc')),
+        (_('Last Modified'), 'metadata_modified desc'),
+        (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
+    %}
+    {% snippet 'snippets/search_form.html', form_id='organization-datasets-search-form', type='dataset', query=q, sorting=sorting, sorting_selected=sort_by_selected, count=page.item_count, facets=facets, placeholder=_("Search this organization's datasets..."), show_empty=request.params, fields=fields %}
 {% endblock %}

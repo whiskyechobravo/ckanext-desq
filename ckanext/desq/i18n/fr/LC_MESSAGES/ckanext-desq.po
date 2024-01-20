@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-desq 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-20 15:30-0500\n"
-"PO-Revision-Date: 2024-01-20 15:30-0500\n"
+"POT-Creation-Date: 2024-01-20 16:34-0500\n"
+"PO-Revision-Date: 2024-01-20 16:34-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -405,43 +405,43 @@ msgid "organizations"
 msgstr "organisations"
 
 #: ckanext/desq/templates/organization/read.html:20
-#: ckanext/desq/templates/organization/read.html:28
 #: ckanext/desq/templates/package/search.html:21
-#: ckanext/desq/templates/package/search.html:29
 msgid "Relevance"
 msgstr "Pertinence"
 
 #: ckanext/desq/templates/organization/read.html:21
-#: ckanext/desq/templates/organization/read.html:29
 #: ckanext/desq/templates/package/search.html:22
-#: ckanext/desq/templates/package/search.html:30
 #: ckanext/desq/templates/snippets/search_form.html:12
 msgid "Name Ascending"
 msgstr "Nom A-Z"
 
+#: ckanext/desq/templates/organization/read.html:21
+#: ckanext/desq/templates/package/search.html:22
+msgid "sort_title asc"
+msgstr "sort_title_fr asc"
+
 #: ckanext/desq/templates/organization/read.html:22
-#: ckanext/desq/templates/organization/read.html:30
 #: ckanext/desq/templates/package/search.html:23
-#: ckanext/desq/templates/package/search.html:31
 #: ckanext/desq/templates/snippets/search_form.html:12
 msgid "Name Descending"
 msgstr "Nom Z-A"
 
+#: ckanext/desq/templates/organization/read.html:22
+#: ckanext/desq/templates/package/search.html:23
+msgid "sort_title desc"
+msgstr "sort_title_fr desc"
+
 #: ckanext/desq/templates/organization/read.html:23
-#: ckanext/desq/templates/organization/read.html:31
 #: ckanext/desq/templates/package/search.html:24
-#: ckanext/desq/templates/package/search.html:32
 msgid "Last Modified"
 msgstr "Dernière modification"
 
 #: ckanext/desq/templates/organization/read.html:24
-#: ckanext/desq/templates/organization/read.html:32
 #: ckanext/desq/templates/package/search.html:25
-#: ckanext/desq/templates/package/search.html:33
 msgid "Popular"
 msgstr "Populaire"
 
-#: ckanext/desq/templates/organization/read.html:35
+#: ckanext/desq/templates/organization/read.html:26
 msgid "Search this organization's datasets..."
 msgstr "Rechercher les jeux de données de cette organisation..."
 
@@ -505,15 +505,15 @@ msgstr "Supprimé"
 msgid "Create Dataset"
 msgstr "Créer un jeu de données"
 
-#: ckanext/desq/templates/package/search.html:37
+#: ckanext/desq/templates/package/search.html:28
 msgid "Your search"
 msgstr "Votre recherche"
 
-#: ckanext/desq/templates/package/search.html:39
+#: ckanext/desq/templates/package/search.html:30
 msgid "Search"
 msgstr "Recherche"
 
-#: ckanext/desq/templates/package/search.html:50
+#: ckanext/desq/templates/package/search.html:41
 #: ckanext/desq/templates/snippets/search_form.html:72
 msgid "Filter"
 msgstr "Filtrer"
