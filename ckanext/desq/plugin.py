@@ -1,5 +1,6 @@
 """Plugin interfaces definitions."""
 
+import itertools
 import json
 from collections import OrderedDict
 
@@ -221,41 +222,61 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
         data_dict['sort_title'] = json.loads(data_dict.get('title_translated', {})).get('en', "")
         data_dict['sort_title_fr'] = json.loads(data_dict.get('title_translated', {})).get('fr', "")
 
-        def get_choice_value_label(choices, value, language='en'):
+        def _get_choice_value_label(choices, value, language='en'):
             for choice in choices:
                 if choice.get('value') == value:
                     return choice.get('label', {}).get(language, '')
 
-        def get_select_text(data_dict, field_name, language='en'):
+        def _get_select_text(data_dict, field_name, language='en'):
             choices = helpers.get_dataset_field_choices(field_name)
             value = data_dict.get(field_name, '')
-            return get_choice_value_label(choices, value, language)
+            return _get_choice_value_label(choices, value, language)
 
-        def get_multiselect_text(data_dict, field_name, language='en'):
+        def _get_multiselect_text(data_dict, field_name, language='en'):
             choices = helpers.get_dataset_field_choices(field_name)
             values = json.loads(data_dict.get(field_name, '[]'))
-            return [get_choice_value_label(choices, value, language) for value in values]
+            return [_get_choice_value_label(choices, value, language) for value in values]
+
+        def _get_repeated_subfield_text(data_dict, field_name, subfield_name, language='en'):
+            return [
+                text for value in data_dict.get(field_name, {})
+                if (text := json.loads(value.get(subfield_name, '{}')).get(language, ''))
+            ]
 
         if data_dict.get('type') == 'dataset':
             # Prepare text corresponding to each facet value.
-            data_dict['choices_data_type'] = get_select_text(data_dict, 'data_type', 'en')
-            data_dict['choices_data_type_fr'] = get_select_text(data_dict, 'data_type', 'fr')
-            data_dict['choices_topic'] = get_multiselect_text(data_dict, 'topic', 'en')
-            data_dict['choices_topic_fr'] = get_multiselect_text(data_dict, 'topic', 'fr')
-            data_dict['choices_geo_area'] = get_multiselect_text(data_dict, 'geo_area', 'en')
-            data_dict['choices_geo_area_fr'] = get_multiselect_text(data_dict, 'geo_area', 'fr')
-            data_dict['choices_language'] = get_multiselect_text(data_dict, 'language', 'en')
-            data_dict['choices_language_fr'] = get_multiselect_text(data_dict, 'language', 'fr')
+            data_dict['multivalued_text_data_type'] = _get_select_text(data_dict, 'data_type', 'en')
+            data_dict['multivalued_text_data_type_fr'] = _get_select_text(data_dict, 'data_type', 'fr')
+            data_dict['multivalued_text_topic'] = _get_multiselect_text(data_dict, 'topic', 'en')
+            data_dict['multivalued_text_topic_fr'] = _get_multiselect_text(data_dict, 'topic', 'fr')
+            data_dict['multivalued_text_geo_area'] = _get_multiselect_text(data_dict, 'geo_area', 'en')
+            data_dict['multivalued_text_geo_area_fr'] = _get_multiselect_text(data_dict, 'geo_area', 'fr')
+            data_dict['multivalued_text_language'] = _get_multiselect_text(data_dict, 'language', 'en')
+            data_dict['multivalued_text_language_fr'] = _get_multiselect_text(data_dict, 'language', 'fr')
+
+            # Prepare text from repeated subfields.
+            # Reference: https://ckan.org/blog/scheming-subfields
+            data_dict['multivalued_text_variable'] = list(itertools.chain(
+                _get_repeated_subfield_text(data_dict, 'variable', 'variable_name', 'en'),
+                _get_repeated_subfield_text(data_dict, 'variable', 'variable_values', 'en'),
+                _get_repeated_subfield_text(data_dict, 'variable', 'variable_notes', 'en'),
+            ))
+            data_dict['multivalued_text_variable_fr'] = list(itertools.chain(
+                _get_repeated_subfield_text(data_dict, 'variable', 'variable_name', 'fr'),
+                _get_repeated_subfield_text(data_dict, 'variable', 'variable_values', 'fr'),
+                _get_repeated_subfield_text(data_dict, 'variable', 'variable_notes', 'fr'),
+            ))
+            data_dict['multivalued_text_contributor'] = _get_repeated_subfield_text(
+                data_dict, 'contributor', 'contributor_name', 'en'
+            )
+            data_dict['multivalued_text_contributor_fr'] = _get_repeated_subfield_text(
+                data_dict, 'contributor', 'contributor_name', 'fr'
+            )
 
             # Prepare faceting values from multiple-select fields.
             data_dict['topic'] = json.loads(data_dict.get('topic', '[]'))
             data_dict['geo_area'] = json.loads(data_dict.get('geo_area', '[]'))
             data_dict['language'] = json.loads(data_dict.get('language', '[]'))
-
-            # TODO: Remove the scheming_nerf_index plugin, and handle repeating subfields properly.
-            # References:
-            # - https://github.com/ckan/ckanext-scheming#repeating_subfields
-            # - https://ckan.org/blog/scheming-subfields
 
         return data_dict
 
