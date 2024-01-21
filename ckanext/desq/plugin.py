@@ -5,6 +5,7 @@ import json
 from collections import OrderedDict
 
 from ckan import plugins
+from ckan.lib.helpers import get_organization
 from ckan.lib.plugins import DefaultTranslation
 from ckan.lib.search.query import QUERY_FIELDS
 from ckan.plugins import toolkit
@@ -277,6 +278,13 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
             data_dict['topic'] = json.loads(data_dict.get('topic', '[]'))
             data_dict['geo_area'] = json.loads(data_dict.get('geo_area', '[]'))
             data_dict['language'] = json.loads(data_dict.get('language', '[]'))
+
+            # Prepare full organization titles.
+            if (org := get_organization(data_dict.get('owner_org', ''))):
+                data_dict['extras_org_title'] = org.get('title_translated', {}).get('en', '')
+                data_dict['extras_org_title_fr'] = org.get('title_translated', {}).get('fr', '')
+                data_dict['extras_org_abbr_title'] = org.get('title_abbr_translated', {}).get('en', '')
+                data_dict['extras_org_abbr_title_fr'] = org.get('title_abbr_translated', {}).get('fr', '')
 
         return data_dict
 
