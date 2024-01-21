@@ -236,25 +236,26 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
             values = json.loads(data_dict.get(field_name, '[]'))
             return [get_choice_value_label(choices, value, language) for value in values]
 
-        # Prepare text corresponding to each facet value.
-        data_dict['choices_data_type'] = get_select_text(data_dict, 'data_type', 'en')
-        data_dict['choices_data_type_fr'] = get_select_text(data_dict, 'data_type', 'fr')
-        data_dict['choices_topic'] = get_multiselect_text(data_dict, 'topic', 'en')
-        data_dict['choices_topic_fr'] = get_multiselect_text(data_dict, 'topic', 'fr')
-        data_dict['choices_geo_area'] = get_multiselect_text(data_dict, 'geo_area', 'en')
-        data_dict['choices_geo_area_fr'] = get_multiselect_text(data_dict, 'geo_area', 'fr')
-        data_dict['choices_language'] = get_multiselect_text(data_dict, 'language', 'en')
-        data_dict['choices_language_fr'] = get_multiselect_text(data_dict, 'language', 'fr')
+        if data_dict.get('type') == 'dataset':
+            # Prepare text corresponding to each facet value.
+            data_dict['choices_data_type'] = get_select_text(data_dict, 'data_type', 'en')
+            data_dict['choices_data_type_fr'] = get_select_text(data_dict, 'data_type', 'fr')
+            data_dict['choices_topic'] = get_multiselect_text(data_dict, 'topic', 'en')
+            data_dict['choices_topic_fr'] = get_multiselect_text(data_dict, 'topic', 'fr')
+            data_dict['choices_geo_area'] = get_multiselect_text(data_dict, 'geo_area', 'en')
+            data_dict['choices_geo_area_fr'] = get_multiselect_text(data_dict, 'geo_area', 'fr')
+            data_dict['choices_language'] = get_multiselect_text(data_dict, 'language', 'en')
+            data_dict['choices_language_fr'] = get_multiselect_text(data_dict, 'language', 'fr')
 
-        # Prepare faceting values from multiple-select fields.
-        data_dict['topic'] = json.loads(data_dict.get('topic', '[]'))
-        data_dict['geo_area'] = json.loads(data_dict.get('geo_area', '[]'))
-        data_dict['language'] = json.loads(data_dict.get('language', '[]'))
+            # Prepare faceting values from multiple-select fields.
+            data_dict['topic'] = json.loads(data_dict.get('topic', '[]'))
+            data_dict['geo_area'] = json.loads(data_dict.get('geo_area', '[]'))
+            data_dict['language'] = json.loads(data_dict.get('language', '[]'))
 
-        # TODO: Remove the scheming_nerf_index plugin, and handle repeating subfields properly.
-        # References:
-        # - https://github.com/ckan/ckanext-scheming#repeating_subfields
-        # - https://ckan.org/blog/scheming-subfields
+            # TODO: Remove the scheming_nerf_index plugin, and handle repeating subfields properly.
+            # References:
+            # - https://github.com/ckan/ckanext-scheming#repeating_subfields
+            # - https://ckan.org/blog/scheming-subfields
 
         return data_dict
 
