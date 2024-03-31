@@ -266,8 +266,8 @@ dataset_fields:
       fr: Centre local de services communautaire (CLSC)
     value: clsc
   - label:
-      en: Forward sortation area
-      fr: Région de tri d’acheminement
+      en: Forward sortation area (FSA)
+      fr: Région de tri d’acheminement (RTA)
     value: sortation_area
   - label:
       en: Postal code
