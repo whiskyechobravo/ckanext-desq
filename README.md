@@ -12,9 +12,9 @@ CKAN configuration and the Solr schema.
   ```bash
   sudo apt install libicu-dev python3-icu pkg-config
   ```
-- CKAN 2.9.5 fork, installed with:
+- CKAN 2.9.11 fork, installed with:
   ```bash
-  pip install -e 'git+https://github.com/whiskyechobravo/ckan.git@desq-2.9.5#egg=ckan[requirements]'
+  pip install -e 'git+https://github.com/whiskyechobravo/ckan.git@desq-2.9.11#egg=ckan[requirements]'
   ```
 
 Tested under Ubuntu 20.04 and 22.04.
@@ -106,4 +106,4 @@ Compile translations into a `.mo` file:
 python setup.py compile_catalog --locale LANG
 ```
 
-The binary `.mo` file is commited to the repository for ease of deployment.
+The binary `.mo` file is committed to the repository for ease of deployment.
