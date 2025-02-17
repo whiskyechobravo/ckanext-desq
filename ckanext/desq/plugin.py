@@ -114,6 +114,17 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
 
     def organization_facets(self, facets_dict, organization_type, package_type):
         """Modify and return the facets_dict for an organization’s page."""
+        facets_dict = OrderedDict(
+            {
+                "census_year": toolkit._("Census year"),
+                "data_type": toolkit._("Data type"),
+                "topic": toolkit._("Topic"),
+                "geo_area": toolkit._("Geographical area"),
+                "res_format": toolkit._("Format"),
+                "language": toolkit._("Language of dataset"),
+                "license": toolkit._("License"),
+            }
+        )
         return facets_dict
 
     # ITemplateHelpers
