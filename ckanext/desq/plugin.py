@@ -29,16 +29,16 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
     # IConfigurer
 
     def update_config(self, config_):
-        toolkit.add_template_directory(config_, 'templates')
-        toolkit.add_public_directory(config_, 'public')
-        toolkit.add_resource('fanstatic', 'desq')
-        toolkit.add_resource('assets', 'desq')
+        toolkit.add_template_directory(config_, "templates")
+        toolkit.add_public_directory(config_, "public")
+        toolkit.add_resource("fanstatic", "desq")
+        toolkit.add_resource("assets", "desq")
 
     # IMiddleware
 
     def make_middleware(self, app, config):
-        app.jinja_env.filters['humansort'] = jinja.do_humansort
-        app.jinja_env.filters['dicthumansort'] = jinja.do_dicthumansort
+        app.jinja_env.filters["humansort"] = jinja.do_humansort
+        app.jinja_env.filters["dicthumansort"] = jinja.do_dicthumansort
         return app
 
     def make_error_log_middleware(self, app, config):
@@ -49,8 +49,8 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
 
     def get_validators(self):
         return {
-            'desq_is_year': desq_validators.is_year,
-            'desq_no_future_date': desq_validators.no_future_date,
+            "desq_is_year": desq_validators.is_year,
+            "desq_no_future_date": desq_validators.no_future_date,
         }
 
     # IPluginObserver
@@ -59,21 +59,21 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
     def _create_vocabulary(vocabulary_id):
         """Create the specified tag vocabulary if it does not already exists."""
         # Guide: https://docs.ckan.org/en/2.9/extensions/adding-custom-fields.html#tag-vocabularies
-        user = toolkit.get_action('get_site_user')({'ignore_auth': True}, {})
-        context = {'user': user['name']}
+        user = toolkit.get_action("get_site_user")({"ignore_auth": True}, {})
+        context = {"user": user["name"]}
         try:
-            data = {'id': vocabulary_id}
-            toolkit.get_action('vocabulary_show')(context, data)
+            data = {"id": vocabulary_id}
+            toolkit.get_action("vocabulary_show")(context, data)
         except toolkit.ObjectNotFound:
-            data = {'name': vocabulary_id}
-            return toolkit.get_action('vocabulary_create')(context, data)
+            data = {"name": vocabulary_id}
+            return toolkit.get_action("vocabulary_create")(context, data)
 
     def before_load(self, plugin):
         pass
 
     def after_load(self, service):
         # Make sure the required vocabularies exist.
-        self._create_vocabulary('dimension')
+        self._create_vocabulary("dimension")
 
     def before_unload(self, plugin):
         pass
@@ -87,29 +87,33 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
     def dataset_facets(self, facets_dict, package_type):
         """Modify and return the facets_dict for the dataset search page."""
         # Instead of updating facets_dict, we fully replace it to reorder everything.
-        facets_dict = OrderedDict({
-            'census_year': toolkit._('Census year'),
-            'data_type': toolkit._('Data type'),
-            'topic': toolkit._('Topic'),
-            'geo_area': toolkit._('Geographical area'),
-            'res_format': toolkit._('Format'),
-            'language': toolkit._('Language of dataset'),
-            'license': toolkit._('License'),
-            'organization': toolkit._('Contributing DESQ Partners'),
-        })
+        facets_dict = OrderedDict(
+            {
+                "census_year": toolkit._("Census year"),
+                "data_type": toolkit._("Data type"),
+                "topic": toolkit._("Topic"),
+                "geo_area": toolkit._("Geographical area"),
+                "res_format": toolkit._("Format"),
+                "language": toolkit._("Language of dataset"),
+                "license": toolkit._("License"),
+                "organization": toolkit._("Contributing DESQ Partners"),
+            }
+        )
         return facets_dict
 
     def group_facets(self, facets_dict, group_type, package_type):
         """Modify and return the facets_dict for a group’s page."""
-        facets_dict = OrderedDict({
-            'census_year': toolkit._('Census year'),
-            'data_type': toolkit._('Data type'),
-            'topic': toolkit._('Topic'),
-            'geo_area': toolkit._('Geographical area'),
-            'res_format': toolkit._('Format'),
-            'language': toolkit._('Language of dataset'),
-            'license': toolkit._('License'),
-        })
+        facets_dict = OrderedDict(
+            {
+                "census_year": toolkit._("Census year"),
+                "data_type": toolkit._("Data type"),
+                "topic": toolkit._("Topic"),
+                "geo_area": toolkit._("Geographical area"),
+                "res_format": toolkit._("Format"),
+                "language": toolkit._("Language of dataset"),
+                "license": toolkit._("License"),
+            }
+        )
         return facets_dict
 
     def organization_facets(self, facets_dict, organization_type, package_type):
@@ -132,12 +136,12 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
 
     def get_helpers(self):
         return {
-            'desq_get_license': helpers.get_license,
-            'desq_dataset_field_choices': helpers.get_dataset_field_choices,
-            'desq_dataset_sort_variables': helpers.dataset_sort_variables,
-            'desq_organization_title': helpers.get_organization_title,
-            'desq_organization_abbr_or_title': helpers.get_organization_abbr_or_title,
-            'desq_is_field_empty': helpers.is_field_empty,
+            "desq_get_license": helpers.get_license,
+            "desq_dataset_field_choices": helpers.get_dataset_field_choices,
+            "desq_dataset_sort_variables": helpers.dataset_sort_variables,
+            "desq_organization_title": helpers.get_organization_title,
+            "desq_organization_abbr_or_title": helpers.get_organization_abbr_or_title,
+            "desq_is_field_empty": helpers.is_field_empty,
         }
 
     # IPackageController
@@ -199,7 +203,7 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
         input from specific fields.
         """
         # Add and boost the product_number field to list of query fields.
-        search_params['qf'] = f"{QUERY_FIELDS} product_number^32"
+        search_params["qf"] = f"{QUERY_FIELDS} product_number^32"
         return search_params
 
     def after_search(self, search_results, search_params):
@@ -231,71 +235,122 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
         """
 
         # Index language-specific fields.
-        data_dict['sort_title'] = json.loads(data_dict.get('title_translated', {})).get('en', "")
-        data_dict['sort_title_fr'] = json.loads(data_dict.get('title_translated', {})).get('fr', "")
+        data_dict["sort_title"] = json.loads(data_dict.get("title_translated", {})).get(
+            "en", ""
+        )
+        data_dict["sort_title_fr"] = json.loads(
+            data_dict.get("title_translated", {})
+        ).get("fr", "")
 
-        def _get_choice_value_label(choices, value, language='en'):
+        def _get_choice_value_label(choices, value, language="en"):
             for choice in choices:
-                if choice.get('value') == value:
-                    return choice.get('label', {}).get(language, '')
+                if choice.get("value") == value:
+                    return choice.get("label", {}).get(language, "")
 
-        def _get_select_text(data_dict, field_name, language='en'):
+        def _get_select_text(data_dict, field_name, language="en"):
             choices = helpers.get_dataset_field_choices(field_name)
-            value = data_dict.get(field_name, '')
+            value = data_dict.get(field_name, "")
             return _get_choice_value_label(choices, value, language)
 
-        def _get_multiselect_text(data_dict, field_name, language='en'):
+        def _get_multiselect_text(data_dict, field_name, language="en"):
             choices = helpers.get_dataset_field_choices(field_name)
-            values = json.loads(data_dict.get(field_name, '[]'))
-            return [_get_choice_value_label(choices, value, language) for value in values]
-
-        def _get_repeated_subfield_text(data_dict, field_name, subfield_name, language='en'):
+            values = json.loads(data_dict.get(field_name, "[]"))
             return [
-                text for value in data_dict.get(field_name, {})
-                if (text := json.loads(value.get(subfield_name, '{}')).get(language, ''))
+                _get_choice_value_label(choices, value, language) for value in values
             ]
 
-        if data_dict.get('type') == 'dataset':
+        def _get_repeated_subfield_text(
+            data_dict, field_name, subfield_name, language="en"
+        ):
+            return [
+                text
+                for value in data_dict.get(field_name, {})
+                if (
+                    text := json.loads(value.get(subfield_name, "{}")).get(language, "")
+                )
+            ]
+
+        if data_dict.get("type") == "dataset":
             # Prepare text corresponding to each facet value.
-            data_dict['multivalued_text_data_type'] = _get_select_text(data_dict, 'data_type', 'en')
-            data_dict['multivalued_text_data_type_fr'] = _get_select_text(data_dict, 'data_type', 'fr')
-            data_dict['multivalued_text_topic'] = _get_multiselect_text(data_dict, 'topic', 'en')
-            data_dict['multivalued_text_topic_fr'] = _get_multiselect_text(data_dict, 'topic', 'fr')
-            data_dict['multivalued_text_geo_area'] = _get_multiselect_text(data_dict, 'geo_area', 'en')
-            data_dict['multivalued_text_geo_area_fr'] = _get_multiselect_text(data_dict, 'geo_area', 'fr')
-            data_dict['multivalued_text_language'] = _get_multiselect_text(data_dict, 'language', 'en')
-            data_dict['multivalued_text_language_fr'] = _get_multiselect_text(data_dict, 'language', 'fr')
+            data_dict["multivalued_text_data_type"] = _get_select_text(
+                data_dict, "data_type", "en"
+            )
+            data_dict["multivalued_text_data_type_fr"] = _get_select_text(
+                data_dict, "data_type", "fr"
+            )
+            data_dict["multivalued_text_topic"] = _get_multiselect_text(
+                data_dict, "topic", "en"
+            )
+            data_dict["multivalued_text_topic_fr"] = _get_multiselect_text(
+                data_dict, "topic", "fr"
+            )
+            data_dict["multivalued_text_geo_area"] = _get_multiselect_text(
+                data_dict, "geo_area", "en"
+            )
+            data_dict["multivalued_text_geo_area_fr"] = _get_multiselect_text(
+                data_dict, "geo_area", "fr"
+            )
+            data_dict["multivalued_text_language"] = _get_multiselect_text(
+                data_dict, "language", "en"
+            )
+            data_dict["multivalued_text_language_fr"] = _get_multiselect_text(
+                data_dict, "language", "fr"
+            )
 
             # Prepare text from repeated subfields.
             # Reference: https://ckan.org/blog/scheming-subfields
-            data_dict['multivalued_text_variable'] = list(itertools.chain(
-                _get_repeated_subfield_text(data_dict, 'variable', 'variable_name', 'en'),
-                _get_repeated_subfield_text(data_dict, 'variable', 'variable_values', 'en'),
-                _get_repeated_subfield_text(data_dict, 'variable', 'variable_notes', 'en'),
-            ))
-            data_dict['multivalued_text_variable_fr'] = list(itertools.chain(
-                _get_repeated_subfield_text(data_dict, 'variable', 'variable_name', 'fr'),
-                _get_repeated_subfield_text(data_dict, 'variable', 'variable_values', 'fr'),
-                _get_repeated_subfield_text(data_dict, 'variable', 'variable_notes', 'fr'),
-            ))
-            data_dict['multivalued_text_contributor'] = _get_repeated_subfield_text(
-                data_dict, 'contributor', 'contributor_name', 'en'
+            data_dict["multivalued_text_variable"] = list(
+                itertools.chain(
+                    _get_repeated_subfield_text(
+                        data_dict, "variable", "variable_name", "en"
+                    ),
+                    _get_repeated_subfield_text(
+                        data_dict, "variable", "variable_values", "en"
+                    ),
+                    _get_repeated_subfield_text(
+                        data_dict, "variable", "variable_notes", "en"
+                    ),
+                )
             )
-            data_dict['multivalued_text_contributor_fr'] = _get_repeated_subfield_text(
-                data_dict, 'contributor', 'contributor_name', 'fr'
+            data_dict["multivalued_text_variable_fr"] = list(
+                itertools.chain(
+                    _get_repeated_subfield_text(
+                        data_dict, "variable", "variable_name", "fr"
+                    ),
+                    _get_repeated_subfield_text(
+                        data_dict, "variable", "variable_values", "fr"
+                    ),
+                    _get_repeated_subfield_text(
+                        data_dict, "variable", "variable_notes", "fr"
+                    ),
+                )
+            )
+            data_dict["multivalued_text_contributor"] = _get_repeated_subfield_text(
+                data_dict, "contributor", "contributor_name", "en"
+            )
+            data_dict["multivalued_text_contributor_fr"] = _get_repeated_subfield_text(
+                data_dict, "contributor", "contributor_name", "fr"
             )
 
             # Prepare faceting values from multiple-select fields.
-            data_dict['topic'] = json.loads(data_dict.get('topic', '[]'))
-            data_dict['geo_area'] = json.loads(data_dict.get('geo_area', '[]'))
-            data_dict['language'] = json.loads(data_dict.get('language', '[]'))
+            data_dict["topic"] = json.loads(data_dict.get("topic", "[]"))
+            data_dict["geo_area"] = json.loads(data_dict.get("geo_area", "[]"))
+            data_dict["language"] = json.loads(data_dict.get("language", "[]"))
 
             # Prepare full organization titles.
-            if (org := get_organization(data_dict.get('owner_org', ''))):
-                data_dict['extras_org_title'] = org.get('title_translated', {}).get('en', '')
-                data_dict['extras_org_title_fr'] = org.get('title_translated', {}).get('fr', '')
-                data_dict['extras_org_abbr_title'] = org.get('title_abbr_translated', {}).get('en', '')
-                data_dict['extras_org_abbr_title_fr'] = org.get('title_abbr_translated', {}).get('fr', '')
+            if org := get_organization(data_dict.get("owner_org", "")):
+                data_dict["extras_org_title"] = org.get("title_translated", {}).get(
+                    "en", ""
+                )
+                data_dict["extras_org_title_fr"] = org.get("title_translated", {}).get(
+                    "fr", ""
+                )
+                data_dict["extras_org_abbr_title"] = org.get(
+                    "title_abbr_translated", {}
+                ).get("en", "")
+                data_dict["extras_org_abbr_title_fr"] = org.get(
+                    "title_abbr_translated", {}
+                ).get("fr", "")
 
         return data_dict
 
