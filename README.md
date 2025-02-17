@@ -12,9 +12,9 @@ CKAN configuration and the Solr schema.
   ```bash
   sudo apt install libicu-dev python3-icu pkg-config
   ```
-- CKAN 2.9.11 fork, installed with:
+- CKAN, DESQ fork, installed with:
   ```bash
-  pip install -e 'git+https://github.com/whiskyechobravo/ckan.git@desq-2.9.11#egg=ckan[requirements]'
+  pip install -e 'git+https://github.com/whiskyechobravo/ckan.git@desq#egg=ckan[requirements]'
   ```
 
 Tested under Ubuntu 20.04 and 22.04.
