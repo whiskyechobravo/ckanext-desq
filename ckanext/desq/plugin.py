@@ -142,6 +142,7 @@ class DesqPlugin(plugins.SingletonPlugin, DefaultTranslation):
             "desq_organization_title": helpers.get_organization_title,
             "desq_organization_abbr_or_title": helpers.get_organization_abbr_or_title,
             "desq_is_field_empty": helpers.is_field_empty,
+            "desq_get_citation": helpers.get_citation,
         }
 
     # IPackageController

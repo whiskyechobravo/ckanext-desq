@@ -6,10 +6,11 @@
       Scheming to then override it with its own.
     - Adapt exclude_fields list.
     - Hide empty fields.
+    - Call custom helper to show the 'citation' field.
     - Change heading style (forced to override the whole thing!).
     - Remove table classes (condensed, striped, bordered).
     - Sort "Variable Names" in the repeated subfields of the "Variable" field.
-    - Reindent code, filter whitespaces.
+    - Re-indent code, filter whitespaces.
 -#}
 
 {%- set exclude_fields = [
@@ -39,7 +40,13 @@
                                 {{- h.scheming_language_text(field.label) -}}
                             </th>
                             <td class="dataset-details"{% if field.display_property %} property="{{ field.display_property }}"{% endif %}>
-                                {%- snippet 'scheming/snippets/display_field.html', field=field, data=sorted_pkg_dict, schema=schema -%}
+                                {%- if field.field_name == "citation_translated" %}
+                                    <span class="dataset-details__citation">
+                                        {{ h.desq_get_citation(pkg_dict) }}
+                                    </span>
+                                {%- else %}
+                                    {%- snippet 'scheming/snippets/display_field.html', field=field, data=sorted_pkg_dict, schema=schema -%}
+                                {%- endif %}
                             </td>
                         </tr>
                     {%- endif %}

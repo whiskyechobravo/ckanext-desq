@@ -26,7 +26,7 @@ dataset_fields:
     fr: Nom à utiliser pour produire un URL unique pour ce jeu de données.
   form_placeholder:
     en: eg. my-dataset
-    en: p.ex. mon-jeu-de-donnees
+    fr: p.ex. mon-jeu-de-donnees
 
 - field_name: notes_translated
   label:
@@ -474,6 +474,20 @@ dataset_fields:
     en: The date on which the dataset was updated (YYYY-MM-DD).
     fr: Date à laquelle le jeu de données a été mis à jour (AAAA-MM-JJ).
   validators: scheming_required unicode_safe isodate desq_no_future_date
+
+- field_name: citation_translated
+  label:
+    en: How to cite
+    fr: Comment citer
+  preset: fluent_core_translated
+  help_text:
+    en: "Enter the citation. The following tokens will be automatically replaced: %(product)s, %(date)s, %(org)s, %(url)s."
+    fr: "Entrez la référence bibliographique. Les jetons suivants seront automatiquement remplacés: %(product)s, %(date)s, %(org)s, %(url)s."
+  form_placeholder:
+    en: eg. Statistics Canada, %(product)s, %(date)s, custom dataset created for %(org)s by Statistics Canada. Reproduced and distributed on an as-is basis with the permission of Statistics Canada. %(url)s
+    fr: p.ex. Statistique Canada, %(product)s, %(date)s, jeu de données personnalisé créé pour %(org)s par Statistique Canada. Reproduit et distribué tel quel avec la permission de Statistique Canada. %(url)s
+  form_attrs:
+    class: form-control
 
 
 resource_fields:

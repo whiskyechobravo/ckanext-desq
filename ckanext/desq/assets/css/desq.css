@@ -617,6 +617,11 @@ output {
 .dataset-details dt:first-child {
   margin-top: 0;
 }
+.dataset-details__citation {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
 
 /* Context info (in dataset sidebar). */
 
