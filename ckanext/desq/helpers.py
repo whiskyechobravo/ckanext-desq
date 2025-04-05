@@ -57,7 +57,7 @@ def get_citation(data_dict):
 
     org = get_organization(data_dict.get("organization", {}).get("id", ""))
     if org:
-        org = get_organization_abbr_or_title(org)
+        org = get_organization_title(org)
     else:
         org = ""
 
