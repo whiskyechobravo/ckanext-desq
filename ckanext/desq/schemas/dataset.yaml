@@ -94,6 +94,10 @@ dataset_fields:
       fr: Déplacement domicile-travail
     value: commuting
   - label:
+      en: COVID-19
+      fr: COVID-19
+    value: covid_19
+  - label:
       en: Economics
       fr: Économie
     value: economics
@@ -213,6 +217,10 @@ dataset_fields:
       en: Census tract (CT)
       fr: Secteur de recensement (SR)
     value: ct
+  - label:
+      en: Collection unit (CU)
+      fr: Unité de collection (CU)
+    value: cu
   - label:
       en: Designated place (DPL)
       fr: Localité désignée (LD)
