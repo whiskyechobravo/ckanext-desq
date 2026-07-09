@@ -62,12 +62,17 @@ def get_citation(data_dict):
         org = ""
 
     # Format the citation, replacing %(product)s, %(date)s, %(org)s, %(url)s.
-    return get_translated(data_dict, "citation").strip() % {
-        "product": product,
-        "date": data_dict.get("census_year", ""),
-        "org": org,
-        "url": url,
-    }
+    # Not using % string formatting to make this more tolerant of missing values or incorrect format strings.
+    citation = get_translated(data_dict, "citation").strip()
+    if product:
+        citation = citation.replace("%(product)s", str(product))
+    if year := data_dict.get("census_year"):
+        citation = citation.replace("%(date)s", str(year))
+    if org:
+        citation = citation.replace("%(org)s", str(org))
+    if url:
+        citation = citation.replace("%(url)s", str(url))
+    return citation
 
 
 def is_field_empty(data_dict, field):
